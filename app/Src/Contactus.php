@@ -10,4 +10,5 @@ class Contactus extends Model
     use LocaleTrait;
     protected $table = 'contactus';
     public $localeStrings = ['company_name','address'];
+    protected $guarded = [''];
 }

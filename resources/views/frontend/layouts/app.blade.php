@@ -13,18 +13,18 @@
     @section('styles')
         @include('frontend.partials.styles')
     @show
-
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}"/>
 </head>
 <body>
 
 @section('header')
     @include('frontend.partials.nav')
-    @include('frontend.partials.notifications');
+    @include('frontend.partials.notifications')
 @show
 
 @section('body')
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="content">
             @yield('content')
         </div>
     </div>
@@ -32,6 +32,7 @@
 
 
 @section('footer')
+    @include('frontend.partials.footer')
 @section('scripts')
     @include('frontend.partials.scripts')
 @show

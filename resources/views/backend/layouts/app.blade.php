@@ -11,23 +11,52 @@
     <title>Laravel</title>
 
     @section('styles')
-        @include('frontend.partials.styles')
+        @include('backend.partials.styles')
     @show
-
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}"/>
 </head>
-<body>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
 
-@include('frontend.partials.nav')
+@section('header')
 
 
-<div class="container">
-    <div class="row">
-        @yield('content')
+@show
+
+@section('body')
+    @include('backend.partials.nav')
+    <div class="page-container">
+        @include('backend.partials.sidebar')
+
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <!-- BEGIN PAGE HEADER-->
+
+                <!-- BEGIN PAGE BAR -->
+                @section('pageBar')
+                    @include('backend.partials._page_bar')
+                            <!-- BEGIN PAGE TITLE-->
+                    @section('title')
+                        <h3 class="page-title"> Dashboard
+                            <small>dashboard & statistics</small>
+                        </h3>
+                    @show
+                    <!-- END PAGE TITLE-->
+                @show
+                    <!-- END PAGE BAR -->
+
+                <div class="row">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+    @include('backend.partials.footer')
+@show
+
 
 @section('scripts')
-    @include('frontend.partials.scripts')
+    @include('backend.partials.scripts')
 @show
 </body>
 </html>

@@ -2,22 +2,18 @@
 
 
 @section('body')
-    {{--@include('frontend.partials.slider')--}}
-    @parent
-@endsection
-
-
 @section('content')
-    <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-            <div class="panel-heading">Dashboard</div>
+    @include('frontend.partials.slider')
+    @include('frontend.partials._search_section')
 
-            <div class="panel-body">
-                You are logged in!
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12 header" id="app"></div>
-    </div>
+    @include('frontend.partials._random_avatars')
+
+    @include('frontend.partials._post_thumbnail')
+
+
+    {{--<div class="row">--}}
+        {{--<div class="col-lg-12 header"></div>--}}
+    {{--</div>--}}
+@show
 @endsection
+

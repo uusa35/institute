@@ -3,6 +3,9 @@
 namespace App\Core\Services\Views;
 
 use App\Src\Category;
+use App\Src\Contactus;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 
 class ViewComposers
@@ -17,10 +20,69 @@ class ViewComposers
 
     public function getMenuItems(View $view)
     {
-        $menuItems = $this->category->menu()->get();
 
-//        dd($menuItems);
+        if (!Cache::has('menuItems')) {
 
-        return $view->with(compact('menuItems'));
+            Cache::forever('menuItems', $this->category->menu()->orderBy('created_at', 'desc')->get());
+
+        }
+
+        $menuItems = Cache::get('menuItems');
+
+        $contactusInfo = $this->contactusInfo();
+
+        return $view->with(compact('menuItems', 'contactusInfo'));
+    }
+
+    public function getContactusInfo(View $view)
+    {
+        $contactusInfo = $this->contactusInfo();
+
+        return $view->with(compact('contactusInfo'));
+    }
+
+
+    public function getBreadCrumbs(View $view)
+    {
+        $link = '';
+
+        $arrayFilter = ['index', 'create', 'update', 'store', 'destroy', 'delete', 'meta', 'attribute', 'edit'];
+
+        $name = Route::currentRouteName();
+
+        $routes = explode('.', $name);
+
+        $routes = array_filter($routes, function ($item) use ($arrayFilter) {
+
+            if (!in_array($item, $arrayFilter, true)) {
+
+                return $item;
+
+            }
+
+        });
+
+        $view->with('breadCrumbs', $routes);
+    }
+
+    public function contactusInfo()
+    {
+
+        if (!Cache::has('contactusInfo')) {
+
+            $contactusInfo = Contactus::first();
+
+            Cache::forever('contactusInfo', $contactusInfo);
+        }
+
+        return Cache::get('contactusInfo');
+    }
+
+    public function removeCache(View $view)
+    {
+        Cache::flush();
+
+        return $view;
     }
 }
+

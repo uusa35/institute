@@ -85,16 +85,16 @@ $style = [
                                         <!-- Greeting -->
                                         <h1 style="{{ $style['header-1'] }}">
                                             @if ($level == 'error')
-                                                Whoops!
+
                                             @else
-                                                Hello!
+
                                             @endif
                                         </h1>
 
                                         <!-- Intro -->
                                         @foreach ($introLines as $line)
                                             <p style="{{ $style['paragraph'] }}">
-                                                {{ $line }}
+                                                {!!  $line !!}
                                             </p>
                                         @endforeach
 

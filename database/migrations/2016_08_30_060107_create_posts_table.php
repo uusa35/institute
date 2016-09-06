@@ -20,9 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('body_en');
             $table->integer('user_id')->unsigned()->index();
             $table->string('image');
-            $table->integer('gallery_id')->unsigned()->index();
 
-            $table->foreign('gallery_id')->references('id')->on('galleries')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();

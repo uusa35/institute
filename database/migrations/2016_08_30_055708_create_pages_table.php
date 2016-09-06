@@ -17,11 +17,9 @@ class CreatePagesTable extends Migration
             $table->string('title_ar');
             $table->string('title_en');
             $table->integer('category_id')->unsigned()->index();
-            $table->integer('gallery_id')->unsigned()->index();
-            $table->enum('order_id',[1,2,3,4,5]);
+            $table->enum('order',range(0,10));
             $table->string('image');
 
-            $table->foreign('gallery_id')->references('id')->on('galleries')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();

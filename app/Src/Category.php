@@ -9,6 +9,7 @@ class Category extends Model
 {
     use LocaleTrait;
     public $localeStrings = ['name'];
+    protected $guarded = [''];
 
     public function parent()
     {
@@ -33,7 +34,9 @@ class Category extends Model
 
     public function scopeMenu($q)
     {
-        return $q->parents()->with('pages')->where('menu', true);
+        return $q->parents()->whereHas('pages', function ($q) {
+            $q->with('pages');
+        }, '>=', 1)->where('menu', true);
     }
 
 }

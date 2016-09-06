@@ -36,11 +36,13 @@ $factory->define(App\Src\User::class, function (Faker\Generator $faker) {
         'description_ar' => $faker->paragraph(1),
         'description_en' => $faker->paragraph(1),
         'video_link' => $faker->sentence(5),
-        'pdf_link' => $faker->sentence(5),
         'other_link' => $faker->sentence(5),
-        'type' => $faker->randomElement(['free', 'paid']),
+        'pdf' => $faker->imageUrl(),
+        'type' => $faker->randomElement(['NPL', 'IHB','WHATEVER']),
+        'gender' => $faker->randomElement(['male', 'female']),
         'active' => $faker->numberBetween(0, 1),
-        'subscribed' => $faker->numberBetween(0, 1),
+        'membership_id' => $faker->numberBetween(999,99999),
+        'subscribed' => $faker->randomElement(['free', 'paid']),
     ];
 });
 
@@ -60,8 +62,7 @@ $factory->define(Image::class, function (Faker\Generator $faker) {
         'gallery_id' => Gallery::all()->random()->id,
         'caption_ar' => $faker->sentence(1),
         'caption_en' => $faker->sentence(1),
-        'thumbnail_url' => $faker->imageUrl(),
-        'large_url' => $faker->imageUrl(),
+        'image_url' => $faker->imageUrl(),
     ];
 });
 
@@ -72,18 +73,18 @@ $factory->define(Post::class, function (Faker\Generator $faker) {
         'body_ar' => $faker->paragraph(3),
         'body_en' => $faker->paragraph(3),
         'user_id' => '1',
-        'image' => $faker->imageUrl(),
-        'gallery_id' => $faker->numberBetween(1, 30)
+        'image' => $faker->imageUrl()
     ];
 });
 
 $factory->define(Category::class, function (Faker\Generator $faker) {
-    for ($i = 0; $i <= 20; $i++) {
+//    'parent_id' => ($i <= 5) ? 0 : Category::doesntHave('parent')->pluck('id')->shuffle()->first(),
+    for ($i = 0; $i <= 5; $i++) {
         Category::create(
             [
                 'name_ar' => $faker->name,
                 'name_en' => $faker->name,
-                'parent_id' => ($i <= 5) ? 0 : Category::doesntHave('parent')->pluck('id')->shuffle()->first(),
+                'parent_id' => 0,
                 'menu' => $faker->numberBetween(0, 1)
             ]
         );
@@ -102,8 +103,7 @@ $factory->define(Page::class, function (Faker\Generator $faker) {
         'title_ar' => $faker->sentence(1),
         'title_en' => $faker->sentence(1),
         'category_id' => Category::doesntHave('parent')->pluck('id')->shuffle()->first(),
-        'gallery_id' => Gallery::all()->where('galleryable_type', 'App\Src\Page')->pluck('id')->shuffle()->first(),
-        'order_id' => $faker->numberBetween(1, 5),
+        'order' => $faker->numberBetween(1, 10),
         'image' => $faker->imageUrl(),
     ];
 });
@@ -113,7 +113,7 @@ $factory->define(Slider::class, function (Faker\Generator $faker) {
     return [
         'caption_ar' => $faker->sentence(1),
         'caption_en' => $faker->sentence(1),
-        'url' => $faker->url,
+        'url' => $faker->imageUrl('1900','500'),
         'type' => $faker->randomElement(['image', 'video']),
     ];
 });

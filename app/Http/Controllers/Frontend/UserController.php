@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Src\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -47,7 +48,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        return view('frontend.modules.user.show',compact('user'));
     }
 
     /**

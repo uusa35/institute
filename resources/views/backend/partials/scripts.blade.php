@@ -5,4 +5,28 @@
     ]); ?>
 </script>
 <!-- Scripts -->
-<script src="/js/app.js"></script>
+<script src="{{ asset('js/backend.js') }}"></script>
+<script type="text/javascript">
+    $('#categories').DataTable({
+        "order": [[ 0, "desc" ]]
+    });
+    $('#users').DataTable({
+        "order": [[ 0, "desc" ]]
+    });
+    $('#pages').DataTable({
+        "order": [[ 0, "desc" ]]
+    });
+    $('#posts').DataTable({
+        "order": [[ 0, "desc" ]]
+    });
+    $('#sliders').DataTable({
+        "order": [[ 0, "desc" ]]
+    });
+    $('#sectioins').DataTable({
+        "order": [[ 0, "desc" ]]
+    });
+    $('#contactus').DataTable({
+        "order": [[ 0, "desc" ]]
+    });
+    tinymce.init({selector: 'textarea'});
+</script>

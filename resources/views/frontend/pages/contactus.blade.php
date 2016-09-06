@@ -37,6 +37,9 @@
                                     <i class="fa fa-mobile"></i> <strong>Email</strong>
                                     <a href="mailto:example@test.com" target="_top">example@test.com</a>
                                 </li>
+                                <li>
+                                    <a href="#" class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-yellow bg-hover-grey-salsa font-white bg-hover-white socicon-facebook tooltips" data-original-title="Facebook"></a>
+                                </li>
                             </ul>
                         </div>
                     </div><!-- End contact info -->

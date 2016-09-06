@@ -20,15 +20,18 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('avatar');
             $table->string('password');
-            $table->string('mobile');
-            $table->string('description_ar');
-            $table->string('description_en');
-            $table->string('video_link');
-            $table->string('pdf_link');
-            $table->string('other_link');
-            $table->enum('type', ['free', 'paid']);
-            $table->boolean('active');
-            $table->boolean('subscribed');
+            $table->string('mobile')->default(0);
+            $table->string('description_ar')->default(0);
+            $table->string('description_en')->default(0);
+            $table->string('video_link')->default(0);
+            $table->string('other_link')->default(0);
+            $table->string('pdf');
+            $table->string('type')->default('user');
+            $table->enum('gender', ['male', 'female'])->default('male');
+            $table->boolean('active')->default(1);
+            $table->enum('subscribed', ['free', 'paid'])->default('free');
+            $table->integer('membership_id')->unsigned()->index()->default(0);
+
 
             $table->rememberToken();
             $table->timestamps();

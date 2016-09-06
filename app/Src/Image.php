@@ -9,6 +9,7 @@ class Image extends Model
 {
     use LocaleTrait;
     public $localeStrings = ['caption'];
+    protected $guarded = [''];
 
     public function gallery()
     {

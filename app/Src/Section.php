@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Section extends Model
 {
     use LocaleTrait;
-    public $localeStrings = ['header','content'];
+    public $localeStrings = ['header', 'content'];
+    protected $guarded = [''];
 
     public function page()
     {

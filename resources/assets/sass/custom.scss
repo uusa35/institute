@@ -1,0 +1,42 @@
+body , .navbar {
+  background: url("../images/bg.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.slider-main {
+  background: url("../images/bg_slider.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 50px;
+}
+.slide {
+  height : 120%;
+}
+
+.bg-circle {
+  background: url("../images/bg_circle.png") no-repeat;
+  background-position: bottom;
+  background-size: 100% 30%;
+}
+.bg-article {
+  height: 230px;
+  margin : 15px;
+  margin-bottom: 25px;
+  background: url("../images/bg_article.png") no-repeat center center;
+  background-size: 110% 130%;
+}
+
+.carousel-inner {
+  margin-top: 100px;
+}
+
+.content {
+  margin-top: 100px;
+}
+.article {
+  min-height : 300px;
+}

@@ -16,9 +16,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('gallery')->first();
-
-//        return view('');
 
     }
 
@@ -51,7 +48,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::whereId($id)->with('gallery')->first();
+
+        return view('frontend.modules.post.show',compact('post'));
     }
 
     /**

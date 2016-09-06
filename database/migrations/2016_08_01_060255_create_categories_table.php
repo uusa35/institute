@@ -16,7 +16,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name_ar');
             $table->string('name_en');
-            $table->integer('parent_id');
+            $table->integer('parent_id')->default(0);
             $table->boolean('menu')->default(0);
             $table->timestamps();
         });

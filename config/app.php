@@ -186,7 +186,6 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         // translation
         Barryvdh\TranslationManager\ManagerServiceProvider::class,
-        Fitztrev\QueryTracer\Providers\QueryTracerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class
 
 

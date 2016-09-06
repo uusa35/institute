@@ -10,7 +10,8 @@
         "laravelcollective/html": "^5.3",
         "barryvdh/laravel-translation-manager": "^0.2.3",
         "intervention/image": "^2.3",
-        "skovmand/mailchimp-laravel": "^1.0"
+        "skovmand/mailchimp-laravel": "^1.0",
+        "intervention/imagecache": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

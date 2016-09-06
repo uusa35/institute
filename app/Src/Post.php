@@ -11,6 +11,7 @@ class Post extends Model
     use Notifiable, LocaleTrait;
 
     public $localeStrings = ['title', 'body'];
+    public $guarded = [''];
 
     public function user()
     {
@@ -19,7 +20,7 @@ class Post extends Model
 
     public function gallery()
     {
-        return $this->morphTo(Gallery::class);
+        return $this->morphMany(Gallery::class, 'galleryable');
     }
 
 }
