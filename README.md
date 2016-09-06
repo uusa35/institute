@@ -1,2 +1,0 @@
-# institute
-Dr.waleed website
