@@ -10,3 +10,4 @@ Homestead.yaml
 /storage/app/uploads/
 /storage/app/public/
 /resources/views/
+app/Http/Controllers/Backend
