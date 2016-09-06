@@ -7,6 +7,6 @@ Homestead.json
 Homestead.yaml
 .env
 /metronic_v4.5.6
-/storage/app/uploads/*
-/storage/app/public/*
-/resources/views/*
+/storage/app/uploads/
+/storage/app/public/
+/resources/views/
