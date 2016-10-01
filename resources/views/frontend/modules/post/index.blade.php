@@ -13,7 +13,7 @@
                 <p class="text-center">{{ $posts->links() }}</p>
             </div>
             @else
-                <div class="alert alert-danger"><{{ trans('general.no_posts') }}/div>
+                <div class="alert alert-danger">{{ trans('general.no_posts') }}</div>
             @endif
         </div>
     </div>
