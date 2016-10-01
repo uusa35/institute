@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Post;
+use App\Models\Post;
 use App\Core\Traits\LocaleTrait;
 use App\Scopes\ScopeActive;
 use Illuminate\Notifications\Notifiable;
