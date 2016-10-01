@@ -1,3 +1,3 @@
 <!-- Styles -->
-<link href="/css/app.css" rel="stylesheet">
-<link href="/css/backend.css" rel="stylesheet">
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="{{ asset('css/backend.css') }}" rel="stylesheet">
