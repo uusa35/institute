@@ -2,8 +2,9 @@
 
 namespace App\Core\Services\Views;
 
-use App\Src\Category;
-use App\Src\Contactus;
+use App\Models\Category;
+use App\Models\Contactus;
+use App\Models\Post;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
@@ -11,19 +12,15 @@ use Illuminate\View\View;
 class ViewComposers
 {
 
-    protected $category;
-
-    public function __construct(Category $category)
-    {
-        $this->category = $category;
-    }
-
     public function getMenuItems(View $view)
     {
+        $category = new Category;
+
+        $category = $category->menu()->orderBy('created_at', 'desc')->get();
 
         if (!Cache::has('menuItems')) {
 
-            Cache::forever('menuItems', $this->category->menu()->orderBy('created_at', 'desc')->get());
+            Cache::forever('menuItems', $category);
 
         }
 

@@ -11,7 +11,11 @@
         "barryvdh/laravel-translation-manager": "^0.2.3",
         "intervention/image": "^2.3",
         "skovmand/mailchimp-laravel": "^1.0",
-        "intervention/imagecache": "^2.3"
+        "intervention/imagecache": "^2.3",
+        "spatie/laravel-newsletter": "^3.0",
+        "mandrill/mandrill": "^1.0",
+        "pusher/pusher-php-server": "^2.6",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

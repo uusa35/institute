@@ -1,0 +1,28 @@
+{
+  "name": "institute",
+  "description": "",
+  "main": "",
+  "authors": [
+    "uusa35 <uusa35@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/uusa35/institute",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "Bootstrap-Image-Gallery": "^3.4.2",
+    "blueimp-gallery": "^2.21.3",
+    "pusher-websocket-iso": "pusher#^3.2.1"
+  },
+  "install": {
+    "path": "bower_components/bower_installer/js/"
+  }
+}

@@ -19,13 +19,14 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('avatar');
+            $table->string('country')->nullable();
             $table->string('password');
             $table->string('mobile')->default(0);
             $table->string('description_ar')->default(0);
             $table->string('description_en')->default(0);
             $table->string('video_link')->default(0);
             $table->string('other_link')->default(0);
-            $table->string('pdf');
+            $table->text('pdf');
             $table->string('type')->default('user');
             $table->enum('gender', ['male', 'female'])->default('male');
             $table->boolean('active')->default(1);

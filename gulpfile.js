@@ -1,6 +1,6 @@
 const elixir = require('laravel-elixir')
 
-require('laravel-elixir-vue')
+//require('laravel-elixir-vue')
 
 /*
  |--------------------------------------------------------------------------
@@ -17,6 +17,8 @@ require('laravel-elixir-vue')
 elixir(mix => {
     mix.sass('app.scss')
         .sass('custom.scss')
+        .sass('custom-arabic.scss')
+        .sass('custom-english.scss')
         .styles([
 
                 '../../../metronic_v4.5.6/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css',
@@ -27,18 +29,25 @@ elixir(mix => {
 //<!-- END GLOBAL MANDATORY STYLES -->
                 '../../../metronic_v4.5.6/theme/assets/global/css/components.min.css',
                 '../../../metronic_v4.5.6/theme/assets/global/css/plugins.min.css',
-                //'../../../metronic_v4.5.6/theme/assets/global/plugins/dropzone/dropzone.min.css',
                 '../../../metronic_v4.5.6/theme/assets/global/plugins/datatables/datatables.min.css',
-                '../../../metronic_v4.5.6/theme//assets/pages/css/blog.min.css',
-                //'../../../metronic_v4.5.6/theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css',
+                '../../../metronic_v4.5.6/theme/assets/global/plugins/cubeportfolio/css/cubeportfolio.css',
             ],
             'public/css/backend.css'
         )
         .styles([
-            '../../../bower_components/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css'
-            //'../../../bower_components/blueimp-gallery/css/blueimp-gallery.min.css'
+                '../../../bower_components/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css'
             ],
             'public/css/gallery.css'
+        )
+        .styles([
+                //
+            ],
+            'public/css/frontend.css'
+        )
+        .styles([
+                'bootstrap-rtl.min.css'
+            ],
+            'public/css/bootstrap-rtl.min.css'
         )
         .webpack('app.js')
         //::::: javascripts :::::
@@ -84,15 +93,18 @@ elixir(mix => {
             //'../../../metronic_v4.5.6/theme/assets/global/plugins/dropzone/dropzone.min.js',
             '../../../metronic_v4.5.6/theme/assets/global/plugins/datatables/datatables.min.js',
             '../../../node_modules/tinymce/tinymce.min.js',
-
-            //'../../../metronic_v4.5.6/theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js',
-            //<!-- BEGIN THEME LAYOUT SCRIPTS -->
-
         ], 'public/js/backend.js')
+        .scripts([
+            //
+        ], 'public/js/frontend.js')
+        .scripts([
+            //
+            '../../../bower_components/bower_installer/js/pusher-websocket-iso/pusher.js',
+        ], 'public/js/pusher.js')
         .scripts([
             //'jquery.blueimp-gallery.min.js',
             '../../../bower_components/Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js'
             //'../../../bower_components/blueimp-gallery/js/blueimp-gallery.min.js'
-        ],'public/js/gallery.js')
+        ], 'public/js/gallery.js')
 
 })

@@ -5,13 +5,13 @@
  */
 
 require('./bootstrap');
-//import React , { Component } from 'react';
-//import { render } from 'react-dom';
-//import Home from './components/Home'
+import React , { Component } from 'react';
+import { render } from 'react-dom';
+import Home from './components/Home'
 
 $(document).ready(function () {
 
-    //render(<Home />, document.getElementById('app'));
+    render(<Home />, document.getElementById('app'));
 
 });
 

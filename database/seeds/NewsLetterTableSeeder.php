@@ -1,6 +1,6 @@
 <?php
 
-use App\Src\Newsletter;
+use App\Models\Newsletter;
 use Illuminate\Database\Seeder;
 
 class NewsLetterTableSeeder extends Seeder

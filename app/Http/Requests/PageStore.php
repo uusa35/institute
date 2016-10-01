@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Src\Page;
+use App\Models\Page;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 

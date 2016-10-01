@@ -13,7 +13,7 @@ class SliderUpdate extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class SliderUpdate extends FormRequest
     public function rules()
     {
         return [
-            //
+            'caption_ar' => 'required|min:3',
+            'caption_en' => 'required|min:3',
+            'url' => 'url',
+            'image' => 'mimes:jpeg,bmp,png',
+            'type' => 'required'
         ];
     }
 }

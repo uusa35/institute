@@ -1,6 +1,6 @@
 <?php
 
-use App\Src\Contactus;
+use App\Models\Contactus;
 use Illuminate\Database\Seeder;
 
 class ContactusTableSeeder extends Seeder

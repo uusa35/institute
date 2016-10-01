@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Src\Post;
+use App\Models\Post;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PostStore extends FormRequest
@@ -29,7 +29,7 @@ class PostStore extends FormRequest
             'title_en' => 'required:min:3',
             'body_ar' => 'required:min:5',
             'body_en' => 'required:min:5',
-            'image' => 'mimes:jpeg,bmp,png',
+            'image' => 'required|mimes:jpeg,bmp,png',
             'gallery' => 'array',
         ];
     }

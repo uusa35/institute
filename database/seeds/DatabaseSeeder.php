@@ -1,7 +1,7 @@
 <?php
 
-use App\Src\Gallery;
-use App\Src\Menu;
+use App\Models\Gallery;
+use App\Models\Menu;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
             $this->call(CategoriesTableSeeder::class);
             $this->call(PostsTableSeeder::class);
             $this->call(PagesTableSeeder::class);
+            $this->call(AlbumsTableSeeder::class);
 
             $this->call(SlidersTableSeeder::class);
             $this->call(NewsLetterTableSeeder::class);

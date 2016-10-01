@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Src\Post;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -16,7 +16,9 @@ class PostController extends Controller
      */
     public function index()
     {
+        $posts = Post::orderBy('created_at','desc')->paginate(10);
 
+        return view('frontend.modules.post.index',compact('posts'));
     }
 
     /**

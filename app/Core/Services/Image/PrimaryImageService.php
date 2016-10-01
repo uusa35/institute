@@ -26,7 +26,6 @@ class PrimaryImageService implements PrimaryImageServiceInterface
             $realPath = $currentImage->getRealPath();
 
             \Image::make($realPath)->resize($thumbResize[0],
-
                 $thumbResize[1])->save(public_path('img/uploads/thumbnail/' . $fileName));
 
             \Image::make($realPath)->resize($largeResize[0],

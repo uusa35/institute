@@ -12,7 +12,6 @@ class GalleriesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Src\Gallery::class,50)->create();
-        factory(\App\Src\Image::class,50)->create();
+        factory(\App\Models\Gallery::class,50)->create();
     }
 }

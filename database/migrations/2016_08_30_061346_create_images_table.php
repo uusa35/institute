@@ -18,6 +18,7 @@ class CreateImagesTable extends Migration
             $table->string('caption_ar')->nullable();
             $table->string('caption_en')->nullable();
             $table->string('image_url');
+            $table->boolean('cover')->default(0);
 
             $table->foreign('gallery_id')->references('id')->on('galleries')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

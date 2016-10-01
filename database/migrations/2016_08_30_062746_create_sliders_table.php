@@ -16,7 +16,8 @@ class CreateSlidersTable extends Migration
             $table->increments('id');
             $table->string('caption_ar');
             $table->string('caption_en');
-            $table->string('url');
+            $table->string('url')->nullable();
+            $table->string('image')->nullable();
             $table->enum('type',['image','video']);
             $table->timestamps();
         });

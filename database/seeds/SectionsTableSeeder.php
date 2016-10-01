@@ -1,6 +1,6 @@
 <?php
 
-use App\Src\Section;
+use App\Models\Section;
 use Illuminate\Database\Seeder;
 
 class SectionsTableSeeder extends Seeder

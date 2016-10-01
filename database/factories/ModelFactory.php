@@ -11,18 +11,20 @@
 |
 */
 
-use App\Src\Contactus;
-use App\Src\Gallery;
-use App\Src\Image;
-use App\Src\Category;
-use App\Src\Newsletter;
-use App\Src\Page;
-use App\Src\Post;
-use App\Src\Section;
-use App\Src\Slider;
-use App\Src\User;
+use App\Models\Album;
+use App\Models\Contactus;
+use App\Models\Gallery;
+use App\Models\Image;
+use App\Models\Category;
+use App\Models\Newsletter;
+use App\Models\Page;
+use App\Models\Post;
+use App\Models\Section;
+use App\Models\Slider;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
-$factory->define(App\Src\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -32,16 +34,17 @@ $factory->define(App\Src\User::class, function (Faker\Generator $faker) {
         'first_name' => $faker->name,
         'last_name' => $faker->name,
         'avatar' => $faker->imageUrl('300', '300'),
+        'country' => $faker->country,
         'mobile' => $faker->phoneNumber,
         'description_ar' => $faker->paragraph(1),
         'description_en' => $faker->paragraph(1),
         'video_link' => $faker->sentence(5),
         'other_link' => $faker->sentence(5),
         'pdf' => $faker->imageUrl(),
-        'type' => $faker->randomElement(['NPL', 'IHB','WHATEVER']),
+        'type' => $faker->randomElement(['NPL', 'IHB', 'WHATEVER']),
         'gender' => $faker->randomElement(['male', 'female']),
         'active' => $faker->numberBetween(0, 1),
-        'membership_id' => $faker->numberBetween(999,99999),
+        'membership_id' => $faker->numberBetween(999, 99999),
         'subscribed' => $faker->randomElement(['free', 'paid']),
     ];
 });
@@ -49,9 +52,9 @@ $factory->define(App\Src\User::class, function (Faker\Generator $faker) {
 
 $factory->define(Gallery::class, function (Faker\Generator $faker) {
     return [
-        'active' => '1',
-        'galleryable_type' => $faker->randomElement(['App\Src\Post', 'App\Src\User', 'App\Src\Page']),
+        'galleryable_type' => $faker->randomElement(['App\Models\Post', 'App\Models\User', 'App\Models\Page', 'App\Models\Album']),
         'galleryable_id' => $faker->numberBetween(1, 30),
+        'active' => '1',
         'description_ar' => $faker->paragraph(2),
         'description_en' => $faker->paragraph(2),
     ];
@@ -63,6 +66,15 @@ $factory->define(Image::class, function (Faker\Generator $faker) {
         'caption_ar' => $faker->sentence(1),
         'caption_en' => $faker->sentence(1),
         'image_url' => $faker->imageUrl(),
+        'cover' => 0,
+    ];
+});
+
+$factory->define(Album::class, function (Faker\Generator $faker) {
+    return [
+        'active' => '1',
+        'description_ar' => $faker->paragraph(2),
+        'description_en' => $faker->paragraph(2),
     ];
 });
 
@@ -82,8 +94,8 @@ $factory->define(Category::class, function (Faker\Generator $faker) {
     for ($i = 0; $i <= 5; $i++) {
         Category::create(
             [
-                'name_ar' => $faker->name,
-                'name_en' => $faker->name,
+                'name_ar' => $faker->word,
+                'name_en' => $faker->word,
                 'parent_id' => 0,
                 'menu' => $faker->numberBetween(0, 1)
             ]
@@ -100,8 +112,8 @@ $factory->define(Category::class, function (Faker\Generator $faker) {
 
 $factory->define(Page::class, function (Faker\Generator $faker) {
     return [
-        'title_ar' => $faker->sentence(1),
-        'title_en' => $faker->sentence(1),
+        'title_ar' => $faker->word(),
+        'title_en' => $faker->word(),
         'category_id' => Category::doesntHave('parent')->pluck('id')->shuffle()->first(),
         'order' => $faker->numberBetween(1, 10),
         'image' => $faker->imageUrl(),
@@ -113,7 +125,8 @@ $factory->define(Slider::class, function (Faker\Generator $faker) {
     return [
         'caption_ar' => $faker->sentence(1),
         'caption_en' => $faker->sentence(1),
-        'url' => $faker->imageUrl('1900','500'),
+        'url' => $faker->url,
+        'image' => $faker->imageUrl('1900', '500'),
         'type' => $faker->randomElement(['image', 'video']),
     ];
 });
@@ -134,7 +147,9 @@ $factory->define(Section::class, function (Faker\Generator $faker) {
         'content_ar' => $faker->paragraph(2),
         'content_en' => $faker->paragraph(2),
         'image' => $faker->imageUrl(),
-        'page_id' => Page::doesntHave('sections')->pluck('id')->shuffle()->first(),
+        'page_id' => (is_null(Page::doesntHave('sections'))) ?
+            Page::doesntHave('sections')->pluck('id')->shuffle()->first()
+            : $faker->numberBetween(1, 30),
     ];
 });
 

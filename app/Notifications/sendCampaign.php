@@ -43,7 +43,6 @@ class sendCampaign extends Notification
      */
     public function toMail($notifiable)
     {
-//        dd($this->emails);
         return (new MailMessage)
             ->from('uusa35@gmail.com')
             ->subject($this->title)
