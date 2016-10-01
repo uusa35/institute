@@ -25,9 +25,6 @@ if (Schema::hasTable('users') && app()->environment() == 'local') {
 
 Auth::routes();
 
-Route::get('/testing', function () {
-    return view('test');
-});
 Route::group(['namespace' => 'Frontend'], function () {
 
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);

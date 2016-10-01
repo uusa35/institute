@@ -6,7 +6,8 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 
-class AdminAccessOnly
+class
+AdminAccessOnly
 {
     /**
      * Handle an incoming request.
@@ -19,6 +20,7 @@ class AdminAccessOnly
     {
 
         abort_if(!Auth::user()->can('isAdmin'),'404','Admin zone only !!!');
+
         return $next($request);
     }
 }

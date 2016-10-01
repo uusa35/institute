@@ -47,6 +47,12 @@ class DatabaseSeeder extends Seeder
             $this->call(ContactusTableSeeder::class);
 
 
+        } elseif (app()->environment() === 'production') {
+            $this->emptyTables($this->tables);
+            Model::unguard();
+            $this->call(UsersTableSeeder::class);
+            $this->call(ContactusTableSeeder::class);
+
         }
 
     }
