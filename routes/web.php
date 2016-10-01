@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Schema;
 
 if (Schema::hasTable('users') && app()->environment() == 'local') {
 
-    $user = User::where('active', 1)->first();
-    Auth::loginUsingId($user->id);
+//    $user = User::where('active', 1)->first();
+//    Auth::loginUsingId($user->id);
 
 }
 
