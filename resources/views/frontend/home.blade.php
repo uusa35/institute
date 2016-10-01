@@ -5,13 +5,19 @@
 
 @section('content')
 
-    @include('frontend.partials.slider')
+    @if(!is_null($sliders))
+        @include('frontend.partials.slider')
+    @endif
 
     @include('frontend.partials._search_section')
 
-    @include('frontend.partials._random_avatars')
+    @if(!is_null($users))
+        @include('frontend.partials._random_avatars')
+    @endif
 
-    @include('frontend.partials._post_thumbnail')
+    @if(!is_null($post))
+        @include('frontend.partials._post_thumbnail')
+    @endif
 
 @show
 

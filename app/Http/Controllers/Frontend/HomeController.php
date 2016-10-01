@@ -22,19 +22,19 @@ class HomeController extends Controller
     }
 
 
-    public function test()
-    {
-        $data['message'] = 'hello Usama from inside my test route ? !!';
-
-        $pusher = app()->make('Pusher')->trigger('channelName', 'eventName', $data);
-
-        if ($pusher) {
-            return 'done';
-        } else {
-            return 'not done';
-        }
-
-    }
+//    public function test()
+//    {
+//        $data['message'] = 'hello Usama from inside my test route ? !!';
+//
+//        $pusher = app()->make('Pusher')->trigger('channelName', 'eventName', $data);
+//
+//        if ($pusher) {
+//            return 'done';
+//        } else {
+//            return 'not done';
+//        }
+//
+//    }
 
     /**
      * Show the application dashboard.

