@@ -61,7 +61,6 @@ class UserController extends Controller
 
         return redirect()->back()->with('success', 'user created');
     }
-
     /**
      * Display the specified resource.
      *
@@ -97,7 +96,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         if ($request->file('pdf')) {
-            $pdfPath = $request->pdf->store('public/uplaods/pdfs');
+            $pdfPath = $request->pdf->store('public/uploads/pdfs');
             $request->request->add(['pdf' => str_replace('public/', '', $pdfPath)]);
         }
 
