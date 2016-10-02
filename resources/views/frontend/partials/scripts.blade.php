@@ -4,10 +4,5 @@
         'csrfToken' => csrf_token(),
     ]); ?>
 </script>
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 {{--<script src="/js/pusher.js"></script>--}}
-<script>
-
-
-</script>

@@ -20,7 +20,7 @@
                     <div class="col-lg-2">
                         <label for="type">type</label></br>
                         <input type="radio" name="type" value="image" {{ ($slider->type == 'image') ? 'checked' : '' }}> Image<br>
-                        <input type="radio" name="type" value="video" {{ (!$slider->type == 'video') ? 'checked' : '' }}> Video<br>
+                        <input type="radio" name="type" value="video" {{ ($slider->type == 'video') ? 'checked' : '' }}> Video<br>
                     </div>
                 </div>
                 <div class="form-group">

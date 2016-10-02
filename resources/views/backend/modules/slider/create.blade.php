@@ -18,9 +18,13 @@
                         {{ Form::text('caption_en',old('caption_en'),['class' => 'form-control', 'placeholder' => 'caption english','required']) }}
                     </div>
                     <div class="col-lg-2">
-                        <label for="type">type</label>
-                        {{ Form::radio('type','image',['class' => 'form-control', 'required']) }}
-                        {{ Form::radio('type','video',['class' => 'form-control', 'required']) }}
+                        <label for="type">Slide Type</label>
+                        <span></br>
+                        {{ Form::radio('type','image',['class' => 'form-control', 'required']) }} Image
+                        </span></br>
+                        <span>
+                            {{ Form::radio('type','video',['class' => 'form-control', 'required']) }} Video
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
