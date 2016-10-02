@@ -10,7 +10,7 @@
                                 href="{{ route('post.show',$post->id) }}" target="_blank">
                             {{ $post->created_at->diffForHumans() }}
                         </a>
-                        <img src="{{ $post->image }}" alt="{{ $post->title }}"
+                        <img src="{{ asset('storage/'.$post->image) }}" alt="{{ $post->title }}"
                              class="img-rounded img-responsive {!! (app()->getLocale() == 'ar' ? 'pull-right' : 'pull-left') !!}"
                              style="max-width: 100px; padding : 10px;">
                     </em>
