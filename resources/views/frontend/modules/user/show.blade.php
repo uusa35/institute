@@ -11,7 +11,7 @@
                 <h1>
                     {{ $user->name }}
                 </h1>
-                <p><i class="glyphicon glyphicon-envelope"></i> {{ trans('genera.email') }} : &nbsp;{{ $user->email }}
+                <p><i class="glyphicon glyphicon-envelope"></i> {{ trans('general.email') }} : &nbsp;{{ $user->email }}
                     <br/>
                     <i class="glyphicon glyphicon-globe"></i> &nbsp;{{ $user->other_link }}
                     <br/>

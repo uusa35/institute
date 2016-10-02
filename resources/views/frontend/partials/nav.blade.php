@@ -58,7 +58,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false">{{ trans('general.language') }} <span
+                           aria-haspopup="true" aria-expanded="false">{!! trans('general.language') !!} <span
                                     class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ url('/lang/ar') }}"><i
@@ -81,7 +81,7 @@
                 <div class="form-group">
                     <input type="text" name="first_name" class="form-control input-sm" placeholder="Search">
                 </div>
-                <button type="submit" class="btn btn-sm btn-info">{{ trans('general.submit') }}</button>
+                <button type="submit" class="btn btn-sm btn-info">{!! trans('general.submit') !!}</button>
                 {{ Form::close() }}
                         <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
