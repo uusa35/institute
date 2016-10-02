@@ -16,7 +16,7 @@
             @if($post->gallery->first())
                 <hr>
                 <div class="row">
-                    @include('frontend.partials._gallery',['element' => $post->gallery->first()])
+                    @include('frontend.partials._gallery',['element' => $post])
                 </div>
             @endif
         </div>
