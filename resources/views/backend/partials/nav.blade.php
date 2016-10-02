@@ -4,7 +4,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo" style="background-color: lightsteelblue;">
             <a href="{{ route('backend.dashboard.index') }}">
-                <img src="{{ Storage::url($contactusInfo->logo) }}" alt="logo" class="img-responsive" style="width: 66%; max-height:48px;"/> </a>
+                <img src="{{ asset('storage/'.$contactusInfo->logo) }}" alt="logo" class="img-responsive" style="width: 66%; max-height:48px;"/> </a>
             <div class="menu-toggler sidebar-toggler">
                 <span></span>
             </div>
@@ -309,7 +309,7 @@
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        <img alt="" class="img-circle" src="{{ Storage::url(auth()->user()->avatar) }}" />
+                        <img alt="" class="img-circle" src="{{ asset('storage/'.auth()->user()->avatar) }}" />
                         <span class="username username-hide-on-mobile"> {{ auth()->user()->name }} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>

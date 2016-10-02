@@ -14,7 +14,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}" style="max-width: 150px;">
-                <img src="{{ Storage::url($contactusInfo->logo) }}" alt="{{ $contactusInfo->company_name }}"
+                <img src="{{ asset('storage/'.$contactusInfo->logo) }}" alt="{{ $contactusInfo->company_name }}"
                      class="img-responsive img-rounded"/>
             </a>
         </div>
