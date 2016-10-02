@@ -26,7 +26,7 @@
                                 <td>{{ $slider->caption_ar }}</td>
                                 <td>{{ $slider->caption_en }}</td>
                                 <td>{{ $slider->type }}</td>
-                                <td><img src="{{ asset('storage/'.$slider->image) }}" style="max-width: 80px;" class="img-responsive" alt=""></td>
+                                <td><img src="{{  }}" style="max-width: 80px;" class="img-responsive" alt=""></td>
                                 <td>{{ $slider->url }}</td>
                                 <td>
                                     <div class="btn-group">

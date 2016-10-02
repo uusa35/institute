@@ -80,7 +80,7 @@ class ContactusController extends Controller
 
         $logoPath = $this->saveImage($request,'logo','150','150');
 
-        $request->request->add(['logo' => str_replace('public/','',$logoPath)]);
+        $request->request->add(['logo' => $logoPath]);
 
         Contactus::whereId(1)->first()->update($request->request->all());
 

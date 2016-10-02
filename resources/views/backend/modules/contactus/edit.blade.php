@@ -23,7 +23,8 @@
                                required="" value="{{ $contactusInfo->company_name_en }}">
                     </div>
                     <div class="col-sm-2">
-                        <label for="logo" class="control-label">logo</label>
+                        <label for="logo" class="control-label">l
+                            ogo</label>
                         <input type="file" class="form-control" name="logo"/>
                     </div>
                 </div>

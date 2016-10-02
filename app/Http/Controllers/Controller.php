@@ -18,8 +18,7 @@ class Controller extends BaseController
     {
         if ($request->hasFile($inputName)) {
             $imagePath = $request->$inputName->store('public/uploads/images');
-            $imagePath = str_replace('public/', '', $imagePath);
-            $img = Image::make(storage_path('app/public/' . $imagePath));
+            $img = Image::make(storage_path('app/' . $imagePath));
             $img->fit($width, $height);
             $img->save();
             return $imagePath;
@@ -32,9 +31,8 @@ class Controller extends BaseController
         if (count($request->gallery) >= 1 && ($request->gallery[0] != null)) {
             foreach ($request->gallery as $item) {
                 $imagePath = $item->store('/public/uploads/images');
-                $imagePath = str_replace('public/', '', $imagePath);
-                $img = Image::make(storage_path('app/public/' . $imagePath));
-                $img = Image::make(storage_path('app/public/' . $imagePath));
+                $img = Image::make(storage_path('app/' . $imagePath));
+                $img = Image::make(storage_path('app/' . $imagePath));
                 $img->fit($width, $height);
                 $img->save();
                 $gallery->images()->create(['image_url' => $imagePath]);
