@@ -16,8 +16,10 @@
                     </em>
                     <p class="text-justify">
                         {!! str_limit($post->body ,200) !!}
-                        <a class="btn btn-info btn-xs {{ (app()->getLocale() == 'ar' ? 'pull-left' : 'pull-right') }}"
-                           href="{{ route('post.show',$post->id) }}">{{ trans('general.more') }}</a>
+                        </br>
+                        {{ link_to_route('post.show',trans('general.more'), $post->id,['class' => 'btn btn-xs btn-info']) }}
+                        {{--<a class="btn btn-info btn-xs {{ (app()->getLocale() == 'ar' ? 'pull-left' : 'pull-right') }}"--}}
+                           {{--href="{{ route('post.show',$post->id) }}">{{ trans('general.more') }}</a>--}}
                     </p>
                 </article>
             </div>
