@@ -20,7 +20,7 @@ class Controller extends BaseController
             $imagePath = $request->$inputName->store('public/uploads/images');
             $imagePath = str_replace('public/', '', $imagePath);
             $img = Image::make(storage_path('app/public/' . $imagePath));
-            $img->fit($width, $height);
+            $img->resize($width, $height);
             $img->save();
             return $imagePath;
         }
@@ -35,7 +35,7 @@ class Controller extends BaseController
                 $imagePath = str_replace('public/', '', $imagePath);
                 $img = Image::make(storage_path('app/public/' . $imagePath));
                 $img = Image::make(storage_path('app/public/' . $imagePath));
-                $img->fit($width, $height);
+                $img->resize($width, $height);
                 $img->save();
                 $gallery->images()->create(['image_url' => $imagePath]);
             }
