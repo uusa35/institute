@@ -8,7 +8,7 @@
             @foreach($users as $user)
                 <div class="col-lg-3">
                     <div class="span2">
-                        <img src="{{ asset($user->avatar) }}" alt="{{ $user->first_name }}"
+                        <img src="{{ File::exists('storage/'.$user->avatar) ? asset($user->avatar) : asset('images/profile.png') }}" alt="{{ $user->first_name }}"
                              class="img-responsive">
                     </div>
                     <div class="span4">

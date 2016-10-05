@@ -1,8 +1,7 @@
-<div class="row" style="background-color: #242424 !important;">
+<div class="row footer">
     <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-12">
         <div class="col-lg-3 col-xs-12 col-sm-12">
             <h3>{{ trans('general.contactus') }}</h3>
-
             <p>
                 @if(!is_null(trim($contactusInfo->address)))
                     <span class="glyphicon glyphicon-home"></span> {{ $contactusInfo->address }}<br/>
@@ -19,7 +18,7 @@
                 @endif
                 @if(trim($contactusInfo->twitter_url))
                     <span class="glyphicon glyphicon-globe"></span>
-                    <a href="http://twitter.com/{{ $contactusInfo->twitter_url }}"> {{ $contactusInfo->twitter_url }}</a>
+                    <a href="http://twitter.com/{{ $contactusInfo->twitter_url }}">{{ trans('general.twitter') }}</a>
                     <br/>
                 @endif
                 @if(trim($contactusInfo->instagram_url))
@@ -57,31 +56,32 @@
 
             <div class="form-group {{ (app()->getLocale() == 'ar') ? 'pull-left' : 'pull-right' }}">
                 <button style="margin: 10px;" type="submit"
-                        class="btn btn-success">{{ trans('general.subscribe') }}</button>
+                        class="btn btn-primary">{{ trans('general.subscribe') }}</button>
             </div>
             {!! Form::close() !!}
                     <!-- form -->
         </div>
         <!-- Instagram -->
         {{--<div class="col-lg-3 col-xs-12 col-sm-12">--}}
-            {{--<h3>{{ trans('general.instagram') }}</h3>--}}
+        {{--<h3>{{ trans('general.instagram') }}</h3>--}}
 
-            {{--<p>--}}
-                {{--<!-- SnapWidget -->--}}
-                {{--<script src="http://snapwidget.com/js/snapwidget.js"></script>--}}
-                {{--<iframe src="http://snapwidget.com/in/?u=N29yb2ZfY29tfGlufDcwfDJ8Mnx8bm98MnxmYWRlSW58b25TdGFydHx5ZXN8eWVz&ve=241115"--}}
-                        {{--title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0"--}}
-                        {{--scrolling="no" style="border:none; overflow:hidden; width:100%;">--}}
-                {{--</iframe>--}}
-            {{--</p>--}}
+        {{--<p>--}}
+        {{--<!-- SnapWidget -->--}}
+        {{--<script src="http://snapwidget.com/js/snapwidget.js"></script>--}}
+        {{--<iframe src="http://snapwidget.com/in/?u=N29yb2ZfY29tfGlufDcwfDJ8Mnx8bm98MnxmYWRlSW58b25TdGFydHx5ZXN8eWVz&ve=241115"--}}
+        {{--title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0"--}}
+        {{--scrolling="no" style="border:none; overflow:hidden; width:100%;">--}}
+        {{--</iframe>--}}
+        {{--</p>--}}
         {{--</div>--}}
-        <!-- twitter -->
+                <!-- twitter -->
         <div class="col-lg-3 col-xs-12 col-sm-12">
             <h3>{{ trans('general.twitter') }}</h3>
 
             <p>
-                <a class="twitter-timeline" href="https://twitter.com/7orof_com" data-widget-id="669172461506863104">Tweets
-                    by @7orof_com</a>
+                <a class="twitter-timeline" href="https://twitter.com/{{ $contactusInfo->twitter_url }}"
+                   data-widget-id="669172461506863104">Tweets
+                    by {{ $contactusInfo->twitter_url }}</a>
                 <script>!function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
                         if (!d.getElementById(id)) {
@@ -99,18 +99,16 @@
             <h3>{{ trans('general.youtube') }}</h3>
 
             <p>
-                {{--<iframe width="250" height="141"--}}
-                        {{--src="https://www.youtube.com/embed/videoseries?list={{ $contactusInfo->youtube_channel }}"--}}
-                        {{--frameborder="0" allowfullscreen></iframe>--}}
+                <iframe width="250" height="141"
+                        src="https://www.youtube.com/embed/videoseries?list={{ $contactusInfo->youtube_channel }}"
+                        frameborder="0" allowfullscreen></iframe>
             </p>
         </div>
         <!-- col -->
     </div>
-</div><!-- row -->
-<div class="row" style="background-color: #242424 !important;">
-    <div class="col-lg-12 text-center text-info">
+    <div class="col-lg-12 text-center text-default">
         {{ trans('messages.allrights') }} - {{ trans('messages.designed_developed') }} -
         <a href="http://ideasowners.net">{{ trans('general.ideasowners') }}</a>
         </br>
     </div>
-</div>
+</div><!-- row -->

@@ -4,7 +4,6 @@
 @section('body')
 
 @section('content')
-
     @if(!is_null($sliders))
         @include('frontend.partials.slider')
     @endif
@@ -18,7 +17,6 @@
     @if(!is_null($post))
         @include('frontend.partials._post_thumbnail')
     @endif
-
 @show
 
 @endsection

@@ -3,15 +3,20 @@
 @section('content')
     <div class="row" style="margin-top: 10px;">
         <div class="col-lg-8 col-lg-push-2">
+            <h1>{{ trans('general.user_profile') }}</h1>
+            <hr>
             <div class="col-xs-3">
-                <img src="{{ asset('storage/'.$user->avatar) }}"
+                <img src="{{ File::exists('storage/'.$user->avatar) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"
                      alt="" class="img-rounded img-responsive"/>
             </div>
             <div class="col-xs-7">
                 <h1>
                     {{ $user->name }}
                 </h1>
-                <p><i class="glyphicon glyphicon-envelope"></i> {{ trans('general.email') }} : &nbsp;{{ $user->email }}
+                <p>
+                    <i class="glyphicon glyphicon-flag"></i> &nbsp;{{ $user->country }}
+                    <br/>
+                    <i class="glyphicon glyphicon-envelope"></i> {{ trans('general.email') }} : &nbsp;{{ $user->email }}
                     <br/>
                     <i class="glyphicon glyphicon-globe"></i> &nbsp;{{ $user->other_link }}
                     <br/>

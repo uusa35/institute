@@ -5,4 +5,6 @@ return array (
   'albums' => 'albums',
   'search_one' => 'search by membership',
   'newsletter' => 'Newsletter subscription',
+  'arabic' => 'arabic',
+  'language' => 'language',
 );

@@ -21,12 +21,11 @@
                     <div class="col-lg-6"
                          style="display: flex; flex-direction: column; flex: 0.5; align-content: center; justify-items: center; justify-content: center">
                         <div class="form-group">
-                            <input name="first_name" class="input-lg" type="text" size="15"
+                            <input name="first_name" class="input-lg searchInput" type="text" size="15"
                                    placeholder="{{ trans('general.search_by_name') }}"/>
                         </div>
                         <button type="submit" href="#" style="border: none; background: transparent;">
-                            <i class="glyphicon glyphicon-circle-arrow-{{ app()->getLocale() == 'en' ? 'left' : 'right' }}" aria-hidden="true"
-                               style="color : #1976b7; font-size: 250%"></i>
+                            <i class="arrowBtn glyphicon glyphicon-circle-arrow-{{ app()->getLocale() == 'en' ? 'left' : 'right' }}" aria-hidden="true"></i>
                         </button>
                     </div>
                     {{ Form::close() }}
@@ -34,12 +33,11 @@
                     <div class="col-lg-6"
                          style="display: flex; flex-direction: column; flex: 0.5; align-content: center; justify-items: center; justify-content: center">
                         <div class="form-group">
-                            <input name="membership_id" class="input-lg" type="text" size="15"
+                            <input name="membership_id" class="input-lg searchInput" type="text" size="15"
                                    placeholder="{{ trans('general.search_by_id') }}"/>
                         </div>
                         <button type="submit" href="#" style="border: none; background: transparent;">
-                            <i class="glyphicon glyphicon-circle-arrow-{{ app()->getLocale() == 'en' ? 'right' : 'left' }}" aria-hidden="true"
-                               style="color : #1976b7; font-size: 250%"></i>
+                            <i class="arrowBtn glyphicon glyphicon-circle-arrow-{{ app()->getLocale() == 'en' ? 'right' : 'left' }}" aria-hidden="true"></i>
                         </button>
                     </div>
                     {{ Form::close() }}

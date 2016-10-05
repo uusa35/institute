@@ -78,13 +78,15 @@ class ContactusController extends Controller
     {
         Cache::forget('contactusInfo');
 
-        $logoPath = $this->saveImage($request,'logo','150','150');
+        $logoPath = $this->saveImage($request, 'logo', '220', '48');
 
-        $request->request->add(['logo' => $logoPath]);
+        if (!is_null($logoPath)) {
+            $request->request->add(['logo' => $logoPath]);
+        }
 
         Contactus::whereId(1)->first()->update($request->request->all());
 
-        return redirect()->route('backend.contactus.index')->with('success','contactus info updated');
+        return redirect()->route('backend.contactus.index')->with('success', 'contactus info updated');
     }
 
     /**

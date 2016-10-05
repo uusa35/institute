@@ -16,14 +16,25 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 
 
-if (Schema::hasTable('users') && app()->environment() === 'local') {
-
-    $user = User::where('active', 1)->first();
-    Auth::loginUsingId($user->id);
-
-}
+//if (Schema::hasTable('users') && app()->environment() === 'local') {
+//
+//    $user = User::where('active', 1)->first();
+//    Auth::loginUsingId($user->id);
+//
+//}
 
 Auth::routes();
+
+//Route::get('testing', function () {
+//   return view('test');
+//});
+
+//Route::any('/testing/pusher', function () {
+//    $configName = 'broadcasting.connections.pusher.';
+//   $pusher = new Pusher(config($configName.'public'), config($configName.'secret'), config($configName.'app_id'));
+//    $pusher->trigger('channelName','eventName',['message' => 'message from the web.php']);
+//    return 'done';
+//});
 
 Route::get('/logmein', function () {
     Auth::LoginUsingId(1);

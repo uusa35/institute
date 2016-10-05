@@ -12,7 +12,7 @@
             @foreach($sliders as $slider)
                 @if($slider->type == 'image')
                     <div class="item {{ ($loop->first) ? 'active' : null }}">
-                        <img src="{{ asset('storage/'.$slider->image )}}" alt="title of the image"/>
+                        <img src="{{ File::exists('storage/'.$slider->image) ? asset('storage/'.$slider->image ) : 'http://placehold.it/1180X350&text='.$slider->caption }}" alt="title of the image"/>
                         <div class="carousel-caption">
                             <h4>{{ $slider->caption }}</h4>
                         </div>

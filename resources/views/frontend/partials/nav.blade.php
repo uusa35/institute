@@ -13,8 +13,8 @@
 
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}" style="max-width: 150px;">
-                <img src="{{ asset('storage/'.$contactusInfo->logo) }}" alt="{{ $contactusInfo->company_name }}"
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="{{ File::exists('storage/'.$contactusInfo->logo) ? asset('storage/'.$contactusInfo->logo) : 'http://placehold.it/130x75&text=logo&color=gold' }}" alt="{{ $contactusInfo->company_name }}"
                      class="img-responsive img-rounded"/>
             </a>
         </div>
@@ -79,9 +79,9 @@
                 {{--</form>--}}
                 {{ Form::open(['action' => 'Frontend\HomeController@searchByName','method' => 'GET' , 'class' => 'navbar-form navbar-right', 'role' => 'search']) }}
                 <div class="form-group">
-                    <input type="text" name="first_name" class="form-control input-sm" placeholder="Search">
+                    <input type="text" name="first_name" class="form-control input-sm" placeholder="Search" style="max-width:100px;">
                 </div>
-                <button type="submit" class="btn btn-sm btn-info">{!! trans('general.submit') !!}</button>
+                <button type="submit" class="btn btn-xs btn-info">{!! trans('general.submit') !!}</button>
                 {{ Form::close() }}
                         <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -93,7 +93,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ Auth::user()->first_name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">

@@ -13,26 +13,26 @@ use Illuminate\Support\Facades\Cache;
 class CategoryObserver
 {
 
-    public function created()
+    public function created($model)
     {
-        $this->clearCache();
+        $this->clearCache($model);
     }
 
-    public function updated()
+    public function updated($model)
     {
-        $this->clearCache();
+        $this->clearCache($model);
     }
 
-    public function deleted()
+    public function deleted($model)
     {
-        $this->clearCache();
+        $this->clearCache($model);
     }
 
-    public function clearCache(Category $category)
+    public function clearCache($model)
     {
         Cache::forget('menuItems');
 
-        Cache::forever('menuItems', $category->menu()->orderBy('created_at', 'desc')->get());
+        Cache::forever('menuItems', $model->menu()->orderBy('created_at', 'desc')->get());
     }
 
 }

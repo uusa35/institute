@@ -4,8 +4,9 @@
     <div class="row">
         <div class="col-lg-10 col-lg-push-1">
             <h1>{{ $page->title }}</h1>
+            <hr>
             <h3 class="text-center">
-                <img src="{{ asset('storage/'.$page->image) }}" alt="" class="img-responsive"
+                <img src="{{ File::exists('storage/'.$page->image) ? asset('storage/'.$page->image) : 'http://placehold.it/1000x300&text='.$page->title }}" alt="" class="img-responsive"
                      style="max-height: 250px; width: 100%;">
             </h3>
         </div>

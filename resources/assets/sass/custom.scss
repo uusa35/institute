@@ -1,13 +1,18 @@
-.container-fluid, .navbar {
-  background: url("../images/bg.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
+body {
+  background: url("../images/bg_6.jpg") repeat-y !important;
+  -webkit-background-size: 100%;
+  background-size: 100%;
 }
 
 .navbar-brand {
+  display: flex;
+  align-items: center;
   padding: 0px !important;
+}
+
+nav:first-child {
+  background-color: darkgray !important;
 }
 
 .navbar > .container-fluid {
@@ -16,12 +21,16 @@
   align-items: center;
 }
 
-.navbar > .container-fluid, .navbar-header, .navbar-brand {
+.navbar {
+  border-bottom: 2px solid darkgrey;
+}
+
+.navbar, .navbar-header, .navbar-brand {
   min-height: 80px;
 }
 
 .navbar-brand > img {
-  width: 80%;
+  width: 100%;
   max-height: 78px !important;
 }
 
@@ -154,4 +163,37 @@ end of nav
   line-height: 16px;
   max-height: 64px;
   overflow: hidden;
+}
+
+.searchInput {
+  background-color: #737373;
+  color: white;
+  border: medium none;
+  border-radius: 2px
+}
+
+.arrowBtn {
+  color: #1882A3;
+  background: transparent;
+  font-size: 250%;
+}
+
+.footer {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#242424+0,242424+50,242424+53,4c4c4c+100 */
+  background: #242424; /* Old browsers */
+  background: -moz-linear-gradient(top, #242424 0%, #242424 50%, #242424 53%, #4c4c4c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #242424 0%, #242424 50%, #242424 53%, #4c4c4c 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #242424 0%, #242424 50%, #242424 53%, #4c4c4c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#242424', endColorstr='#4c4c4c', GradientType=0); /* IE6-9 */
+}
+
+hr {
+  border-top : 0.5px solid dimgrey !important;
+}
+/*
+Backend
+*/
+.page-logo {
+  display: flex !important;
+  align-items: center !important;
 }

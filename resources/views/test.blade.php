@@ -2,43 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>flexbox tutorials</title>
     <style type="text/css">
-        body , html {
-            height: 100%;
+        html , body {
+            height : 100%;
         }
-        
 
-        nav {
-            display : flex;
+        .container {
+            display: flex;
+            width : 90%;
+            height : 100%;
+            margin : auto;
+            flex-direction: column;
+            border: 1px solid gold;
+            justify-content: space-between;
             align-items: center;
         }
+        header, footer {
+            background-color : lightblue;
+            width: 100%;
+        }
+        main {
+            margin-bottom: auto;
+        }
 
-        nav > ul {
-            list-style: none;
-            display: flex;
-            justify-content: space-around;
-            align-content: center;
-            padding : 0;
-            margin : 0;
-        }
-        .nav-item {
-            padding : 20px;
-        }
+
+
     </style>
 </head>
 <body>
-
-<nav>
-    <ul class="menu">
-        <li class="nav-item">Home</li>
-        <li class="nav-item">Contactus</li>
-        <li class="nav-item">Aboutus</li>
-        <li class="nav-item">Articles</li>
-        <li class="nav-item">Sections</li>
-    </ul>
-</nav>
-
-
+<div class="container">
+    <header>
+        <h1>this is the title</h1>
+    </header>
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis doloremque ex facere facilis
+            laboriosam sint? Earum error facilis hic, itaque minus molestias placeat quaerat quidem sint, suscipit
+            ullam vel!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis doloremque ex facere facilis
+            laboriosam sint? Earum error facilis hic, itaque minus molestias placeat quaerat quidem sint, suscipit
+            ullam vel!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis doloremque ex facere facilis
+            laboriosam sint? Earum error facilis hic, itaque minus molestias placeat quaerat quidem sint, suscipit
+            ullam vel!</p>
+    </main>
+    <footer>
+        <h3>this is the footer</h3>
+    </footer>
+</div>
 </body>
 </html>

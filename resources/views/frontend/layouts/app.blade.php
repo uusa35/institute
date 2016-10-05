@@ -22,20 +22,16 @@
 @show
 
 <div class="container-fluid">
-    <div id="app"></div>
+    <div id="app">from app</div>
     @include('frontend.partials.notifications')
     @section('body')
-        <div class="row">
-            @yield('content')
-        </div>
+        @yield('content')
     @show
-
-
     @section('footer')
         @include('frontend.partials.footer')
+    @show
     @section('scripts')
         @include('frontend.partials.scripts')
-    @show
     @show
 </div>
 </body>

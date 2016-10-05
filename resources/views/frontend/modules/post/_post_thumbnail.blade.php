@@ -2,14 +2,14 @@
     <div class="line-item hf-item-odd clearfix">
         <div class="content-image col-lg-1">
             <a class="image-link article-link" href="{{ route('post.show',$post->id) }}">
-                <img class="img-thumbnail img-responsive" src="{{ asset('storage/'.$post->image) }}">
+                <img class="img-thumbnail img-responsive" src="{{ File::exists('storage/'.$post->image) ? asset('storage/'.$post->image) : 'http://placehold.it/200x250&text='.$post->title}}">
                 <span class="overlay article-overlay"></span>
             </a>
         </div>
         <div class="hf-info">
             <h2 class="post-title">
                 <a class="article-link" href="#">
-                    Post title Bootstrap Html Css Js Snippet
+                    {{ $post->title }}
                     <span class="overlay article-overlay"></span>
                 </a>
             </h2>
@@ -18,7 +18,7 @@
             </div>
             <div class="summary">
                 <p>
-                    <div class="col-lg-10 col-lg-push-1">
+                    <div class="col-lg-10">
                     {!! str_limit($post->body,150) !!}
                 </div>
                 </p>

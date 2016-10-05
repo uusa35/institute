@@ -2,9 +2,9 @@
     <!-- BEGIN HEADER INNER -->
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
-        <div class="page-logo" style="background-color: lightsteelblue;">
+        <div class="page-logo" style="background-color: #444F5C;">
             <a href="{{ route('backend.dashboard.index') }}">
-                <img src="{{ asset('storage/'.$contactusInfo->logo) }}" alt="logo" class="img-responsive" style="width: 66%; max-height:48px;"/> </a>
+                <img src="{{ asset('storage/'.$contactusInfo->logo) }}" alt="logo" class="img-responsive" style="width: 100%; max-height:48px;"/> </a>
             <div class="menu-toggler sidebar-toggler">
                 <span></span>
             </div>
@@ -66,7 +66,7 @@
                                                 <span class="details">
                                                     <span class="label label-sm label-icon label-warning">
                                                         <i class="fa fa-database"></i>
-                                                    </span> Categories. </span>
+                                                    </span> Categories </span>
                                     </a>
                                 </li>
                                 <li>

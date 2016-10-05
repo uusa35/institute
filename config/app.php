@@ -185,6 +185,11 @@ return [
         // collecative HTML , Form
         Collective\Html\HtmlServiceProvider::class,
         // translation
+        /*
+         * php artisan import first
+         * php artisan find (will be saved in the db but still will not appear unless public
+         * public from the package view
+         * */
         Barryvdh\TranslationManager\ManagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         // mailchaimp newsletter

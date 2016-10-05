@@ -10,7 +10,7 @@
                                 href="{{ route('post.show',$post->id) }}" target="_blank">
                             {{ $post->created_at->diffForHumans() }}
                         </a>
-                        <img src="{{ asset('storage/'.$post->image) }}" alt="{{ $post->title }}"
+                        <img src="{{ File::exists('storage/'.$post->image) ? asset('storage/'.$post->image) : 'http://placehold.it/120x120&text=post'}}" alt="{{ $post->title }}"
                              class="img-rounded img-responsive {!! (app()->getLocale() == 'ar' ? 'pull-right' : 'pull-left') !!}"
                              style="max-width: 100px; padding : 10px;">
                     </em>

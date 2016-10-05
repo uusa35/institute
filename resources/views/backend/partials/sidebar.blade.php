@@ -180,7 +180,7 @@
             </li>
             <li class="nav-item open {{ (str_contains(Request::route()->getName(),'album') ? 'active' : '' ) }} ">
                 <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa  fa-picture-o"></i>
+                    <i class="fa fa-th-large"></i>
                     <span class="title">Album page</span>
                     <span class="arrow"></span>
                 </a>
