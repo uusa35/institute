@@ -22,6 +22,7 @@ use App\Models\Post;
 use App\Models\Section;
 use App\Models\Slider;
 use App\Models\User;
+use App\Review;
 use Illuminate\Support\Facades\DB;
 
 $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
@@ -171,4 +172,5 @@ $factory->define(Contactus::class, function (Faker\Generator $faker) {
         'logo' => $faker->imageUrl(),
     ];
 });
+
 
