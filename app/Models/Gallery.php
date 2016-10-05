@@ -13,6 +13,7 @@ class Gallery extends Model
     public $localeStrings = ['description'];
     protected $with = ['images'];
     protected $table = 'galleries';
+    protected $guarded = [''];
 
     protected static function boot() {
 

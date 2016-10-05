@@ -54,6 +54,8 @@ class PageController extends Controller
             // saving gallery for a post if exists
             $gallery = $page->gallery()->save(new Gallery());
 
+            $gallery->update(['description_ar' => $request->title_ar, 'description_en' => $request->title_en]);
+
             $this->saveGallery($request, $gallery);
         }
 

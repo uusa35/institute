@@ -23,7 +23,7 @@ class Page extends Model
     {
         parent::boot();
 
-        if (!request()->is('backend')) {
+        if (!request()->is('backend/*')) {
 
             static::addGlobalScope(new ScopeHasSections());
 

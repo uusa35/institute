@@ -14,6 +14,7 @@
                             <th>description_ar</th>
                             <th>description_en</th>
                             <th>Type</th>
+                            <th>Type id</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -22,7 +23,8 @@
                                 <td>{{ $gallery->id }}</td>
                                 <td>{{ $gallery->description_ar }}</td>
                                 <td>{{ $gallery->description_en }}</td>
-                                <td>{{ str_replace('App\Src','',$gallery->galleryable_type) }}</td>
+                                <td>{{ str_replace('App\Models','',$gallery->galleryable_type) }}</td>
+                                <td>{{ $gallery->galleryable_id }}</td>
                                 {{--<td>--}}
                                     {{--<div class="btn-group">--}}
                                         {{--<button class="btn btn-xs green dropdown-toggle" type="button"--}}

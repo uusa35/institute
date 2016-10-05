@@ -52,6 +52,8 @@ class PostController extends Controller
             // saving gallery for a post if exists
             $gallery = $post->gallery()->save(new Gallery());
 
+            $gallery->update(['description_ar' => $request->title_ar, 'description_en' => $request->title_en]);
+
             $this->saveGallery($request, $gallery);
         }
 
@@ -103,6 +105,8 @@ class PostController extends Controller
         if ($post) {
             // saving gallery for a post
             $gallery = $post->gallery()->first();
+
+            $gallery->update(['description_ar' => $request->title_ar, 'description_en' => $request->title_en]);
 
             $this->saveGallery($request, $gallery);
         }

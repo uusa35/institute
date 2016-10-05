@@ -69,6 +69,7 @@ class AlbumController extends Controller
     public function edit($id)
     {
         $album = Album::whereId($id)->with('gallery.images')->first();
+
         return view('backend.modules.album.edit', compact('album'));
     }
 
@@ -83,11 +84,13 @@ class AlbumController extends Controller
     {
         $album = Album::whereId($id)->first();
 
-        $gallery = $album->gallery()->first();
-
         $album->update($request->except('gallery'));
 
+        $gallery = $album->gallery()->first();
+
         $this->saveGallery($request, $gallery);
+
+        $gallery->update(['description_ar' => $request->description_ar, 'description_en' => $request->description_en]);
 
         return redirect()->route('backend.album.index')->with('success','album updated successfully');
     }
