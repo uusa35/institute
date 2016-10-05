@@ -9,37 +9,62 @@
                 {{ csrf_field() }}
 
                 <div class="form-group">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="first_name" class="control-label">First Name</label>
-                        <input id="first_name" type="text" class="form-control" name="first_name" placeholder="First Name" value="{{ $user->first_name }}"/>
+                        <input id="first_name" type="text" class="form-control" name="first_name"
+                               placeholder="First Name" value="{{ $user->first_name }}"/>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="last_name" class="control-label">last name</label>
-                        <input id="last_name" type="last_name" class="form-control" name="last_name" placeholder="Last Name" value="{{ $user->last_name }}">
+                        <input id="last_name" type="last_name" class="form-control" name="last_name"
+                               placeholder="Last Name" value="{{ $user->last_name }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="country" class="control-label">country</label>
+                        {{ Form::select('country', $countries, $user->country, ['class' => 'form-control']) }}
+
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="avatar" class="control-label">Avatar</label>
                         <input type="file" class="form-control" id="avatar"
                                name="avatar">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="email" class="control-label">email</label>
                         <input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}">
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="type">User Type</label>
+                        <span></br>
+                            {{ Form::radio('subscribed',$user->subscribed == 'paid' ? true : false,['class' => 'form-control', 'required' => 'required']) }} paid
+                        </span></br>
+                        <span>
+                            {{ Form::radio('subscribed',$user->subscribed == 'free' ? true : false,['class' => 'form-control', 'required' => 'required']) }} free
+                        </span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="video_link" class="control-label">Video Link</label>
                         <input type="text" class="form-control"
                                name="video_link" value="{{ $user->video_link }}">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="pdf" class="control-label">pdf</label>
                         <input type="file" class="form-control" name="pdf">
 
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="type">Active User</label>
+                        <span></br>
+                            {{ Form::radio('active',1 , $user->active,['class' => 'form-control', 'required' => 'required']) }} active
+                        </span></br>
+                        <span>
+                            {{ Form::radio('active',0  ,$user->active , ['class' => 'form-control', 'required' => 'required']) }} not active
+                        </span>
                     </div>
                 </div>
 

@@ -83,7 +83,10 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('backend.modules.user.edit', compact('user'));
+
+        $countries = ['Kuwait', 'Egypt', 'UAE', 'Qatar', 'Bahrain', 'KSA'];
+
+        return view('backend.modules.user.edit', compact('user','countries'));
     }
 
     /**

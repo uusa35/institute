@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'first_name', 'last_name', 'email', 'password', 'description_ar', 'description_en', 'avatar', 'country',
-        'video_url', 'pdf', 'other_link', 'mobile'
+        'video_url', 'pdf', 'other_link', 'mobile', 'subscribed','active'
     ];
     public $localeStrings = ['description'];
 
@@ -43,7 +43,7 @@ class User extends Authenticatable
     {
         parent::boot();
 
-        if (!request()->is('backend')) {
+        if (!request()->is('backend/*')) {
 
             static::addGlobalScope(new ScopeActive());
 

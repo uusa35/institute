@@ -57,15 +57,24 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="video_link" class=" control-label">Video Link</label>
                         <input type="text" class="form-control"
                                name="video_link">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="pdf" class="control-label">pdf</label>
                         <input type="file" class="form-control" name="pdf">
 
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="type">User Type</label>
+                        <span></br>
+                            {{ Form::radio('subscribed','paid',['class' => 'form-control', 'required']) }} paid
+                        </span></br>
+                        <span>
+                            {{ Form::radio('subscribed','free',['class' => 'form-control', 'required']) }} free
+                        </span>
                     </div>
                 </div>
 
