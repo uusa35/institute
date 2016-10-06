@@ -49,7 +49,7 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/search/name', 'HomeController@searchByName');
     Route::get('/search/id', 'HomeController@searchById');
     Route::get('/lang/{lang}', 'LanguageController@changeLocale');
-    Route::get('/contactus', 'HomeController@getContactus');
+    Route::get('contactus', ['as' => 'contactus','uses' =>'HomeController@getContactus']);
     Route::post('/contactus', 'HomeController@postContactus');
     Route::post('/newsletter', 'HomeController@postNewsletter');
     Route::resource('album', 'AlbumController', ['only' => ['index', 'show']]);

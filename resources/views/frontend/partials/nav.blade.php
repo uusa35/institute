@@ -54,11 +54,15 @@
                         @endif
                     @endforeach
                     <li class="{{ str_is('album*',Route::currentRouteName()) ? 'active' : null }}">
-                        <a href="{{ route('album.index') }}"><i class="fa fa-image"></i>{{ trans('general.albums') }}
+                        <a href="{{ route('album.index') }}">{{ trans('general.albums') }}
                         </a>
                     </li>
                     <li class="{{ str_is('post*',Route::currentRouteName()) ? 'active' : null }}">
-                        <a href="{{ route('post.index') }}"><i class="fa fa-image"></i>{{ trans('general.posts') }}
+                        <a href="{{ route('post.index') }}">{{ trans('general.posts') }}
+                        </a>
+                    </li>
+                    <li class="{{ str_is('contactus*',Route::currentRouteName()) ? 'active' : null }}">
+                        <a href="{{ url('/contactus') }}">{{ trans('general.contactus') }}
                         </a>
                     </li>
                     <li class="dropdown">

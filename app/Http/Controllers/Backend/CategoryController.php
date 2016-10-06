@@ -92,6 +92,11 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
+        if(!Category::find($id)) {
+
+            return redirect()->route('backend.category.index')->with('error', 'category not deleted');
+
+        }
         Category::whereId($id)->first()->delete();
 
         return redirect()->route('backend.category.index')->with('success', 'category deleted');

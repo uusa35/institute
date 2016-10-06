@@ -16,15 +16,7 @@ class ViewComposers
     {
         $category = new Category;
 
-        $category = $category->menus()->orderBy('created_at', 'desc')->get();
-
-        if (!Cache::has('menuItems')) {
-
-            Cache::forever('menuItems', $category);
-
-        }
-
-        $menuItems = Cache::get('menuItems');
+        $menuItems = $category->menus()->orderBy('created_at', 'desc')->get();
 
         $contactusInfo = $this->contactusInfo();
 
