@@ -1,5 +1,9 @@
 <nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
-    <div class="container-fluid">
+    <div class="container-fluid mainNav">
+
+
+
+        {{--logo--}}
         <div class="navbar-header">
 
             <!-- Collapsed Hamburger -->
@@ -18,6 +22,7 @@
                      class="img-responsive img-rounded"/>
             </a>
         </div>
+
         <div class="nav-top-frontend">
             <div class="nav collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
@@ -119,5 +124,8 @@
                 </ul>
             </div>
         </div>
+
+
+
     </div>
 </nav>
