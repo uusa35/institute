@@ -10,7 +10,9 @@ body {
   align-items: center;
   padding: 0px !important;
 }
-
+.navbar-header {
+  max-width:310px;
+}
 nav:first-child {
   background-color: darkgray !important;
 }

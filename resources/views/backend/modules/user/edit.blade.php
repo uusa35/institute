@@ -38,10 +38,10 @@
                     <div class="col-lg-4">
                         <label for="type">User Type</label>
                         <span></br>
-                            {{ Form::radio('subscribed',$user->subscribed == 'paid' ? true : false,['class' => 'form-control', 'required' => 'required']) }} paid
+                            {{ Form::radio('subscribed',$user->subscribed ? 'paid' : 'free' ,['class' => 'form-control', 'required' => 'required']) }} paid
                         </span></br>
                         <span>
-                            {{ Form::radio('subscribed',$user->subscribed == 'free' ? true : false,['class' => 'form-control', 'required' => 'required']) }} free
+                            {{ Form::radio('subscribed',$user->subscribed ? 'free' : 'paid' ,['class' => 'form-control', 'required' => 'required']) }} free
                         </span>
                     </div>
                 </div>
