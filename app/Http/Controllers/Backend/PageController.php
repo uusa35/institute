@@ -101,7 +101,11 @@ class PageController extends Controller
     {
         $imagePath = $this->saveImage($request);
 
-        $request->request->add(['image' => str_replace('public/', '', $imagePath)]);
+        if (!is_null($imagePath)) {
+
+            $request->request->add(['image' => str_replace('public/', '', $imagePath)]);
+
+        }
 
         $page = Page::find($id);
 

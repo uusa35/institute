@@ -25,14 +25,14 @@
                     </div>
                     <div class="col-sm-2">
                         <label for="category" class="control-label">category</label>
-                        {{ Form::select('category_id', $categories, 0, ['class' => 'form-control']) }}
+                        {{ Form::select('category_id', $categories, $page->category_id, ['class' => 'form-control']) }}
                     </div>
-                    <div class="col-sm-2">
-                        <label for="order" class="control-label">order</label>
-                        {{ Form::select('order', range(0,10), 0, ['class' => 'form-control']) }}
-                    </div>
+                    {{--<div class="col-sm-2">--}}
+                        {{--<label for="order" class="control-label">order</label>--}}
+                        {{ Form::hidden('order', 0) }}
+                    {{--</div>--}}
                     <div class="col-lg-2">
-                        <img src="{{ asset('storage/'.$page->image) }}" alt="" class="img-responsive">
+                        <img src="{{ File::exists('storage/'.$page->image) ? asset('storage/'.$page->image) : 'http://placehold.it/100x100&test=no-image'}}" alt="" class="img-responsive">
                     </div>
                 </div>
 

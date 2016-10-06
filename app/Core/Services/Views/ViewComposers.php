@@ -16,7 +16,7 @@ class ViewComposers
     {
         $category = new Category;
 
-        $category = $category->menu()->orderBy('created_at', 'desc')->get();
+        $category = $category->menus()->orderBy('created_at', 'desc')->get();
 
         if (!Cache::has('menuItems')) {
 

@@ -2,8 +2,8 @@
     <div class="col-lg-12 logos_bg">
         <div class="col-lg-3">
             <div class="text-center searchMainTitle">
-                <h3 class="text-center">{{ trans('general.search_one') }}</h3>
-                <img src="{{ asset('/images/logo_right.png') }}" alt="..." class="img-responsive">
+                <h5 class="text-center">{{ trans('general.search_one') }}</h5>
+                <img src="{{ asset('/images/search-right.png') }}" alt="..." class="img-responsive">
             </div>
         </div>
         <div class="col-lg-6">
@@ -51,8 +51,8 @@
         <div class="col-lg-3">
             <div class="text-center"
                  style="display: flex; align-items: center; align-content: center; flex-direction: column">
-                <h3 class="text-center">{{ trans('general.search_tow') }}</h3>
-                <img src="{{ asset('/images/logo_left.png') }}" alt="..." class="img-responsive">
+                <h5 class="text-center">{{ trans('general.search_tow') }}</h5>
+                <img src="{{ asset('/images/search-left.png') }}" alt="..." class="img-responsive">
             </div>
         </div>
     </div>
