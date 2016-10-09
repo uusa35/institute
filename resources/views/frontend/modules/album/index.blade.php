@@ -31,7 +31,7 @@
                     @endforeach
                 </div>
             @else
-                <div class="alert alert-warning"><p>{{ trans('general.message.no_albums') }}</p></div>
+                <div class="alert alert-warning"><p>{{ trans('general.no_albums') }}</p></div>
             @endif
         </div>
     </div>

@@ -97,11 +97,10 @@
         <!-- Youtube  -->
         <div class="col-lg-3 col-xs-12 col-sm-12">
             <h3>{{ trans('general.youtube') }}</h3>
-
             <p>
-                {{--<iframe width="250" height="141"--}}
-                        {{--src="https://www.youtube.com/embed/videoseries?list={{ $contactusInfo->youtube_channel }}"--}}
-                        {{--frameborder="0" allowfullscreen></iframe>--}}
+                <iframe width="250" height="141"
+                        src="https://www.youtube.com/embed/videoseries?list={{ $contactusInfo->youtube_channel }}"
+                        frameborder="0" allowfullscreen></iframe>
             </p>
         </div>
         <!-- col -->

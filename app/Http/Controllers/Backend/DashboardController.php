@@ -6,6 +6,7 @@ use App\Models\Contactus;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -31,13 +32,19 @@ class DashboardController extends Controller
         $totalSubscribed = Auth::user()->totalsubscribed;
         $totalNotActive = Auth::user()->totalnotactive;
 
-        return view('backend.home',compact('totalUsers','totalSubscribed','totalNotActive'));
+        return view('backend.home', compact('totalUsers', 'totalSubscribed', 'totalNotActive'));
     }
 
     public function contactus()
     {
         $contactusInfo = Contactus::first();
 
-        return view('backend.pages.contactus',compact('contactusInfo'));
+        return view('backend.pages.contactus', compact('contactusInfo'));
+    }
+
+    public function publishTrans()
+    {
+        Artisan::call('publish-trans');
+        return redirect()->back()->with('success', 'translatioins has been successfully published');
     }
 }

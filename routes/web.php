@@ -66,6 +66,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::get('/home', 'DashboardController@index');
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/contactus', ['uses' => 'DashboardController@contactus', 'as' => 'contactus']);
+    Route::get('/publish/trans', ['as' => 'publish.trans','uses' => 'DashboardController@publishTrans']);
     Route::resource('user', 'UserController');
     Route::resource('page', 'PageController');
     Route::resource('post', 'PostController');

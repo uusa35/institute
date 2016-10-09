@@ -102,7 +102,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false">
-                                {{ Auth::user()->first_name }} <span class="caret"></span>
+                                {{ str_limit(Auth::user()->first_name,6,'') }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
