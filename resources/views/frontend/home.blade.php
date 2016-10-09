@@ -5,7 +5,7 @@
 
 @section('content')
     @if(!is_null($sliders))
-        {{--@include('frontend.partials.slider')--}}
+        @include('frontend.partials.slider')
     @endif
 
     @include('frontend.partials._search_section')
