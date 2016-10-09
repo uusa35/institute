@@ -75,7 +75,8 @@ end of nav
   background: url("../images/bg_circle.png") no-repeat;
   background-position: top;
   background-size: 110% 100%;
-}
+  padding-top : 30px;
+}h
 
 .bg-article {
   margin: 15px;
@@ -98,10 +99,10 @@ end of nav
 
 .logos_bg {
   background: url("../images/logos_bg.png") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
 }
 
 .gallery-thumb {

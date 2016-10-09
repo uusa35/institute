@@ -106,9 +106,13 @@ class PostController extends Controller
             // saving gallery for a post
             $gallery = $post->gallery()->first();
 
-            $gallery->update(['description_ar' => $request->title_ar, 'description_en' => $request->title_en]);
+            if($gallery) {
 
-            $this->saveGallery($request, $gallery);
+                $gallery->update(['description_ar' => $request->title_ar, 'description_en' => $request->title_en]);
+
+                $this->saveGallery($request, $gallery);
+
+            }
         }
 
         return redirect()->route('backend.post.index')->with('success', 'post saved');

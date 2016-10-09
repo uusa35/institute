@@ -19,7 +19,7 @@
             <div class="summary">
                 <p>
                     <div class="col-lg-12">
-                    {!! str_limit($post->body,250) !!}
+                    {!! str_limit($post->body,100) !!}
                 </div>
                 </p>
             </div>

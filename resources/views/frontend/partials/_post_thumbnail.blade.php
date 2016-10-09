@@ -14,7 +14,7 @@
                              class="img-rounded img-responsive {!! (app()->getLocale() == 'ar' ? 'pull-right' : 'pull-left') !!}"
                              style="max-width: 100px; padding : 10px;">
                     </em>
-                    <p class="text-justify">
+                    <p class="text-justify" style="font-size: 12px;">
                         {!! str_limit($post->body ,200) !!}
                         </br>
                         {{ link_to_route('post.show',trans('general.more'), $post->id,['class' => 'btn btn-xs btn-info']) }}
