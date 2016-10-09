@@ -12,7 +12,7 @@
                             <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3' style="padding:4px;">
                                 <a class="thumbnail fancybox" rel="ligthbox"
                                    href="{{ route('album.show',$album->id) }}">
-                                    @if(!is_null($album->cover))
+                                    @if(count($album->cover) > 1)
                                         <img class="img-responsive" alt="" src="{{ asset('storage/'.$album->cover) }}"/>
                                     @else
                                         <img class="img-responsive" alt=""

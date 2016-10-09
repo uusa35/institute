@@ -43,7 +43,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::take(5)->get();
+        $sliders = Slider::all();
 
         $post = Post::latest()->first();
 
@@ -69,7 +69,7 @@ class HomeController extends Controller
 
     public function postNewsletter(NewsletterPost $request)
     {
-        $newsletter = MyNewsLetter::create($request->all());
+        $newsletter = Newsletter::create($request->all());
 
         if ($newsletter) {
 

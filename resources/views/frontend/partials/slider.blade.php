@@ -2,9 +2,9 @@
     <div id="carousel-example-generic" class="carousel slide col-lg-10 col-lg-push-1" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            @foreach($sliders as $slider)
+                <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->index == 0 ? 'active' : null }}"></li>
+                @endforeach
         </ol>
 
         <!-- Wrapper for slides -->
@@ -14,16 +14,16 @@
                     <div class="item {{ ($loop->first) ? 'active' : null }}">
                         <img src="{{ File::exists('storage/'.$slider->image) ? asset('storage/'.$slider->image ) : 'http://placehold.it/1180X350&text='.$slider->caption }}" alt="title of the image"/>
                         <div class="carousel-caption">
-                            <h4>{{ $slider->caption }}</h4>
+                            <h4><a href="{{ url($slider->url) }}" target="_blank">{{ $slider->caption }}</a></h4>
                         </div>
                     </div>
                 @elseif($slider->type == 'video')
                     <div class="item {{ ($loop->first) ? 'active' : null }} text-center">
-                        <iframe width="700" height="315" src="{!! $slider->url !!}"
+                        <iframe width="700" height="315" src="{{ url($slider->url) }}"
                                 frameborder="0" allowfullscreen></iframe>
                         <div class="carousel-caption">
-                            <h4 class="text-center">{{ $slider->caption }}</h4>
-                        </div>c
+                            <h4 class="text-center"><a href="{{ url($slider->url) }}" class="" target="_blank">{{ $slider->caption }}</a></h4>
+                        </div>
                     </div>
                 @endif
             @endforeach
