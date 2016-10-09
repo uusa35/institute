@@ -37,10 +37,14 @@ nav:first-child {
   font-weight: bold;
 }
 
-.mainNav {
+.navbar>.container-fluid {
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
+}
+.mainNav {
+
+
 }
 
 .navbar-brand > img {

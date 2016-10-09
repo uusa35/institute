@@ -4,7 +4,7 @@
 @section('body')
 
 @section('content')
-    @if(!is_null($sliders))
+    @if(!is_null($sliders) && app()->environment() != 'local')
         @include('frontend.partials.slider')
     @endif
 
