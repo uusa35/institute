@@ -31,6 +31,11 @@ nav:first-child {
   min-height: 80px;
 }
 
+.nav>li>a {
+  padding-right : 3px !important;
+  padding-left : 3px !important;
+}
+
 .mainNav {
   align-items: center;
   justify-content: space-between;
