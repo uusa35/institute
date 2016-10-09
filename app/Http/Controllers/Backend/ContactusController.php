@@ -78,7 +78,7 @@ class ContactusController extends Controller
     {
         Cache::forget('contactusInfo');
 
-        $logoPath = $this->saveImage($request, 'logo', '310', '78');
+        $logoPath = $this->saveImage($request, 'logo', '310', '68');
 
         if (!is_null($logoPath)) {
             $request->request->add(['logo' => $logoPath]);
