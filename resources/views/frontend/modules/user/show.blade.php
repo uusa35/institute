@@ -17,17 +17,17 @@
                     <i class="glyphicon glyphicon-flag"></i> &nbsp;{{ $user->country }}
                     <br/>
                     <i class="glyphicon glyphicon-envelope"></i> {{ trans('general.email') }} : &nbsp;{{ $user->email }}
+                    </br>
+                    <i class="glyphicon glyphicon-calendar"></i> &nbsp; {{ trans('general.member_sience') }} :
+                    &nbsp;{{ $user->created_at->diffForHumans() }}
+                    <br/>
+                    <i class="glyphicon glyphicon-paperclip"></i> &nbsp; {{ trans('general.pdf') }} :
+                    &nbsp;<a href="{{ asset('storage/'.$user->pdf) }}">{{ trans('general.pdf') }}</a>
                     <br/>
                     <i class="glyphicon glyphicon-globe"></i> &nbsp;{{ $user->other_link }}
                     <br/>
                     <i class="glyphicon glyphicon-play-circle"></i> &nbsp;{{ $user->video_link }}
-                    <br/>
-                    <i class="glyphicon glyphicon-calendar"></i> &nbsp; {{ trans('general.member_sience') }} :
-                    &nbsp;{{ $user->created_at->diffForHumans() }}
-
-                    <br/>
-                    <i class="glyphicon glyphicon-paperclip"></i> &nbsp; {{ trans('general.member_sience') }} :
-                    &nbsp;<a href="{{ asset('storage/'.$user->pdf) }}">{{ trans('general.pdf') }}</a>
+                
             </div>
             <div class="col-xs-12 panel panel-default">
                 <div class="panel-heading">
