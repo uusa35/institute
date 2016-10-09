@@ -1,5 +1,5 @@
 <div class="row footer">
-    <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-sm-12">
+    <div class="col-lg-12">
         <div class="col-lg-3 col-xs-12 col-sm-12">
             <h3>{{ trans('general.contactus') }}</h3>
             <p>
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <div class="form-group {{ (app()->getLocale() == 'ar') ? 'pull-left' : 'pull-right' }}">
+            <div class="form-group text-center">
                 <button style="margin: 10px;" type="submit"
                         class="btn btn-primary">{{ trans('general.subscribe') }}</button>
             </div>
@@ -98,7 +98,7 @@
         <div class="col-lg-3 col-xs-12 col-sm-12">
             <h3>{{ trans('general.youtube') }}</h3>
             <p>
-                <iframe width="250" height="141"
+                <iframe width="350" height="241"
                         src="https://www.youtube.com/embed/videoseries?list={{ $contactusInfo->youtube_channel }}"
                         frameborder="0" allowfullscreen></iframe>
             </p>

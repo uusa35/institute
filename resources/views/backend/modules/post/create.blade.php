@@ -29,7 +29,7 @@
                 <!-- File Button http://getbootstrap.com/css/#forms -->
                 <div class="form-group">
                     <div class="col-sm-6">
-                        <label for="image" class="control-label">first image</label>
+                        <label for="image" class="control-label">first image <small>best fit 1150px*310px</small></label>
                         <input type="file" name="image" name="image" required="">
                     </div>
                     <div class="col-sm-6">

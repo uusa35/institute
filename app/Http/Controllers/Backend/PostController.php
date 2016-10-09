@@ -40,10 +40,13 @@ class PostController extends Controller
      */
     public function store(Requests\PostStore $request)
     {
-        // save the main image
         $imagePath = $this->saveImage($request);
 
-        $request->request->add(['image' => $imagePath]);
+        if (!is_null($imagePath)) {
+
+            $request->request->add(['image' => $imagePath]);
+
+        }
 
         $post = $request->presist($request->request->all());
 
@@ -96,7 +99,11 @@ class PostController extends Controller
         // save the main image
         $imagePath = $this->saveImage($request);
 
-        $request->request->add(['image' => $imagePath]);
+        if (!is_null($imagePath)) {
+
+            $request->request->add(['image' => $imagePath]);
+
+        }
 
         $post = Post::find($id);
 
@@ -106,7 +113,7 @@ class PostController extends Controller
             // saving gallery for a post
             $gallery = $post->gallery()->first();
 
-            if($gallery) {
+            if ($gallery) {
 
                 $gallery->update(['description_ar' => $request->title_ar, 'description_en' => $request->title_en]);
 

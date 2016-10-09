@@ -2,7 +2,7 @@
     <div class="col-lg-12 logos_bg">
         <div class="col-lg-3">
             <div class="text-center searchMainTitle">
-                <h5 class="text-center">{{ trans('general.search_one') }}</h5>
+                <h5 class="text-center"><b>{{ trans('general.search_one') }}</b></h5>
                 <img src="{{ asset('/images/search-right.png') }}" alt="..." class="img-responsive">
             </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="col-lg-3">
             <div class="text-center"
                  style="display: flex; align-items: center; align-content: center; flex-direction: column">
-                <h5 class="text-center">{{ trans('general.search_tow') }}</h5>
+                <h5 class="text-center"><b>{{ trans('general.search_tow') }}</b></h5>
                 <img src="{{ asset('/images/search-left.png') }}" alt="..." class="img-responsive">
             </div>
         </div>

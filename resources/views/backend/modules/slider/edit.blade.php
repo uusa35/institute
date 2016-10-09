@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-lg-6">
-                        <label for="image">image</label>
+                        <label for="image">image <small>best fit 1350px*423px</small></label>
                         {!! Form::file('image',['class' => 'form-control']) !!}
                     </div>
                     <div class="col-lg-6">

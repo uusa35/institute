@@ -41,7 +41,7 @@ class SliderController extends Controller
     public function store(Requests\SliderStore $request)
     {
         // save the main image
-        $imagePath = $this->saveImage($request);
+        $imagePath = $this->saveImage($request,'image','1350','423');
 
         $request->request->add(['image' => $imagePath]);
 
@@ -84,7 +84,7 @@ class SliderController extends Controller
     public function update(Requests\SliderUpdate $request, $id)
     {
         // save the main image
-        $imagePath = $this->saveImage($request);
+        $imagePath = $this->saveImage($request,'image','1350','423');
 
         if (!is_null($imagePath)) {
 
