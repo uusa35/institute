@@ -161,11 +161,11 @@
                                                             <td width='60'>
                                                                 <div class='contentEditableContainer contentImageEditable'>
                                                                     <div class='contentEditable'>
-                                                                        <a target='_blank' href="[CLIENTS.WEBSITE]"><img
+                                                                        <a target='_blank' href="{{ config('app.url') }}"><img
                                                                                     src="{{ $message->embed('images/logo.png') }}"
-                                                                                    alt="Logo" width='60' height='60'
+                                                                                    alt="Logo" width='300' height='68'
                                                                                     data-default="placeholder"
-                                                                                    data-max-width="200"></a>
+                                                                                    data-max-width="300"></a>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -173,10 +173,10 @@
                                                             <td valign="middle" style='vertical-align: middle;'>
                                                                 <div class='contentEditableContainer contentTextEditable'>
                                                                     <div class='contentEditable'
-                                                                         style='text-align: left;font-weight: light; color:#555555;font-size:26;line-height: 39px;font-family: Helvetica Neue;'>
+                                                                         style="text-align: left;font-weight: normal; color:#555555;font-size:20;line-height: 39px;font-family: Helvetica Neue;">
                                                                         <h1 class='big'><a target='_blank'
                                                                                            href="{{ app_path() }}"
-                                                                                           style='color:#444444'>{{ env('APP_URL') }}</a>
+                                                                                           style='color:#444444'>{{ config('app.url') }}</a>
                                                                         </h1>
                                                                     </div>
                                                                 </div>
@@ -266,10 +266,9 @@
                                                                 <div class='contentEditableContainer contentTextEditable'>
                                                                     <div class='contentEditable'
                                                                          style='text-align: center;color:#AAAAAA;'>
-                                                                        <p> {{ env('APP_URL') }} Teamwork <br/>
-                                                                            Kuwait, Sharq <br/>
-                                                                            123456 <br/>
-                                                                            <a href={{ base_path() }}">7orof</a>
+                                                                        <p> {{ env('APP_URL') }} <br/>
+                                                                            {{ $address }}<br/>
+                                                                            <a href="{{ base_path() }}">{{ config('app.name') }}</a>
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -282,69 +281,69 @@
                                         </table>
                                     </div>
 
-                                    <div class='movableContent'>
-                                        <table width="580" border="0" cellspacing="0" cellpadding="0" align="center">
-                                                        <tr>
-                                                            <td colspan="3" height='40'></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width='195'></td>
-                                                            <td width='190' align='center' style='text-align: center;'>
-                                                                <table width='190' cellpadding="0" cellspacing="0" align="center">
-                                                                    <tr>
-                                                                        <td width='40'>
-                                                                            <div class='contentEditableContainer contentFacebookEditable'>
-                                                                                <div class='contentEditable'
-                                                                                     style='text-align: center;color:#AAAAAA;'>
-                                                                                    <img src="{{ $message->embed('images/facebook.png') }}"
-                                                                                         alt="facebook" width='40' height='40'
-                                                                                         data-max-width="40" data-customIcon="true">
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td width='10'></td>
-                                                                        <td width='40'>
-                                                                            <div class='contentEditableContainer contentTwitterEditable'>
-                                                                                <div class='contentEditable'
-                                                                                     style='text-align: center;color:#AAAAAA;'>
-                                                                                    <img src="{{ $message->embed('images/twitter.png') }}"
-                                                                                         alt="twitter" width='40' height='40'
-                                                                                         data-max-width="40" data-customIcon="true">
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td width='10'></td>
-                                                                        <td width='40'>
-                                                                            <div class='contentEditableContainer contentImageEditable'>
-                                                                                <div class='contentEditable'
-                                                                                     style='text-align: center;color:#AAAAAA;'>
-                                                                                    <img src="{!! $message->embed('images/youtube.png') !!}"
-                                                                                         alt="youtube" width='40' height='40'
-                                                                                         data-max-width="40">
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td width='10'></td>
-                                                                        <td width='40'>
-                                                                            <div class='contentEditableContainer contentImageEditable'>
-                                                                                <div class='contentEditable'
-                                                                                     style='text-align: center;color:#AAAAAA;'>
-                                                                                    <img src="{!!  $message->embed('images/instagram.png') !!}"
-                                                                                         alt='Social media' width='40' height='40'
-                                                                                         data-max-width='40'>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                            <td width='195'></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="3" height='40'></td>
-                                                        </tr>
-                                                    </table>
-                                    </div>
+                                    {{--<div class='movableContent'>--}}
+                                        {{--<table width="580" border="0" cellspacing="0" cellpadding="0" align="center">--}}
+                                                        {{--<tr>--}}
+                                                            {{--<td colspan="3" height='40'></td>--}}
+                                                        {{--</tr>--}}
+                                                        {{--<tr>--}}
+                                                            {{--<td width='195'></td>--}}
+                                                            {{--<td width='190' align='center' style='text-align: center;'>--}}
+                                                                {{--<table width='190' cellpadding="0" cellspacing="0" align="center">--}}
+                                                                    {{--<tr>--}}
+                                                                        {{--<td width='40'>--}}
+                                                                            {{--<div class='contentEditableContainer contentFacebookEditable'>--}}
+                                                                                {{--<div class='contentEditable'--}}
+                                                                                     {{--style='text-align: center;color:#AAAAAA;'>--}}
+                                                                                    {{--<img src="{{ $message->embed('images/facebook.png') }}"--}}
+                                                                                         {{--alt="facebook" width='40' height='40'--}}
+                                                                                         {{--data-max-width="40" data-customIcon="true">--}}
+                                                                                {{--</div>--}}
+                                                                            {{--</div>--}}
+                                                                        {{--</td>--}}
+                                                                        {{--<td width='10'></td>--}}
+                                                                        {{--<td width='40'>--}}
+                                                                            {{--<div class='contentEditableContainer contentTwitterEditable'>--}}
+                                                                                {{--<div class='contentEditable'--}}
+                                                                                     {{--style='text-align: center;color:#AAAAAA;'>--}}
+                                                                                    {{--<img src="{{ $message->embed('images/twitter.png') }}"--}}
+                                                                                         {{--alt="twitter" width='40' height='40'--}}
+                                                                                         {{--data-max-width="40" data-customIcon="true">--}}
+                                                                                {{--</div>--}}
+                                                                            {{--</div>--}}
+                                                                        {{--</td>--}}
+                                                                        {{--<td width='10'></td>--}}
+                                                                        {{--<td width='40'>--}}
+                                                                            {{--<div class='contentEditableContainer contentImageEditable'>--}}
+                                                                                {{--<div class='contentEditable'--}}
+                                                                                     {{--style='text-align: center;color:#AAAAAA;'>--}}
+                                                                                    {{--<img src="{!! $message->embed('images/youtube.png') !!}"--}}
+                                                                                         {{--alt="youtube" width='40' height='40'--}}
+                                                                                         {{--data-max-width="40">--}}
+                                                                                {{--</div>--}}
+                                                                            {{--</div>--}}
+                                                                        {{--</td>--}}
+                                                                        {{--<td width='10'></td>--}}
+                                                                        {{--<td width='40'>--}}
+                                                                            {{--<div class='contentEditableContainer contentImageEditable'>--}}
+                                                                                {{--<div class='contentEditable'--}}
+                                                                                     {{--style='text-align: center;color:#AAAAAA;'>--}}
+                                                                                    {{--<img src="{!!  $message->embed('images/instagram.png') !!}"--}}
+                                                                                         {{--alt='Social media' width='40' height='40'--}}
+                                                                                         {{--data-max-width='40'>--}}
+                                                                                {{--</div>--}}
+                                                                            {{--</div>--}}
+                                                                        {{--</td>--}}
+                                                                    {{--</tr>--}}
+                                                                {{--</table>--}}
+                                                            {{--</td>--}}
+                                                            {{--<td width='195'></td>--}}
+                                                        {{--</tr>--}}
+                                                        {{--<tr>--}}
+                                                            {{--<td colspan="3" height='40'></td>--}}
+                                                        {{--</tr>--}}
+                                                    {{--</table>--}}
+                                    {{--</div>--}}
                                     <!-- =============== END FOOTER =============== -->
                                 </td>
                             </tr>

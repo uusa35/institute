@@ -12,14 +12,16 @@ class Contactus extends Mailable
     use Queueable, SerializesModels;
 
     public $request;
+    public $contactusInfo;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($request)
+    public function __construct($request,$contactusInfo)
     {
         $this->request = $request;
+        $this->contactusInfo = $contactusInfo;
     }
 
     /**
@@ -33,7 +35,8 @@ class Contactus extends Mailable
             'name' => $this->request['name'],
             'title' => $this->request['subject'],
             'body' => $this->request['content'],
-            'email' => $this->request['email']
+            'email' => $this->request['email'],
+            'address' => $this->contactusInfo->address
         ]);
     }
 }

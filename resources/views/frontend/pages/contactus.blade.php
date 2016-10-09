@@ -23,30 +23,43 @@
                 <!--contact-body-area start-->
                 <div class="row">
                     <!-- contact info -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="contact-info">
-                            <h3>Contact info</h3>
-                            <ul>
-                                <li>
-                                    <i class="fa fa-map-marker"></i> <strong>Address</strong>
-                                    address here address
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope"></i> <strong>Phone</strong>
-                                    2323434
-                                </li>
-                                <li>
-                                    <i class="fa fa-mobile"></i> <strong>Email</strong>
-                                    <a href="mailto:example@test.com" target="_top">example@test.com</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                       class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-yellow bg-hover-grey-salsa font-white bg-hover-white socicon-facebook tooltips"
-                                       data-original-title="Facebook"></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!-- End contact info -->
+                    <div class="col-lg-3 col-xs-12 col-sm-12">
+                        <h3>{{ trans('general.contactus') }}</h3>
+                        <p>
+                            @if(!is_null(trim($contactusInfo->address)))
+                                <span class="glyphicon glyphicon-home"></span> {{ $contactusInfo->address }}<br/>
+                            @endif
+                            @if(trim($contactusInfo->phone))
+                                <span class="glyphicon glyphicon-earphone"></span> {{ $contactusInfo->phone }}<br/>
+                            @endif
+                            @if(trim($contactusInfo->mobile))
+                                <span class="glyphicon glyphicon-phone"></span> {{ $contactusInfo->mobile }}<br/>
+                            @endif
+                            @if($contactusInfo->email)
+                                <span class="glyphicon glyphicon-inbox"></span>
+                                <a href="mailto:{{ $contactusInfo->email }}"> {{ $contactusInfo->email }}</a> <br/>
+                            @endif
+                            @if(trim($contactusInfo->twitter_url))
+                                <span class="glyphicon glyphicon-globe"></span>
+                                <a href="http://twitter.com/{{ $contactusInfo->twitter_url }}">{{ trans('general.twitter') }}</a>
+                                <br/>
+                            @endif
+                            @if(trim($contactusInfo->instagram_url))
+                                <span class="glyphicon glyphicon-globe"></span>
+                                <a href="http://instagram.com/{{ $contactusInfo->instagram_url }}"> {{ $contactusInfo->instagram_url }}</a>
+                                <br/>
+                            @endif
+                            @if(trim($contactusInfo->youtube_channel))
+                                <span class="glyphicon glyphicon-globe"></span>
+                                <span><a href="http://youtube.com/{{ $contactusInfo->youtube_channel }}">
+                                        {{ $contactusInfo->youtube_channel }}
+                                    </a>
+                        </span>
+                            @endif
+                        </p>
+                    </div>
+
+                    {{--contact us form--}}
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                         <div class="contact-form">
                             <h3><i class="fa fa-envelope-o"></i> {{ trans('general.leave_message') }}</h3>

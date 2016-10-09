@@ -61,7 +61,9 @@ class HomeController extends Controller
 
     public function postContactus(ContactusEmail $request)
     {
-        $email = Mail::to(config('mail.from.address'))->queue(new \App\Mail\Contactus($request->all()));
+        $contactusInfo = Contactus::first();
+
+        $email = Mail::to(Contactus::first()->email)->queue(new \App\Mail\Contactus($request->all(),$contactusInfo));
 
         return redirect()->back()->with('success', 'email has been sent');
 
