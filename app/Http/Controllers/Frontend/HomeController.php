@@ -7,9 +7,11 @@ use App\Models\Newsletter;
 use App\Models\Post;
 use App\Models\Slider;
 use App\Models\User;
+use App\Notifications\sendRegisterMemberReuest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -92,7 +94,9 @@ class HomeController extends Controller
 
     public function postRegisterMembership()
     {
-        $email = Mail::to(Contactus::first()->email)->queue(new \App\Mail\sendRegisterMembership(request()->all()));
+//        $email = Mail::to(Contactus::first()->email)->queue(new \App\Mail\sendRegisterMembership(request()->all()));
+
+        $email = Notification::send(User::first(),new sendRegisterMemberReuest(request()->all()));
 
         if(!$email) {
             return redirect()->back()->with('error', 'error ocured .. please try later');
