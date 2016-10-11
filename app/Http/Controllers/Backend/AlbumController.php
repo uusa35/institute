@@ -44,7 +44,9 @@ class AlbumController extends Controller
 
         $gallery = $album->gallery()->save(new Gallery());
 
-        $this->saveGallery($request, $gallery);
+        $gallery = $this->saveGallery($request, $gallery);
+
+        $gallery->images()->first()->update(['cover' => 1]);
 
         return redirect()->route('backend.album.index')->with('success', 'album stored successfully');
     }
@@ -91,6 +93,8 @@ class AlbumController extends Controller
         $this->saveGallery($request, $gallery);
 
         $gallery->update(['description_ar' => $request->description_ar, 'description_en' => $request->description_en]);
+
+        $gallery->images()->first()->update(['cover' => 1]);
 
         return redirect()->route('backend.album.index')->with('success','album updated successfully');
     }

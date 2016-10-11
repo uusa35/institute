@@ -42,11 +42,13 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'video_link' => $faker->sentence(5),
         'other_link' => $faker->sentence(5),
         'pdf' => $faker->imageUrl(),
-        'type' => $faker->randomElement(['NPL', 'IHB', 'WHATEVER']),
+        'graduation_year' => $faker->year,
+        'type' => $faker->randomElement(['IBNLP', 'IBH', 'user']),
         'gender' => $faker->randomElement(['male', 'female']),
-        'active' => $faker->numberBetween(0, 1),
+        'active' => 1,
         'membership_id' => $faker->numberBetween(999, 99999),
-        'subscribed' => $faker->randomElement(['free', 'paid']),
+        'subscribed' => $faker->numberBetween(0, 1),
+        'featured' => $faker->numberBetween(0, 1),
     ];
 });
 
@@ -148,9 +150,11 @@ $factory->define(Section::class, function (Faker\Generator $faker) {
         'content_ar' => $faker->paragraph(2),
         'content_en' => $faker->paragraph(2),
         'image' => $faker->imageUrl(),
+        'image' => 'storage/uploads/images/tmp.png',
         'page_id' => (is_null(Page::doesntHave('sections'))) ?
             Page::doesntHave('sections')->pluck('id')->shuffle()->first()
             : $faker->numberBetween(1, 30),
+        'type' => $faker->randomElement(['a','b','c'])
     ];
 });
 

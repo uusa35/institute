@@ -1,5 +1,3 @@
-
-
 @extends('backend.layouts.app')
 
 @section('content')
@@ -11,20 +9,17 @@
             </div>
             <div class="panel-body">
                 {{ Form::model($section,['route' => ['backend.section.update',$section->id], 'method'=>'PATCH','class' => 'form-horizontal','files' => true]) }}
-                        <!-- Text input http://getbootstrap.com/css/#forms -->
-                        <!-- Textarea http://getbootstrap.com/css/#textarea -->
-                <!-- Textarea http://getbootstrap.com/css/#textarea -->
                 {{ Form::hidden('page_id',$section->page_id) }}
                 <div class="form-group">
                     <div class="col-sm-6">
                         <label class="control-label" for="header_en">header engish</label>
-                            <input type="text" class="form-control" name="header_en"
-                                      required="" value="{{ $section->header_en }}">
+                        <input type="text" class="form-control" name="header_en"
+                               required="" value="{{ $section->header_en }}">
                     </div>
                     <div class="col-sm-6">
                         <label class="control-label" for="header_ar">header_ar</label>
-                            <input type="text" class="form-control" name="header_ar"
-                                      required="" value="{{ $section->header_ar }}">
+                        <input type="text" class="form-control" name="header_ar"
+                               required="" value="{{ $section->header_ar }}">
                     </div>
                 </div>
 
@@ -32,7 +27,18 @@
                 <div class="form-group">
                     <div class="col-sm-6">
                         <label for="image" class="control-label"> image</label>
-                        <input type="file" name="image" name="image" >
+                        <input type="file" name="image" name="image">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <label for="type">section type</label></br>
+                        {{ Form::radio('type','a',$section->type == 'a' ? true : false, ['class' => '', 'required']) }}
+                        section A &nbsp;
+                        {{ Form::radio('type','b',$section->type == 'b' ? true : false, ['class' => '', 'required']) }}
+                        section B &nbsp;
+                        {{ Form::radio('type','c',$section->type == 'c' ? true : false, ['class' => '', 'required']) }}
+                        section C &nbsp;
+                        </span>
                     </div>
                 </div>
 

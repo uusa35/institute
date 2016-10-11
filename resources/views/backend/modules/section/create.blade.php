@@ -11,9 +11,6 @@
             </div>
             <div class="panel-body">
                 {{ Form::open(['route' => ['backend.section.store'], 'method'=>'post','class' => 'form-horizontal','files' => true]) }}
-                        <!-- Text input http://getbootstrap.com/css/#forms -->
-                <!-- Textarea http://getbootstrap.com/css/#textarea -->
-                <!-- Textarea http://getbootstrap.com/css/#textarea -->
                 {{ Form::hidden('page_id',$page_id) }}
                 <div class="form-group">
                     <div class="col-sm-6">
@@ -33,6 +30,18 @@
                     <div class="col-sm-6">
                         <label for="image" class="control-label"> image</label>
                         <input type="file" name="image" name="image" >
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="type">Section Type</label>
+                        <span></br>
+                            {{ Form::radio('type','a',['class' => 'form-control', 'required']) }} section A
+                        </span></br>
+                        <span>
+                            {{ Form::radio('type','b',['class' => 'form-control', 'required']) }} section B
+                        </span></br>
+                        <span>
+                            {{ Form::radio('type','c',['class' => 'form-control', 'required']) }} section C
+                        </span>
                     </div>
                 </div>
 

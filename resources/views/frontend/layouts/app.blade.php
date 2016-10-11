@@ -25,7 +25,9 @@
     <div id="app">from app</div>
     @include('frontend.partials.notifications')
     @section('body')
-        @yield('content')
+        <div class="row">
+            @yield('content')
+        </div>
     @show
     @section('footer')
         @include('frontend.partials.footer')

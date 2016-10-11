@@ -39,7 +39,7 @@ class SectionController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\SectionStore $request)
     {
         if ($request->file('image')) {
             $imagePath = $request->image->store('public/uploads/images');

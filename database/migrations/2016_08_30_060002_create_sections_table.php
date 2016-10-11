@@ -16,9 +16,11 @@ class CreateSectionsTable extends Migration
             $table->increments('id');
             $table->string('header_ar');
             $table->string('header_en');
-            $table->text('content_ar');
-            $table->text('content_en');
+            $table->mediumText('content_ar');
+            $table->mediumText('content_en');
             $table->string('image');
+            $table->string('pdf');
+            $table->enum('type',['a','b','c']);
             $table->integer('page_id')->unsigned()->index();
 
             $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade')->onUpdate('cascade');

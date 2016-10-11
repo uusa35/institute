@@ -16,8 +16,8 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title_ar');
             $table->string('title_en');
-            $table->text('body_ar');
-            $table->text('body_en');
+            $table->longText('body_ar');
+            $table->longText('body_en');
             $table->integer('user_id')->unsigned()->index();
             $table->string('image');
 

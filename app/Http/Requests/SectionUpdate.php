@@ -30,6 +30,7 @@ class SectionUpdate extends FormRequest
             'content_en' => 'required',
             'image' => 'mimes:jpeg,bmp,png',
             'page_id' => 'required',
+            'type' => 'required',
         ];
     }
 }

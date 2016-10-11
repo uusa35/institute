@@ -26,7 +26,7 @@ class AlbumStore extends FormRequest
         return [
             'description_ar' => 'required|min:3',
             'description_en' => 'required|min:3',
-            'gallery' => 'required|array',
+            'gallery' => 'array',
         ];
     }
 }

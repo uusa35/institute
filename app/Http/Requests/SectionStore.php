@@ -13,7 +13,7 @@ class SectionStore extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -30,6 +30,7 @@ class SectionStore extends FormRequest
             'content_en' => 'required',
             'image' => 'required|mimes:jpeg,bmp,png',
             'page_id' => 'required',
+            'type' => 'required',
         ];
     }
 }

@@ -74,9 +74,19 @@
                                     <label class="control-label" for="email">{{ trans('general.email') }}</label>
                                     {!! Form::text('email', null, ['class' => 'form-control', 'placeholder'=> trans('general.email') , 'required' ]) !!}
                                 </div>
+                            </div>
+                            <div class="form-group">
                                 <div class="col-lg-4">
                                     <label class="control-label" for="subject">{{ trans('general.subject') }}</label>
                                     {!! Form::text('subject', null, ['class' => 'form-control','placeholder'=> trans('general.subject') , 'required' ]) !!}
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="control-label" for="phone">{{ trans('general.phone') }}</label>
+                                    {!! Form::text('phone', null, ['class' => 'form-control','placeholder'=> trans('general.phone') , 'required' ]) !!}
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="col-lg-12 control-label" for="country">{{ trans('general.country') }}</label>
+                                    {{ Form::select('country', $countries, ['class' => 'form-control','required' ]) }}
                                 </div>
                             </div>
                             <div class="form-group">
@@ -87,9 +97,9 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-3 col-lg-push-9">
-                                    <label class="control-label" for="content"></label>
-                                    <input type="submit" class="btn btn-primary form-control" value="Submit Form"/>
-                                    <label class="control-label" for="content"></label>
+                                    <label class="control-label" for="submit"></label>
+                                    <input type="submit" class="btn btn-info form-control" value="{{ trans('general.send') }}"/>
+                                    <label class="control-label" for="submit"></label>
                                 </div>
                             </div>
                             {!! Form::close() !!}

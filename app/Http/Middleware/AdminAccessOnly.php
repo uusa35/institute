@@ -19,7 +19,7 @@ AdminAccessOnly
     public function handle($request, Closure $next)
     {
 
-        abort_if(!Auth::user()->can('isAdmin'),'404','Admin zone only !!!');
+        abort_if(!Auth::user()->can('isAdmin'), '404', 'Admin zone only !!!');
 
         return $next($request);
     }

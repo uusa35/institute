@@ -52,10 +52,12 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('contactus', ['as' => 'contactus','uses' =>'HomeController@getContactus']);
     Route::post('/contactus', 'HomeController@postContactus');
     Route::post('/newsletter', 'HomeController@postNewsletter');
+    Route::get('/register/membership', ['as' => 'register.membership','uses' => 'HomeController@getRegisterMembership']);
+    Route::post('/register/membership', ['as' => 'register.membership','uses' => 'HomeController@postRegisterMembership']);
     Route::resource('album', 'AlbumController', ['only' => ['index', 'show']]);
     Route::resource('post', 'PostController', ['only' => ['index', 'show']]);
     Route::resource('page', 'PageController', ['only' => ['index', 'show']]);
-    Route::resource('user', 'UserController', ['only' => ['index', 'show']]);
+    Route::resource('user', 'UserController', ['except' => ['destroy','create','store']]);
 
 });
 

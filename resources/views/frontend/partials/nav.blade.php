@@ -2,7 +2,6 @@
     <div class="container-fluid mainNav">
 
 
-
         {{--logo--}}
         <div class="navbar-header">
 
@@ -18,7 +17,8 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ File::exists('storage/'.$contactusInfo->logo) ? asset('storage/'.$contactusInfo->logo) : 'http://placehold.it/130x75&text=logo&color=gold' }}" alt="{{ $contactusInfo->company_name }}"
+                <img src="{{ File::exists('storage/'.$contactusInfo->logo) ? asset('storage/'.$contactusInfo->logo) : 'http://placehold.it/130x75&text=logo&color=gold' }}"
+                     alt="{{ $contactusInfo->company_name }}"
                      class="img-responsive img-rounded"/>
             </a>
         </div>
@@ -53,6 +53,10 @@
                             </li>
                         @endif
                     @endforeach
+                    <li class="{{ str_is('membership*',Route::currentRouteName()) ? 'active' : null }}">
+                        <a href="{{ route('register.membership') }}">{{ trans('general.register_membership') }}
+                        </a>
+                    </li>
                     <li class="{{ str_is('album*',Route::currentRouteName()) ? 'active' : null }}">
                         <a href="{{ route('album.index') }}">{{ trans('general.albums') }}
                         </a>
@@ -81,14 +85,15 @@
                 </ul>
 
                 {{--<form class="navbar-form navbar-right">--}}
-                    {{--<div class="form-group">--}}
-                        {{--<input type="text" class="form-control input-sm" placeholder="Search">--}}
-                    {{--</div>--}}
-                    {{--<button type="submit" class="btn btn-sm btn-info">Submit</button>--}}
+                {{--<div class="form-group">--}}
+                {{--<input type="text" class="form-control input-sm" placeholder="Search">--}}
+                {{--</div>--}}
+                {{--<button type="submit" class="btn btn-sm btn-info">Submit</button>--}}
                 {{--</form>--}}
                 {{ Form::open(['action' => 'Frontend\HomeController@searchByName','method' => 'GET' , 'class' => 'navbar-form navbar-right', 'role' => 'search']) }}
                 <div class="form-group">
-                    <input type="text" name="first_name" class="form-control input-sm" placeholder="Search" style="max-width:100px;">
+                    <input type="text" name="first_name" class="form-control input-sm" placeholder="Search"
+                           style="max-width:100px;">
                 </div>
                 <button type="submit" class="btn btn-xs btn-info">{!! trans('general.submit') !!}</button>
                 {{ Form::close() }}
@@ -110,6 +115,10 @@
                                     <li>
                                         <a href="{{route('backend.dashboard.index')}}">{{ trans('general.dashboard') }}</a>
                                     </li>
+                                @elseif(Auth::user())
+                                    <li>
+                                        <a href="{{route('user.edit', auth()->user()->id)}}">{{ trans('general.profile') }}</a>
+                                    </li>
                                 @endif
                                 <li>
                                     <a href="{{ url('/logout') }}"
@@ -128,7 +137,6 @@
                 </ul>
             </div>
         </div>
-
 
 
     </div>

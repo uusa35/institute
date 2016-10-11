@@ -234,7 +234,10 @@
                                                                         <p>{!! $body !!}.</p>
                                                                         <hr/>
                                                                         <p>
-                                                                            <small>{!! $name !!} |  from : {!! $email !!}</small>
+                                                                            <small>{!! $name !!} |  from : {!! $email !!}</br>
+                                                                            phone : {!! $phone !!} </br>
+                                                                                country : {!! $country !!}
+                                                                            </small>
                                                                         </p>
                                                                     </div>
                                                                 </div>

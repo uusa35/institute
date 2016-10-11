@@ -17,10 +17,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'description_ar', 'description_en', 'avatar', 'country',
-        'video_url', 'pdf', 'other_link', 'mobile', 'subscribed','active'
-    ];
+    protected $guarded = [''];
     public $localeStrings = ['description'];
 
     /**
@@ -65,6 +62,11 @@ class User extends Authenticatable
     public function scopeSubscribed($q)
     {
         $q->where('subscribed', 'paid');
+    }
+
+    public function scopeTrainer($q)
+    {
+        $q->where('type','!=', 'user');
     }
 
     public function getNameAttribute()

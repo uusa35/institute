@@ -1,40 +1,40 @@
 <div class="row footer">
     <div class="col-lg-12">
-        <div class="col-lg-3 col-xs-12 col-sm-12">
-            <h3>{{ trans('general.contactus') }}</h3>
-            <p>
-                @if(!is_null(trim($contactusInfo->address)))
-                    <span class="glyphicon glyphicon-home"></span> {{ $contactusInfo->address }}<br/>
-                @endif
-                @if(trim($contactusInfo->phone))
-                    <span class="glyphicon glyphicon-earphone"></span> {{ $contactusInfo->phone }}<br/>
-                @endif
-                @if(trim($contactusInfo->mobile))
-                    <span class="glyphicon glyphicon-phone"></span> {{ $contactusInfo->mobile }}<br/>
-                @endif
-                @if($contactusInfo->email)
-                    <span class="glyphicon glyphicon-inbox"></span>
-                    <a href="mailto:{{ $contactusInfo->email }}"> {{ $contactusInfo->email }}</a> <br/>
-                @endif
-                @if(trim($contactusInfo->twitter_url))
-                    <span class="glyphicon glyphicon-globe"></span>
-                    <a href="http://twitter.com/{{ $contactusInfo->twitter_url }}">{{ trans('general.twitter') }}</a>
-                    <br/>
-                @endif
-                @if(trim($contactusInfo->instagram_url))
-                    <span class="glyphicon glyphicon-globe"></span>
-                    <a href="http://instagram.com/{{ $contactusInfo->instagram_url }}"> {{ $contactusInfo->instagram_url }}</a>
-                    <br/>
-                @endif
-                @if(trim($contactusInfo->youtube_channel))
-                    <span class="glyphicon glyphicon-globe"></span>
-                    <span><a href="http://youtube.com/{{ $contactusInfo->youtube_channel }}">
-                            {{ $contactusInfo->youtube_channel }}
-                        </a>
-                        </span>
-                @endif
-            </p>
-        </div>
+        {{--<div class="col-lg-3 col-xs-12 col-sm-12">--}}
+            {{--<h3>{{ trans('general.contactus') }}</h3>--}}
+            {{--<p>--}}
+                {{--@if(!is_null(trim($contactusInfo->address)))--}}
+                    {{--<span class="glyphicon glyphicon-home"></span> {{ $contactusInfo->address }}<br/>--}}
+                {{--@endif--}}
+                {{--@if(trim($contactusInfo->phone))--}}
+                    {{--<span class="glyphicon glyphicon-earphone"></span> {{ $contactusInfo->phone }}<br/>--}}
+                {{--@endif--}}
+                {{--@if(trim($contactusInfo->mobile))--}}
+                    {{--<span class="glyphicon glyphicon-phone"></span> {{ $contactusInfo->mobile }}<br/>--}}
+                {{--@endif--}}
+                {{--@if($contactusInfo->email)--}}
+                    {{--<span class="glyphicon glyphicon-inbox"></span>--}}
+                    {{--<a href="mailto:{{ $contactusInfo->email }}"> {{ $contactusInfo->email }}</a> <br/>--}}
+                {{--@endif--}}
+                {{--@if(trim($contactusInfo->twitter_url))--}}
+                    {{--<span class="glyphicon glyphicon-globe"></span>--}}
+                    {{--<a href="http://twitter.com/{{ $contactusInfo->twitter_url }}">{{ trans('general.twitter') }}</a>--}}
+                    {{--<br/>--}}
+                {{--@endif--}}
+                {{--@if(trim($contactusInfo->instagram_url))--}}
+                    {{--<span class="glyphicon glyphicon-globe"></span>--}}
+                    {{--<a href="http://instagram.com/{{ $contactusInfo->instagram_url }}"> {{ $contactusInfo->instagram_url }}</a>--}}
+                    {{--<br/>--}}
+                {{--@endif--}}
+                {{--@if(trim($contactusInfo->youtube_channel))--}}
+                    {{--<span class="glyphicon glyphicon-globe"></span>--}}
+                    {{--<span><a href="http://youtube.com/{{ $contactusInfo->youtube_channel }}">--}}
+                            {{--{{ $contactusInfo->youtube_channel }}--}}
+                        {{--</a>--}}
+                        {{--</span>--}}
+                {{--@endif--}}
+            {{--</p>--}}
+        {{--</div>--}}
         <!-- col -->
 
         <div class="col-lg-3 col-xs-12 col-sm-12">

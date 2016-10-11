@@ -14,8 +14,8 @@
         @include('frontend.partials._random_avatars')
     @endif
 
-    @if(!is_null($post))
-        @include('frontend.partials._post_thumbnail')
+    @if(!is_null($posts))
+        @include('frontend.partials._post_slider')
     @endif
 @show
 

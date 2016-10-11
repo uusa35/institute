@@ -4,6 +4,7 @@ use App\Models\Gallery;
 use App\Models\Menu;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
         'contactus',
         'newsletter'
     ];
+
     /**
      * Run the database seeds.
      *
@@ -63,9 +65,9 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
         foreach ($tables as $table) {
-
-            DB::table($table)->truncate();
-
+            if (Schema::hasTable($table)) {
+                DB::table($table)->truncate();
+            }
         }
 
     }

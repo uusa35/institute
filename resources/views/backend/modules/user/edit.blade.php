@@ -20,64 +20,99 @@
                                placeholder="Last Name" value="{{ $user->last_name }}">
                     </div>
                     <div class="col-md-4">
-                        <label for="country" class="control-label">country</label>
-                        {{ Form::select('country', $countries, $user->country, ['class' => 'form-control']) }}
-
+                        <label for="membership_id" class="control-label">membership Id</label>
+                        <input id="membership_id" type="membership_id" class="form-control" name="membership_id"
+                               placeholder="Membership Id" value="{{ $user->membership_id }}">
                     </div>
                 </div>
+
+
                 <div class="form-group">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
+                        <label for="password" class="control-label">password</label>
+                        <input id="password" type="password" class="form-control" name="password">
+
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password-confirm" class="control-label">Password confirmation</label>
+                        <input id="password-confirm" type="password" class="form-control"
+                               name="password_confirmation">
+
+                        @if ($errors->has('password_confirmation'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
                         <label for="avatar" class="control-label">Avatar</label>
                         <input type="file" class="form-control" id="avatar"
                                name="avatar">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <label for="email" class="control-label">email</label>
                         <input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}">
                     </div>
-                    <div class="col-lg-4">
-                        <label for="type">User Type</label>
-                        <span></br>
-                            {{ Form::radio('subscribed',$user->subscribed ? 'paid' : 'free' ,['class' => 'form-control', 'required' => 'required']) }} paid
-                        </span></br>
-                        <span>
-                            {{ Form::radio('subscribed',$user->subscribed ? 'free' : 'paid' ,['class' => 'form-control', 'required' => 'required']) }} free
-                        </span>
+                    <div class="col-lg-2">
+                        <label for="type">User type</label></br>
+                        {{ Form::radio('type','IBH', $user->type == 'IBH' ? true : false, ['class' => '', 'required']) }}
+                        NLP </br>
+                        {{ Form::radio('type','IBNLP', $user->type == 'IBNLP' ? true : false, ['class' => '', 'required']) }}
+                        IBNLP </br>
+                        {{ Form::radio('type','user',$user->type == 'user' ? true : false, ['class' => '', 'required']) }}
+                        user </br>
+                    </div>
+                    <div class="col-lg-2">
+                        <label for="type">Gender</label></br>
+                        {{ Form::radio('gender','male', $user->gender == 'male' ? true : false, ['class' => '', 'required']) }}
+                        male
+                        </br>
+                        {{ Form::radio('gender','female',$user->gender  == 'female' ? true : false, ['class' => '', 'required']) }}
+                        female
+                    </div>
+
+                    <div class="col-lg-2">
+                        <label for="type">User Subscription</label></br>
+                        {{ Form::radio('subscribed','1', $user->subscribed ? true : false, ['class' => '', 'required']) }}
+                        paid
+                        </br>
+                        {{ Form::radio('subscribed',0, $user->subscribed ? true : false , ['class' => '', 'required']) }}
+                        free
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label for="video_link" class="control-label">Video Link</label>
                         <input type="text" class="form-control"
                                name="video_link" value="{{ $user->video_link }}">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label for="pdf" class="control-label">pdf</label>
                         <input type="file" class="form-control" name="pdf">
 
                     </div>
-                    <div class="col-lg-4">
-                        <label for="type">Active User</label>
-                        <span></br>
-                            {{ Form::radio('active',1 , $user->active,['class' => 'form-control', 'required' => 'required']) }} active
-                        </span></br>
-                        <span>
-                            {{ Form::radio('active',0  ,$user->active , ['class' => 'form-control', 'required' => 'required']) }} not active
-                        </span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-6">
+                    <div class="col-md-2">
                         <label for="mobile" class="control-label">mobile</label>
                         <input type="text" class="form-control"
                                name="mobile" value="{{ $user->mobile }}">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-2">
                         <label for="other_link" class="control-label">Other Link</label>
                         <input id="other_link" type="text" class="form-control" name="other_link">
 
+                    </div>
+                    <div class="col-md-2">
+                        <label for="country" class="control-label">country</label>
+                        {{ Form::select('country', $countries, $user->country, ['class' => 'form-control']) }}
                     </div>
                 </div>
 

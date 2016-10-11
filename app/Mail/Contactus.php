@@ -35,6 +35,8 @@ class Contactus extends Mailable
             'name' => $this->request['name'],
             'title' => $this->request['subject'],
             'body' => $this->request['content'],
+            'phone' => $this->request['phone'],
+            'country' => $this->request['country'],
             'email' => $this->request['email'],
             'address' => $this->contactusInfo->address
         ]);

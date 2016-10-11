@@ -31,9 +31,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        $countries = ['Kuwait', 'Egypt', 'UAE', 'Qatar', 'Bahrain', 'KSA'];
+        $countries = config('app.countriesList');
 
-        return view('backend.modules.user.create', compact('countries'));
+        $types = ['IBH', 'IBNLP', 'user'];
+
+        return view('backend.modules.user.create', compact('countries', 'types'));
     }
 
     /**
@@ -56,10 +58,13 @@ class UserController extends Controller
             $request->request->add(['avatar' => str_replace('public/', '', $imagePath)]);
         }
 
-        User::create($request->request->all());
+        $user = User::create($request->request->all());
 
-        return redirect()->back()->with('success', 'user created');
+        $user->update(['password' => bcrypt($request->password)]);
+
+        return redirect()->route('backend.user.index')->with('success', 'user created');
     }
+
     /**
      * Display the specified resource.
      *
@@ -83,9 +88,9 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        $countries = ['Kuwait', 'Egypt', 'UAE', 'Qatar', 'Bahrain', 'KSA'];
+        $countries = config('app.countriesList');
 
-        return view('backend.modules.user.edit', compact('user','countries'));
+        return view('backend.modules.user.edit', compact('user', 'countries'));
     }
 
     /**
@@ -95,7 +100,7 @@ class UserController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\UserUpdate $request, $id)
     {
         if ($request->file('pdf')) {
             $pdfPath = $request->pdf->store('public/uploads/pdfs');
@@ -108,6 +113,11 @@ class UserController extends Controller
         }
 
         User::find($id)->update($request->request->all());
+
+        if ($request->has('password')) {
+
+            User::find($id)->update(['password' => bcrypt($request->password)]);
+        }
 
         return redirect()->route('backend.user.index')->with('success', 'user updated');
     }

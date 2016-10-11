@@ -21,17 +21,19 @@ class CreateUsersTable extends Migration
             $table->string('avatar');
             $table->string('country')->nullable();
             $table->string('password');
-            $table->string('mobile')->default(0);
-            $table->string('description_ar')->default(0);
-            $table->string('description_en')->default(0);
-            $table->string('video_link')->default(0);
-            $table->string('other_link')->default(0);
+            $table->string('mobile');
+            $table->longText('description_ar');
+            $table->longText('description_en');
+            $table->string('video_link');
+            $table->string('other_link');
+            $table->string('membership_id')->index()->default(0);
+            $table->string('graduation_year');
             $table->text('pdf');
-            $table->string('type')->default('user');
+            $table->enum('type',['IBH', 'IBNLP','user'])->default('user');
             $table->enum('gender', ['male', 'female'])->default('male');
             $table->boolean('active')->default(1);
-            $table->enum('subscribed', ['free', 'paid'])->default('free');
-            $table->integer('membership_id')->unsigned()->index()->default(0);
+            $table->boolean('subscribed')->default(0);
+            $table->boolean('featured')->default(0);
 
 
             $table->rememberToken();

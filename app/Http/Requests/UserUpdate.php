@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserStore extends FormRequest
+class UserUpdate extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,6 +13,17 @@ class UserStore extends FormRequest
      */
     public function authorize()
     {
+        if (!auth()->user()->can('isAdmin')) {
+
+            if ($this->user()->id == auth()->user()->id) {
+
+                return true;
+
+            }
+
+            return false;
+
+        }
         return true;
     }
 
@@ -26,13 +37,12 @@ class UserStore extends FormRequest
         return [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'avatar' => 'required|mimes:jpeg,bmp,png',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:1|confirmed',
+            'avatar' => 'mimes:jpeg,bmp,png',
+            'email' => 'required|email|max:255',
             'pdf' => 'mimes:pdf',
             'video_link' => 'url',
             'other_link' => 'url',
-            'membership_id' => 'required|alpha_num|unique:users',
+            'membership_id' => 'required|alpha_num',
             'type' => 'required',
             'gender' => 'required'
         ];

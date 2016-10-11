@@ -45,25 +45,27 @@ class HomeController extends Controller
     {
         $sliders = Slider::all();
 
-        $post = Post::latest()->first();
+        $posts = Post::latest()->take(4)->get();
 
-        $users = User::subscribed()->take(12)->get()->shuffle();
+        $users = User::subscribed()->trainer()->take(12)->get()->shuffle();
 
-        return view('frontend.home', compact('sliders', 'users', 'post'));
+        return view('frontend.home', compact('sliders', 'users', 'posts'));
     }
 
     public function getContactus()
     {
         $contactusInfo = Contactus::first();
 
-        return view('frontend.pages.contactus', compact('contactusInfo'));
+        $countries = ['Kuwait', 'Egypt', 'UAE', 'Qatar', 'Bahrain', 'KSA'];
+
+        return view('frontend.pages.contactus', compact('contactusInfo', 'countries'));
     }
 
     public function postContactus(ContactusEmail $request)
     {
         $contactusInfo = Contactus::first();
 
-        $email = Mail::to(Contactus::first()->email)->queue(new \App\Mail\Contactus($request->all(),$contactusInfo));
+        $email = Mail::to(Contactus::first()->email)->queue(new \App\Mail\Contactus($request->all(), $contactusInfo));
 
         return redirect()->back()->with('success', 'email has been sent');
 
@@ -82,6 +84,22 @@ class HomeController extends Controller
         return redirect()->back()->with('error', 'error occured please try again later ...');
     }
 
+
+    public function getRegisterMembership()
+    {
+        return view('frontend.pages.register_membership');
+    }
+
+    public function postRegisterMembership()
+    {
+        $email = Mail::to(Contactus::first()->email)->queue(new \App\Mail\sendRegisterMembership(request()->all()));
+
+        if(!$email) {
+            return redirect()->back()->with('error', 'error ocured .. please try later');
+        }
+        return redirect()->back()->with('success', 'email has been sent');
+
+    }
 
     public function searchByName(Request $request)
     {

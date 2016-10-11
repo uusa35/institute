@@ -16,7 +16,25 @@ class UserController extends Controller
      */
     public function index()
     {
+        $title = request()->get('filter');
 
+        $countries = config('app.countriesList');
+
+        $featuredUsers = User::where('type',$title)->where('featured', true)->take(4)->get();
+
+        $q = User::query();
+
+        if(request()->get('filter')) {
+            $q->where('type','=',$title);
+        }
+
+        if(request()->get('country')) {
+            $q->where('country','=',request()->get('country'));
+        }
+
+        $users = $q->paginate(12);
+
+        return view('frontend.modules.user.index', compact('users','countries','featuredUsers'));
     }
 
     /**
@@ -32,7 +50,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -43,42 +61,63 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $user = User::find($id);
-        return view('frontend.modules.user.show',compact('user'));
+
+        return view('frontend.modules.user.profile', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $this->authorize('isOwner', $id);
+
+        $user = User::find($id);
+
+        $countries = config('app.countriesList');
+
+        return view('frontend.modules.user.edit', compact('user', 'countries'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\UserUpdate $request, $id)
     {
-        //
+
+        $this->authorize('isOwner', $id);
+
+        $user = User::find($id);
+
+        $user->update($request->request->all());
+
+        if ($request->has('password')) {
+
+            $user->update(['password' => bcrypt($request->password)]);
+
+        }
+
+        return redirect()->route('home')->with('success', 'profile updated succesfully');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
