@@ -40,6 +40,6 @@ class Album extends Model
 
     public function getCoverAttribute()
     {
-        return $this->gallery->first()->images->where('cover', true)->first()->image_url;
+        return $this->gallery->first()->images()->where('cover', true)->first()->image_url;
     }
 }

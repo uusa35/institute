@@ -14,7 +14,7 @@
         @include('frontend.partials._random_avatars')
     @endif
 
-    @if(!is_null($posts))
+    @if(!is_null($posts) && $posts->count() > 0)
         @include('frontend.partials._post_slider')
     @endif
 @show
