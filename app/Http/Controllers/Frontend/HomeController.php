@@ -2,16 +2,15 @@
 
 use App\Http\Requests\ContactusEmail;
 use App\Http\Requests\NewsletterPost;
+use App\Mail\MembershipRegisterRequest;
 use App\Models\Contactus;
 use App\Models\Newsletter;
 use App\Models\Post;
 use App\Models\Slider;
 use App\Models\User;
-use App\Notifications\sendRegisterMemberReuest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -94,7 +93,7 @@ class HomeController extends Controller
 
     public function postRegisterMembership()
     {
-        $email = Mail::to(config('mail.from.address'))->queue(new sendRegisterMemberReuest(request()->all()));
+        $email = Mail::to(config('mail.from.address'))->queue(new MembershipRegisterRequest(request()->all()));
 
         if (!$email) {
 
