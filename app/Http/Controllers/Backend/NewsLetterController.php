@@ -117,6 +117,9 @@ class NewsLetterController extends Controller
 
         }
 
+        Mail::to(config('mail.from.address'))
+            ->queue(new NewsLetterCampaign($subscirber, $request->title, $request->body));
+
         return redirect()->route('backend.newsletter.index')->with('success', 'campaign sent successfully to all subscribers');
     }
 }
