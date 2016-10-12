@@ -95,8 +95,8 @@
         <!-- Youtube  -->
         <div class="col-lg-3 col-xs-12 col-sm-12">
             <h3>{{ trans('general.youtube') }}</h3>
-            <p>
-                <iframe width="350" height="241"
+            <p style="max-width: 330px;">
+                <iframe width="330" height="241"
                         src="https://www.youtube.com/embed/{{ $contactusInfo->youtube_channel }}" frameborder="0"
                         allowfullscreen></iframe>
             </p>

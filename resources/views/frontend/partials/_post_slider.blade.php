@@ -3,6 +3,11 @@
     <div class="col-lg-6 col-lg-push-3  bg-article" style="min-height : 190px;">
         <div id="carousel-example-generic" class="carousel slide col-lg-10 col-lg-push-1" data-ride="carousel"
              style="">
+            <ol class="carousel-indicators" style="bottom: -30px;">
+                @foreach($posts as $post)
+                    <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->index == 0 ? 'active' : null }}"></li>
+                @endforeach
+            </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 @foreach($posts as $post)
@@ -20,10 +25,7 @@
                         </em>
                         <p class="text-justify" style="font-size: 12px;">
                             {!! str_limit($post->body ,120) !!}
-                            </br>
-                            {{ link_to_route('post.show',trans('general.more'), $post->id,['class' => 'btn btn-xs btn-info']) }}
-                            {{--<a class="btn btn-info btn-xs {{ (app()->getLocale() == 'ar' ? 'pull-left' : 'pull-right') }}"--}}
-                            {{--href="{{ route('post.show',$post->id) }}">{{ trans('general.more') }}</a>--}}
+                            &nbsp;&nbsp;{{ link_to_route('post.show',trans('general.more'), $post->id,['class' => 'btn btn-xs btn-info']) }}
                         </p>
                     </article>
                 @endforeach
