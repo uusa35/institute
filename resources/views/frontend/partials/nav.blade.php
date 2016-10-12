@@ -75,21 +75,16 @@
                                     class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ url('/lang/ar') }}"><i
-                                            class="fa fa-language"></i>{{ trans('general.arabic') }}
+                                            class="fa fa-language"></i> {{ trans('general.arabic') }}
                                 </a></li>
                             <li><a href="{{ url('/lang/en') }}"><i
-                                            class="fa fa-language"></i>{{ trans('general.english') }}
+                                            class="fa fa-language"></i> {{ trans('general.english') }}
                                 </a></li>
                         </ul>
                     </li>
                 </ul>
 
-                {{--<form class="navbar-form navbar-right">--}}
-                {{--<div class="form-group">--}}
-                {{--<input type="text" class="form-control input-sm" placeholder="Search">--}}
-                {{--</div>--}}
-                {{--<button type="submit" class="btn btn-sm btn-info">Submit</button>--}}
-                {{--</form>--}}
+
                 {{ Form::open(['action' => 'Frontend\HomeController@searchByName','method' => 'GET' , 'class' => 'navbar-form navbar-right', 'role' => 'search']) }}
                 <div class="form-group">
                     <input type="text" name="first_name" class="form-control input-sm" placeholder="Search"

@@ -95,11 +95,6 @@ class HomeController extends Controller
     {
         $email = Mail::to(config('mail.from.address'))->queue(new MembershipRegisterRequest(request()->all()));
 
-        if (!$email) {
-
-            return redirect()->back()->with('error', 'error ocured .. please try later');
-
-        }
         return redirect()->back()->with('success', 'email has been sent');
 
     }

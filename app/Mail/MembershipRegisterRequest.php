@@ -30,6 +30,7 @@ class MembershipRegisterRequest extends Mailable
     public function build()
     {
         return $this->view('emails.membership_register')->with([
+            'title' => trans('general.register'),
             'name' => $this->request['name'],
             'phone' => $this->request['phone'],
             'email' => $this->request['email'],

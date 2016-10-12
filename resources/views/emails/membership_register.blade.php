@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>  {{ trans('general.register') }} | {{ config('app.name') }} | {{ $title }} </title>
+    <title>  {{ trans('general.register') }} | {{ config('app.name') }}  </title>
     <style type="text/css">
         body {
             padding-top: 0 !important;
@@ -231,20 +231,17 @@
                                                                          style='text-align: center;'>
                                                                         <h1 style="font-size: 20px;">{{ ucfirst(trans('general.register')) }}</h1>
                                                                         <hr>
-                                                                        <h2 style="font-size: 20px;">{!! ucfirst($title) !!}</h2>
                                                                         <br>
                                                                         <h5>name : {!! $name !!} </h5>
-                                                                        <h5>title : {!! $title !!} </h5>
                                                                         <h5>phone : {!! $phone !!} </h5>
+                                                                        <h5>email : {!! $email !!} </h5>
                                                                         <h5>country : {!! $country !!} </h5>
-                                                                        <h5>email : {!! $email !!} </h5>
-                                                                        <h5>email : {!! $email !!} </h5>
-                                                                        <h5>email : {!! $email !!} </h5>
-                                                                        <h5>email : {!! $email !!} </h5>
-                                                                        <h5>email : {!! $email !!} </h5>
+                                                                        <h5>address : {!! $address !!} </h5>
+                                                                        <h5>civil id : {!! $id !!} </h5>
+                                                                        <h5>date attendance : {!! $date_attendance !!} </h5>
+                                                                        <h5>training center : {!! $training_center !!} </h5>
                                                                         </br>
 
-                                                                        <p class="pElement">{!! $subject !!}.</p>
                                                                         <hr/>
                                                                         <p>
                                                                             <small>{!! $name !!}
