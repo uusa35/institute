@@ -11,15 +11,17 @@ class MembershipRegisterRequest extends Mailable
 {
     use Queueable, SerializesModels;
     public $request;
+    public $address;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($request)
+    public function __construct($request,$address)
     {
         $this->request = $request;
+        $this->address = $address;
     }
 
     /**
@@ -35,7 +37,7 @@ class MembershipRegisterRequest extends Mailable
             'phone' => $this->request['phone'],
             'email' => $this->request['email'],
             'country' => $this->request['country'],
-            'address' => $this->request['address'],
+            'address' => $this->address,
             'id' => $this->request['id'],
             'date_attendance' => $this->request['date_attendance'],
             'training_center' => $this->request['training_center'],
