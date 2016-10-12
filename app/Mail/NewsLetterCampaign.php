@@ -5,6 +5,7 @@ namespace App\Mail;
 use App\Models\Newsletter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -37,7 +38,7 @@ class NewsLetterCampaign extends Mailable
     public function build()
     {
         // from by default the app email
-        return $this->view('emails.campaign')->with([
+        return $this->view('emails.campaign')->subject('Newsletter Campaign | ' . $this->title)->with([
             'title' => $this->title,
             'body' => $this->body,
             'name' => $this->subscriber->name,

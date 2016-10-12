@@ -20,8 +20,6 @@ elixir(mix => {
         .sass('custom-arabic.scss')
         .sass('custom-english.scss')
         .styles([
-
-                '../../../metronic_v4.5.6/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css',
                 '../../../metronic_v4.5.6/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css',
                 '../../../metronic_v4.5.6/theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css',
                 '../../../metronic_v4.5.6/theme/assets/layouts/layout/css/layout.min.css',
@@ -34,6 +32,9 @@ elixir(mix => {
             ],
             'public/css/backend.css'
         )
+        .styles([
+            '../../../metronic_v4.5.6/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css',
+        ],'public/css/font-awesome.css')
         .styles([
                 '../../../bower_components/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css'
             ],

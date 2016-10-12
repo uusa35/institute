@@ -30,6 +30,13 @@ class ViewComposers
         return $view->with(compact('contactusInfo'));
     }
 
+    public function getCountriesList(View $view) {
+
+        $countries = config('app.countriesList');
+
+        return $view->with(compact('countries'));
+    }
+
 
     public function getBreadCrumbs(View $view)
     {

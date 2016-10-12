@@ -131,7 +131,7 @@ class NewsLetterController extends Controller
 
         foreach ($subscirbers as $subscirber) {
 
-            Mail::to($subscirber)
+            Mail::to($subscirber->email)
                 ->queue(new NewsLetterCampaign($subscirber, $request->title, $request->body));
 
         }

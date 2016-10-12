@@ -16,7 +16,7 @@
 
         <div class="col-lg-12">
             {{-- CV + Youtube Video --}}
-            <div class="col-lg-9 col-xs-12">
+            <div class="col-lg-8 col-xs-12">
                 <h4>
                     {{trans('general.name') }} : {{ $user->name }}
                 </h4>
@@ -39,7 +39,7 @@
                 </p>
             </div>
             {{-- Porchore --}}
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="col-lg-12">
                     <img style="max-height:100px;" class="img-responsive"
                          src="{{ File::exists('storage/'.$user->avatar) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"

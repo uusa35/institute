@@ -28,6 +28,13 @@ class ComposerServiceProvider extends ServiceProvider
         ],
             'App\Core\Services\Views\ViewComposers@getContactusInfo');
 
+        // countries
+        view()->composer([
+            'frontend.modules.user.*',
+            'backend.modules.user.*',
+        ],
+            'App\Core\Services\Views\ViewComposers@getCountriesList');
+
         view()->composer('backend.partials._page_bar', 'App\Core\Services\Views\ViewComposers@getBreadCrumbs');
 
         view()->composer([

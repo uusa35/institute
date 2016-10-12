@@ -16,25 +16,29 @@ class UserController extends Controller
      */
     public function index()
     {
-        $title = request()->get('filter');
+        $title = request()->get('filter') ? request()->get('filter') : 'ibh';
 
-        $countries = config('app.countriesList');
+        $featuredTrainers = User::where($title, true)->featured()->trainer()->take(4)->get();
 
-        $featuredUsers = User::where('type',$title)->where('featured', true)->take(4)->get();
+        $featuredMasters = User::where($title, true)->featured()->master()->take(4)->get();
 
         $q = User::query();
 
-        if(request()->get('filter')) {
-            $q->where('type','=',$title);
+        if (request()->get('filter')) {
+
+            $q->where($title, true);
+
         }
 
-        if(request()->get('country')) {
-            $q->where('country','=',request()->get('country'));
+        if (request()->get('country')) {
+
+            $q->where('country', '=', request()->get('country'));
+
         }
 
         $users = $q->paginate(12);
 
-        return view('frontend.modules.user.index', compact('users','countries','featuredUsers'));
+        return view('frontend.modules.user.index', compact('users', 'featuredTrainers', 'featuredMasters'));
     }
 
     /**
@@ -83,9 +87,7 @@ class UserController extends Controller
 
         $user = User::find($id);
 
-        $countries = config('app.countriesList');
-
-        return view('frontend.modules.user.edit', compact('user', 'countries'));
+        return view('frontend.modules.user.edit', compact('user'));
     }
 
     /**

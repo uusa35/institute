@@ -29,8 +29,10 @@ class CreateUsersTable extends Migration
             $table->string('membership_id')->index()->default(0);
             $table->string('graduation_year');
             $table->text('pdf');
-            $table->enum('type',['IBH', 'IBNLP','user'])->default('user');
             $table->enum('gender', ['male', 'female'])->default('male');
+            $table->enum('type',['trainer', 'assistant','master'])->default('trainer');
+            $table->boolean('ibnlp')->default(0);
+            $table->boolean('ibh')->default(0);
             $table->boolean('active')->default(1);
             $table->boolean('subscribed')->default(0);
             $table->boolean('featured')->default(0);

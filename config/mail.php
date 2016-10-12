@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => 'info@ibh_ibnlp.com',
+        'address' => 'info@ibh-ibnlp.com',
         'name' => 'ibh & ibnlp team',
     ],
 

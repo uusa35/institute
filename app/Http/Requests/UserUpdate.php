@@ -39,6 +39,7 @@ class UserUpdate extends FormRequest
             'last_name' => 'required|max:255',
             'avatar' => 'mimes:jpeg,bmp,png',
             'email' => 'required|email|max:255',
+            'password' => 'sometimes|min:1|confirmed',
             'pdf' => 'mimes:pdf',
             'video_link' => 'url',
             'other_link' => 'url',

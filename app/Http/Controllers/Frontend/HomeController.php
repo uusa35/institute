@@ -67,7 +67,7 @@ class HomeController extends Controller
     {
         $contactusInfo = Contactus::first();
 
-        $email = Mail::to(Contactus::first()->email)->queue(new \App\Mail\Contactus($request->all(), $contactusInfo));
+        $email = Mail::to(config('mail.from.address'))->cc($contactusInfo->email)->queue(new \App\Mail\Contactus($request->all(), $contactusInfo));
 
         return redirect()->back()->with('success', 'email has been sent');
 
@@ -94,12 +94,12 @@ class HomeController extends Controller
 
     public function postRegisterMembership()
     {
-//        $email = Mail::to(Contactus::first()->email)->queue(new \App\Mail\sendRegisterMembership(request()->all()));
+        $email = Mail::to(config('mail.from.address'))->queue(new sendRegisterMemberReuest(request()->all()));
 
-        $email = Notification::send(User::first(),new sendRegisterMemberReuest(request()->all()));
+        if (!$email) {
 
-        if(!$email) {
             return redirect()->back()->with('error', 'error ocured .. please try later');
+
         }
         return redirect()->back()->with('success', 'email has been sent');
 

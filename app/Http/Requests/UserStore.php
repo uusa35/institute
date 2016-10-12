@@ -34,7 +34,12 @@ class UserStore extends FormRequest
             'other_link' => 'url',
             'membership_id' => 'required|alpha_num|unique:users',
             'type' => 'required',
-            'gender' => 'required'
+            'gender' => 'required',
+            'active' => 'required',
+            'ibh' => 'required',
+            'ibnlp' => 'required',
+            'featured' => 'required',
+            'subscribed' => 'required'
         ];
     }
 }

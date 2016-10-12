@@ -66,7 +66,32 @@ class User extends Authenticatable
 
     public function scopeTrainer($q)
     {
-        $q->where('type','!=', 'user');
+        $q->where('type','trainer');
+    }
+
+    public function scopeAssistant($q)
+    {
+        $q->where('type','assistant');
+    }
+
+    public function scopeMaster($q)
+    {
+        $q->where('type','master');
+    }
+
+    public function scopeIbh($q)
+    {
+        $q->where('ibh',true);
+    }
+
+    public function scopeIbnlp($q)
+    {
+        $q->where('ibh',true);
+    }
+
+    public function scopefeatured($q)
+    {
+        $q->where('featured',true);
     }
 
     public function getNameAttribute()

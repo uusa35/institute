@@ -31,11 +31,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        $countries = config('app.countriesList');
-
         $types = ['IBH', 'IBNLP', 'user'];
 
-        return view('backend.modules.user.create', compact('countries', 'types'));
+        return view('backend.modules.user.create', compact('types'));
     }
 
     /**
@@ -88,9 +86,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        $countries = config('app.countriesList');
-
-        return view('backend.modules.user.edit', compact('user', 'countries'));
+        return view('backend.modules.user.edit', compact('user'));
     }
 
     /**
@@ -112,12 +108,14 @@ class UserController extends Controller
             $request->request->add(['avatar' => str_replace('public/', '', $avatarPath)]);
         }
 
-        User::find($id)->update($request->request->all());
-
         if ($request->has('password')) {
 
             User::find($id)->update(['password' => bcrypt($request->password)]);
+
+            $request->request->remove('password_confirmation');
         }
+
+        User::find($id)->update($request->request->all());
 
         return redirect()->route('backend.user.index')->with('success', 'user updated');
     }
