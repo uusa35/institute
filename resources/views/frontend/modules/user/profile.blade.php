@@ -33,9 +33,11 @@
                     <i class="glyphicon glyphicon-paperclip"></i> &nbsp; {{ trans('general.pdf') }} :
                     &nbsp;<a href="{{ asset('storage/'.$user->pdf) }}">{{ trans('general.pdf') }}</a>
                     <br/>
-                    <i class="glyphicon glyphicon-globe"></i> &nbsp;{{ $user->other_link }}
+                    <i class="glyphicon glyphicon-globe"></i> &nbsp; <a href="{{ $user->other_link }}"
+                                                                        class="btn btn-xs">{{ trans('general.other_link') }}</a>
                     <br/>
-                    <i class="glyphicon glyphicon-play-circle"></i> &nbsp;{{ $user->video_link }}
+                    <i class="glyphicon glyphicon-play-circle"></i> &nbsp; <a href="{{ $user->video_link }}"
+                                                                              class="btn btn-xs">{{ trans('general.video') }}</a>
                 </p>
             </div>
             {{-- Porchore --}}
@@ -69,6 +71,14 @@
                         {!! $user->description !!}
                     </p>
                 </blockquote>
+                @if(!empty($user->video_link) >= 1)
+                    <div class="col-lg-12 hidden-sm text-center">
+                        <h5>{{ trans('general.video') }}</h5>
+                        <iframe width="350" height="241"
+                                src="{{ url($user->video_link) }}" frameborder="0"
+                                allowfullscreen></iframe>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

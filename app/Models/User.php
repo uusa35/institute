@@ -17,7 +17,30 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = [''];
+//    protected $guarded = [''];
+    protected $fillable = [
+        'email',
+        'first_name',
+        'last_name',
+        'avatar',
+        'country',
+        'password',
+        'mobile',
+        'description_ar',
+        'description_en',
+        'video_link',
+        'other_link',
+        'membership_id',
+        'graduation_year',
+        'pdf',
+        'gender',
+        'type',
+        'ibnlp',
+        'ibh',
+        'active',
+        'subscribed',
+        'featured',
+    ];
     public $localeStrings = ['description'];
 
     /**
@@ -66,32 +89,32 @@ class User extends Authenticatable
 
     public function scopeTrainer($q)
     {
-        $q->where('type','trainer');
+        $q->where('type', 'trainer');
     }
 
     public function scopeAssistant($q)
     {
-        $q->where('type','assistant');
+        $q->where('type', 'assistant');
     }
 
     public function scopeMaster($q)
     {
-        $q->where('type','master');
+        $q->where('type', 'master');
     }
 
     public function scopeIbh($q)
     {
-        $q->where('ibh',true);
+        $q->where('ibh', true);
     }
 
     public function scopeIbnlp($q)
     {
-        $q->where('ibh',true);
+        $q->where('ibh', true);
     }
 
     public function scopefeatured($q)
     {
-        $q->where('featured',true);
+        $q->where('featured', true);
     }
 
     public function getNameAttribute()
