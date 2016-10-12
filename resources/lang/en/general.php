@@ -44,4 +44,5 @@ return array (
   'twitter' => 'twitter',
   'users' => 'users',
   'youtube' => 'youtube',
+  'country' => 'country',
 );
