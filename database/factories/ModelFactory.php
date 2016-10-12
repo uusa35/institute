@@ -170,7 +170,7 @@ $factory->define(Contactus::class, function (Faker\Generator $faker) {
         'youtube_channel' => $faker->url,
         'phone' => $faker->phoneNumber,
         'mobile' => $faker->phoneNumber,
-        'email' => $faker->email,
+        'email' => 'info@ibh-ibnlp.com',
         'address_ar' => $faker->address,
         'address_en' => $faker->address,
         'latitude' => $faker->latitude,
