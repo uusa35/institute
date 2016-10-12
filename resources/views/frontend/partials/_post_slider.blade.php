@@ -3,11 +3,11 @@
     <div class="col-lg-6 col-lg-push-3  bg-article" style="min-height : 190px;">
         <div id="carousel-example-generic" class="carousel slide col-lg-10 col-lg-push-1" data-ride="carousel"
              style="">
-            <ol class="carousel-indicators" style="bottom: -30px;">
-                @foreach($posts as $post)
-                    <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->index == 0 ? 'active' : null }}"></li>
-                @endforeach
-            </ol>
+            {{--<ol class="carousel-indicators" style="bottom: -30px;">--}}
+                {{--@foreach($posts as $post)--}}
+                    {{--<li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->index == 0 ? 'active' : null }}"></li>--}}
+                {{--@endforeach--}}
+            {{--</ol>--}}
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 @foreach($posts as $post)
@@ -33,14 +33,14 @@
 
 
             <!-- Controls -->
-            <a class="left carousel-control postCarousel" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control postCarousel" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            {{--<a class="left carousel-control postCarousel" href="#carousel-example-generic" role="button" data-slide="prev">--}}
+                {{--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>--}}
+                {{--<span class="sr-only">Previous</span>--}}
+            {{--</a>--}}
+            {{--<a class="right carousel-control postCarousel" href="#carousel-example-generic" role="button" data-slide="next">--}}
+                {{--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>--}}
+                {{--<span class="sr-only">Next</span>--}}
+            {{--</a>--}}
         </div>
     </div>
 
