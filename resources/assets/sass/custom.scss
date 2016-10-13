@@ -10,9 +10,11 @@ body {
   align-items: center;
   padding: 0px !important;
 }
+
 .navbar-header {
-  max-width:310px;
+  max-width: 310px;
 }
+
 nav:first-child {
   background-color: darkgray !important;
 }
@@ -31,19 +33,19 @@ nav:first-child {
   min-height: 80px;
 }
 
-.nav>li>a {
-  padding-right : 3px !important;
-  padding-left : 3px !important;
+.nav > li > a {
+  padding-right: 3px !important;
+  padding-left: 3px !important;
   font-weight: bold;
 }
 
-.navbar>.container-fluid {
+.navbar > .container-fluid {
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
 }
-.mainNav {
 
+.mainNav {
 
 }
 
@@ -53,8 +55,7 @@ nav:first-child {
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus
-.navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover , .navbar-default .navbar-nav > .open > a , .dropdown-menu > li > a:hover
-{
+.navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a, .dropdown-menu > li > a:hover {
   color: white !important;
   background-color: #4f89ac !important;
 }
@@ -80,7 +81,7 @@ end of nav
   background: url("../images/bg_circle.png") no-repeat;
   background-position: top;
   background-size: 110% 100%;
-  padding-top : 30px;
+  padding-top: 30px;
 }
 
 .bg-article {
@@ -88,13 +89,18 @@ end of nav
   margin-bottom: 25px;
   background: url("../images/bg_article.png") no-repeat center center;
   //background-size: 120% 120%;
-  background-size: cover;
-  min-height : 190px;
+  background-size: 110% 150%;
+  min-height: 190px;
 }
+
+.articleElement {
+  min-height: 150px;
+}
+
 .postCarousel {
-  background-color : transparent !important;
+  background-color: transparent !important;
   background-image: none !important;
- color : #0b3045;
+  color: #0b3045;
 }
 
 .carousel-inner {
@@ -227,6 +233,7 @@ end of nav
 }
 
 .footer {
+  width: 100%;
   color: white;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#242424+0,242424+50,242424+53,4c4c4c+100 */
   background: #242424; /* Old browsers */

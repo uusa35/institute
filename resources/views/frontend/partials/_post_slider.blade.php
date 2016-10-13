@@ -12,8 +12,8 @@
             <div class="carousel-inner" role="listbox">
                 @foreach($posts as $post)
 
-                    <article class="item {{ ($loop->first) ? 'active' : null }}">
-                        <h5><a href="{{ route('post.show',$post->id) }}">{{ $post->title }}</a></h5>
+                    <article class="item {{ ($loop->first) ? 'active' : null }} articleElement">
+                        <h5 text="text-center"><a href="{{ route('post.show',$post->id) }}">{{ $post->title }}</a></h5>
                         <em class="hidden-sm hidden-xs">{{ trans('general.created_at') }} <a
                                     href="{{ route('post.show',$post->id) }}" target="_blank">
                                 {{ $post->created_at->diffForHumans() }}
@@ -23,7 +23,7 @@
                                  class="img-rounded img-responsive {!! (app()->getLocale() == 'ar' ? 'pull-right' : 'pull-left') !!}"
                                  style="max-width: 100px; padding : 10px;">
                         </em>
-                        <p class="text-justify" style="font-size: 12px;">
+                        <p class="text-justify" style="font-size: 12px; !important;">
                             {!! str_limit($post->body ,120) !!}
                             &nbsp;&nbsp;{{ link_to_route('post.show',trans('general.more'), $post->id,['class' => 'btn btn-xs btn-info']) }}
                         </p>

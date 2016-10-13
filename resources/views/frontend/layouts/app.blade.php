@@ -27,14 +27,14 @@
     @section('body')
         <div class="row">
             @yield('content')
+            @show
         </div>
-    @show
-    @section('footer')
-        @include('frontend.partials.footer')
-    @show
-    @section('scripts')
-        @include('frontend.partials.scripts')
-    @show
 </div>
+@section('footer')
+    @include('frontend.partials.footer')
+@show
+@section('scripts')
+    @include('frontend.partials.scripts')
+@show
 </body>
 </html>

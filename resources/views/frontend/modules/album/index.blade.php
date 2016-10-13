@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="col-lg-10 col-lg-push-1">
+    <div class="col-xs-10 col-xs-push-1">
         <h1>{{ trans('general.albums') }}</h1>
 
         @if($albums->count() > 0)
@@ -33,7 +33,7 @@
             <div class="alert alert-warning"><p>{{ trans('general.no_albums') }}</p></div>
         @endif
     </div>
-    <div class="col-lg-6 col-lg-push-3 text-center">
+    <div class="col-xs-12 text-center">
         {{ $albums->links() }}
     </div>
 @endsection

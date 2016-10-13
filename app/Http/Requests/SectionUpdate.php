@@ -31,6 +31,7 @@ class SectionUpdate extends FormRequest
             'image' => 'mimes:jpeg,bmp,png',
             'page_id' => 'required',
             'type' => 'required',
+            'pdf' => 'mimes:pdf'
         ];
     }
 }

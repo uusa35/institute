@@ -25,18 +25,23 @@
 
                 <!-- File Button http://getbootstrap.com/css/#forms -->
                 <div class="form-group">
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <label for="image" class="control-label"> image</label>
                         <input type="file" name="image" name="image">
                     </div>
 
+                    <div class="col-md-3" id="pdfEelement" style="display: none;">
+                        <label for="pdf" class="control-label">pdf</label>
+                        <input type="file" class="form-control" name="pdf">
+                    </div>
+
                     <div class="col-lg-6">
                         <label for="type">section type</label></br>
-                        {{ Form::radio('type','a',$section->type == 'a' ? true : false, ['class' => '', 'required']) }}
+                        {{ Form::radio('type','a',$section->type == 'a' ? true : false, ['class' => 'sections', 'required']) }}
                         section A &nbsp;
-                        {{ Form::radio('type','b',$section->type == 'b' ? true : false, ['class' => '', 'required']) }}
+                        {{ Form::radio('type','b',$section->type == 'b' ? true : false, ['class' => $section->type == 'b' ? 'activeSection' : null , 'required','id' => 'sectionB']) }}
                         section B &nbsp;
-                        {{ Form::radio('type','c',$section->type == 'c' ? true : false, ['class' => '', 'required']) }}
+                        {{ Form::radio('type','c',$section->type == 'c' ? true : false, ['class' => 'sections', 'required']) }}
                         section C &nbsp;
                         </span>
                     </div>
@@ -76,3 +81,4 @@
         </div>
     </div>
 @endsection
+

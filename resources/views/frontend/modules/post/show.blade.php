@@ -1,7 +1,6 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="row">
         <div class="col-lg-10 col-lg-push-1">
             <h1>{{ $post->title }}</h1>
             <hr>
@@ -21,7 +20,6 @@
                 </div>
             @endif
         </div>
-    </div>
 @endsection
 
 

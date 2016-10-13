@@ -46,6 +46,11 @@ class SectionController extends Controller
             $request->request->add(['image' => str_replace('public/', '', $imagePath)]);
         }
 
+        if ($request->file('pdf')) {
+            $pdfPath = $request->pdf->store('public/uploads/pdfs');
+            $request->request->add(['pdf' => str_replace('public/', '', $pdfPath)]);
+        }
+
         Section::create($request->request->all());
 
         return redirect()->route('backend.page.index', $request->page_id)->with('success', 'section created');
@@ -89,6 +94,11 @@ class SectionController extends Controller
         if ($request->file('image')) {
             $imagePath = $request->image->store('public/uploads/images');
             $request->request->add(['image' => str_replace('public/', '', $imagePath)]);
+        }
+
+        if ($request->file('pdf')) {
+            $pdfPath = $request->pdf->store('public/uploads/pdfs');
+            $request->request->add(['pdf' => str_replace('public/', '', $pdfPath)]);
         }
 
         Section::find($id)->update($request->request->all());
