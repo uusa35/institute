@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Backend;
 use App\Mail\NewsLetterCampaign;
 use App\Models\Newsletter;
 use Illuminate\Support\Facades\Mail;
-use Spatie\Newsletter\Newsletter as MailChimpNewsletter;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Notifications\Notifiable;

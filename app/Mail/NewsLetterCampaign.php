@@ -5,9 +5,7 @@ namespace App\Mail;
 use App\Models\Newsletter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class NewsLetterCampaign extends Mailable
 {

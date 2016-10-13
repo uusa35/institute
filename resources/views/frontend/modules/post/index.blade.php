@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="row bootstrap snippet">
+    <div class="col-lg-12 bootstrap snippet">
         <div class="col-lg-10 col-lg-push-1">
             <h1>{{ trans('general.posts') }}</h1>
             <hr>
