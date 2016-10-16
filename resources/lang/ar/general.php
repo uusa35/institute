@@ -9,6 +9,7 @@ return array (
   'name' => 'الاسم',
   'country' => 'الدولة',
   'email' => 'البريد',
+  'address' => 'العنوان',
   'phone' => 'جوال',
   'id' => 'رقم البطاقة',
   'date_of_attendance' => 'موعد الحضور',
