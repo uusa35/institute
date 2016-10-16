@@ -84,7 +84,7 @@ class User extends Authenticatable
 
     public function scopeSubscribed($q)
     {
-        $q->where('subscribed', 'paid');
+        $q->where('subscribed', true);
     }
 
     public function scopeTrainer($q)
