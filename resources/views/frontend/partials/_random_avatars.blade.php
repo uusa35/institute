@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-8 col-lg-push-2" style="margin-bottom: 30px;">
-        <h3>{{ trans('general.random_users') }}</h3>
+        <h3>{{ ucwords(trans('general.random_users')) }}</h3>
         <hr>
         @foreach($users->chunk(6) as $usersSet)
             @foreach($usersSet as $user )
