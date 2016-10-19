@@ -66,4 +66,5 @@ return array (
   'featured_users' => 'featured users',
   'graduation_year' => 'graduation year',
   'membership_id' => 'membership id',
+  'articles' => 'articles',
 );

@@ -66,4 +66,5 @@ return array (
   array (
     'no_albums' => 'لا يوجد معرض للصور الآن ..',
   ),
+  'articles' => 'المقالات',
 );
