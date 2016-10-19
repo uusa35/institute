@@ -10,8 +10,8 @@
             {{--</ol>--}}
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
+                <h4>{{ trans('general.articles') }}</h4>
                 @foreach($posts as $post)
-
                     <article class="item {{ ($loop->first) ? 'active' : null }} articleElement">
                         <h5 text="text-center"><a href="{{ route('post.show',$post->id) }}">{{ $post->title }}</a></h5>
                         <em class="hidden-sm hidden-xs">{{ trans('general.created_at') }} <a

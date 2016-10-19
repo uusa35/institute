@@ -34,7 +34,7 @@
                         @if($item->pages->count() > 1)
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">{{ $item->name }} <span
+                                   aria-haspopup="true" aria-expanded="false">{{ ucwords($item->name) }} <span
                                             class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     @foreach($item->pages as $page)
@@ -42,43 +42,43 @@
                                             <li role="separator" class="divider"></li>
                                         @endif
                                         <li>
-                                            <a href="{{ route('page.show',$page->id) }}">{{ $page->title }}</a>
+                                            <a href="{{ route('page.show',$page->id) }}">{{ ucwords($page->title) }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
                             </li>
                         @else
-                            <li>
-                                <a href="{{ route('page.show',$item->pages->first()->id) }}">{{ $item->pages->first()->title }}</a>
+                            <li>|
+                                <a href="{{ route('page.show',$item->pages->first()->id) }}">{{ ucwords($item->pages->first()->title) }}</a>
                             </li>
                         @endif
                     @endforeach
                     <li class="{{ str_is('membership*',Route::currentRouteName()) ? 'active' : null }}">
-                        <a href="{{ route('register.membership') }}">{{ trans('general.register_membership') }}
+                        <a href="{{ route('register.membership') }}">{{ ucwords(trans('general.register_membership')) }}
                         </a>
                     </li>
                     <li class="{{ str_is('album*',Route::currentRouteName()) ? 'active' : null }}">
-                        <a href="{{ route('album.index') }}">{{ trans('general.albums') }}
+                        <a href="{{ route('album.index') }}">{{ ucwords(trans('general.albums')) }}
                         </a>
                     </li>
                     <li class="{{ str_is('post*',Route::currentRouteName()) ? 'active' : null }}">
-                        <a href="{{ route('post.index') }}">{{ trans('general.posts') }}
+                        <a href="{{ route('post.index') }}">{{ ucwords(trans('general.posts')) }}
                         </a>
                     </li>
                     <li class="{{ str_is('contactus*',Route::currentRouteName()) ? 'active' : null }}">
-                        <a href="{{ url('/contactus') }}">{{ trans('general.contactus') }}
+                        <a href="{{ url('/contactus') }}">{{ ucwords(trans('general.contactus')) }}
                         </a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false">{!! trans('general.language') !!} <span
+                           aria-haspopup="true" aria-expanded="false">{!! ucwords(trans('general.language')) !!} <span
                                     class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ url('/lang/ar') }}"><i
-                                            class="fa fa-language"></i> {{ trans('general.arabic') }}
+                                            class="fa fa-language"></i> {{ ucwords(trans('general.arabic')) }}
                                 </a></li>
                             <li><a href="{{ url('/lang/en') }}"><i
-                                            class="fa fa-language"></i> {{ trans('general.english') }}
+                                            class="fa fa-language"></i> {{ ucwords(trans('general.english')) }}
                                 </a></li>
                         </ul>
                     </li>
@@ -90,7 +90,7 @@
                     <input type="text" name="first_name" class="form-control input-sm" placeholder="Search"
                            style="max-width:100px;">
                 </div>
-                <button type="submit" class="btn btn-xs btn-info">{!! trans('general.submit') !!}</button>
+                <button type="submit" class="btn btn-xs btn-info">{!! camel_case(trans('general.submit')) !!}</button>
                 {{ Form::close() }}
                         <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

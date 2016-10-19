@@ -106,7 +106,7 @@
     <!-- col -->
     <div class="col-lg-12 text-center text-default">
         {{ trans('messages.allrights') }} - {{ trans('messages.designed_developed') }} -
-        <a href="http://ideasowners.net">{{ trans('general.ideasowners') }}</a>
+        {{ trans('general.ideasowners') }}
         </br>
     </div>
 </div>
