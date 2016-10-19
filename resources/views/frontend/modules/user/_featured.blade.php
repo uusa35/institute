@@ -1,7 +1,11 @@
 <div class="col-lg-6">
     <div class="panel panel-info">
         <div class="panel-heading">
-            {{ trans('general.featured_users') }}
+            @if($type === 'featured')
+                {{ trans('general.featured_users') }}
+            @elseif($type === 'master')
+                {{ trans('general.master_users') }}
+            @endif
         </div>
         <div class="panel-body"
              style="display: flex; justify-content: space-around; align-content: center; margin-top: auto;">

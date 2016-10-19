@@ -10,7 +10,7 @@
         </div>
         <div class="col-lg-6">
             <div class="caption col-lg-12">
-                <h3 class="text-center">{{ trans('general.welcome_message_title') }}</h3>
+                <h3 class="text-center">{{ ucwords(trans('general.welcome_message_title')) }}</h3>
                 <hr>
                 <p class="text-justify">
                     {{ trans('general.welcome_message') }}
@@ -53,7 +53,7 @@
         <div class="col-lg-3">
             <div class="text-center"
                  style="display: flex; align-items: center; align-content: center; flex-direction: column">
-                <h5 class="text-center"><b>{{ trans('general.search_tow') }}</b></h5>
+                <h5 class="text-center"><b>{{ ucwords(trans('general.search_tow')) }}</b></h5>
                 <a href="{{ route('user.index',['filter' => 'ibnlp']) }}">
                     <img src="{{ asset('/images/IBNLP.png') }}" alt="..." class="img-responsive">
                 </a>

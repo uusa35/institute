@@ -26,8 +26,8 @@
     </div>
     @if(isset($featuredTrainers,$featuredMasters))
         <div class="col-lg-10 col-lg-push-1">
-            @include('frontend.modules.user._featured',['elements' => $featuredTrainers])
-            @include('frontend.modules.user._featured',['elements' => $featuredMasters])
+            @include('frontend.modules.user._featured',['elements' => $featuredTrainers, 'type' => 'featured'])
+            @include('frontend.modules.user._featured',['elements' => $featuredMasters , 'type' => 'master'])
         </div>
     @endif
     <div class="col-lg-10 col-lg-push-1">
