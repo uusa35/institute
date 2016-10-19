@@ -35,7 +35,7 @@ return array (
   'no_users' => 'no users',
   'pdf' => 'pdf',
   'posts' => 'posts',
-  'random_users' => 'random users',
+  'random_users' => 'training sapperton package',
   'search_by_id' => 'search by membership',
   'search_by_name' => 'search by name',
   'search_tow' => 'search by NLP trainers',
