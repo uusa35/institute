@@ -43,7 +43,7 @@ return array (
   'submit' => 'بحث',
   'dashboard' => 'إدارى المحتوى',
   'profile' => 'السيرة الذاتية',
-  'random_users' => 'الباقة التدريبية',
+  'random_users' => 'باقة الدعم التدريبية',
   'no_posts' => 'لا يوجد مقالات ...',
   'no_albums' => 'لا يوجد صور',
   'gallery' => 'المعرض',
