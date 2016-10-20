@@ -61,10 +61,11 @@ return array (
   'description' => 'التوصيف',
   'user_profile' => 'بطاقة تعريفية',
   'member_sience' => 'عضو منذ',
-  'featured_users' => 'أعضاء مميزين (مدربين الماستر)',
+  'featured_users' => 'أعضاء مميزين',
   'message' => 
   array (
     'no_albums' => 'لا يوجد معرض للصور الآن ..',
   ),
   'articles' => 'المقالات',
+  'master_users' => 'مدربين الماستر',
 );

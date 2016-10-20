@@ -67,4 +67,5 @@ return array (
   'graduation_year' => 'graduation year',
   'membership_id' => 'membership id',
   'articles' => 'articles',
+  'master_users' => 'master trainers',
 );
