@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app'))
+@extends('frontend.layouts.app')
 
 @section('content'))
 <div class="col-lg-8 col-lg-push-2">
@@ -44,7 +44,7 @@
                     {{ Form::text('date_attendance',null, ['class' => 'form-control']) }}
                 </div>
                 <div class="col-lg-4">
-                    <label for="graduation_year">{{ ucwords(trans('trans.graduation_year')) }}</label>
+                    <label for="graduation_year">{{ ucwords(trans('general.graduation_year')) }}</label>
                     {{ Form::text('graduation_year',null, ['class' => 'form-control','required']) }}
                 </div>
                 <div class="col-lg-4">
