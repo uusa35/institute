@@ -1,6 +1,6 @@
 <div class="row bg-circle">
 
-    <div class="col-lg-6 col-lg-push-3  bg-article" style="min-height : 190px;">
+    <div class="col-lg-6 col-lg-push-3  bg-article" style="min-height : 190px; background: url('../images/articles_{{ app()->getLocale() }}.png') no-repeat center center;">
         <div id="carousel-example-generic" class="carousel slide col-lg-10 col-lg-push-1" data-ride="carousel"
              style="">
             {{--<ol class="carousel-indicators" style="bottom: -30px;">--}}
