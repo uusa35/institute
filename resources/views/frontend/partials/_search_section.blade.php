@@ -1,10 +1,11 @@
 <div class="row">
-    <div class="col-lg-12 logos_bg">
+    <div class="col-lg-12 logos_bg"
+         style="background: url({{ asset('/images/logos_bg_'.app()->getLocale().'.png') }}) no-repeat center center;">
         <div class="col-lg-3">
             <div class="text-center searchMainTitle">
                 <h5 class="text-center"><b>{{ trans('general.search_one') }}</b></h5>
                 <a href="{{ route('user.index',['filter' => 'ibh']) }}">
-                    <img src="{{ asset('/images/IBH.png') }}" alt="..." class="img-responsive">
+                    <img src="{{ asset('/images/IBH_'.app()->getLocale().'.png') }}" alt="..." class="img-responsive">
                 </a>
             </div>
         </div>
@@ -55,7 +56,7 @@
                  style="display: flex; align-items: center; align-content: center; flex-direction: column">
                 <h5 class="text-center"><b>{{ ucwords(trans('general.search_tow')) }}</b></h5>
                 <a href="{{ route('user.index',['filter' => 'ibnlp']) }}">
-                    <img src="{{ asset('/images/IBNLP.png') }}" alt="..." class="img-responsive">
+                    <img src="{{ asset('/images/IBNLP_'.app()->getLocale().'.png') }}" alt="..." class="img-responsive">
                 </a>
             </div>
         </div>
