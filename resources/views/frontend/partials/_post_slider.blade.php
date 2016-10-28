@@ -1,4 +1,4 @@
-<div class="row bg-circle">
+<div class="row bg-circle hidden-xs hidden-sm">
     <div class="col-xs-6 col-xs-push-3 bg-article"
          style="background: url('../images/articles_{{ app()->getLocale() }}.png') no-repeat center center;">
         <div id="carousel-example-generic" class="carousel slide col-lg-10 col-lg-push-1" data-ride="carousel"
