@@ -3,13 +3,23 @@
 @section('content')
     <div class="col-lg-8 col-lg-push-2">
         <div class="col-lg-12">
-            <div class="col-lg-2">
-                <img style="max-height:100px;" class="img-resopnsive"
-                     src="{{ asset('images/'.$user->type.'.png')  }}" alt="{{ $user->type }}">
-            </div>
-            <div class="col-lg-10">
+            <div class="col-lg-8 text-center">
                 <h1 class="text-center">{{ trans('general.trainer_card') }} {{ $user->type }}</h1>
                 <hr>
+            </div>
+            <div class="col-lg-4">
+                <div class="col-lg-6">
+                    @if($user->ibh)
+                        <img style="max-height:100px;" class="img-resopnsive"
+                             src="{{ asset('images/IBH.png')  }}" alt="{{ $user->type }}">
+                    @endif
+                </div>
+                <div class="col-lg-6">
+                    @if($user->ibnlp)
+                        <img style="max-height:100px;" class="img-resopnsive"
+                             src="{{ asset('images/IBNLP.png')  }}" alt="{{ $user->type }}">
+                    @endif
+                </div>
             </div>
         </div>
 

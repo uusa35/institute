@@ -86,15 +86,16 @@ end of nav
 }
 
 .bg-article {
-  margin: 15px;
-  margin-bottom: 25px;
-  //background-size: 120% 120%;
-  background-size: 110% 150%;
-  min-height: 190px;
+  //margin: 15px;
+  //margin-bottom: 25px;
+  background-position: center;
+  background-size: contain;
+  //background-size: 110% 150%;
+  min-height: 200px;
 }
 
 .articleElement {
-  min-height: 150px;
+  min-height: 200px;
 }
 
 .postCarousel {
