@@ -1,11 +1,14 @@
 @extends('frontend.layouts.app')
 
 @section('content')
+    <div class="col-xs-12" style="display: flex; align-items: center; justify-content: center;">
+            <img src="{{ asset('images/'.strtoupper(request()->get('filter')).'.png') }}" alt="" class="img-responsive" style="width: 120px;">
+    </div>
     <div class="col-lg-10 col-lg-push-1 userMainHeader">
-        <div class="col-lg-4">
+        <div class="col-lg-8">
             <h1>{{ trans('general.users').' '.(strtoupper(request()->get('filter'))) }}</h1>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-4">
             {{ Form::open(['route' => 'user.index','method' => 'GET','class' => 'form-horizontal']) }}
             {{ Form::hidden('filter',request()->get('filter')) }}
             <div class="input-group">
@@ -16,9 +19,6 @@
                 </span>
             </div><!-- /input-group -->
             {{ Form::close() }}
-        </div>
-        <div class="col-lg-1">
-            <img src="{{ asset('images/'.strtoupper(request()->get('filter')).'.png') }}" alt="" class="img-responsive">
         </div>
     </div>
     <div class="col-lg-10 col-lg-push-1">
