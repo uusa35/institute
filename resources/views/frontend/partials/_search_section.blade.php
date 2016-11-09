@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12 logos_bg"
          style="background: url({{ asset('/images/logos_bg_'.app()->getLocale().'.png') }}) no-repeat center center;">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-12 ibhElement">
             <div class="text-center searchMainTitle">
                 <h5 class="text-center"><b>{{ trans('general.search_one') }}</b></h5>
                 <a href="{{ route('user.index',['filter' => 'ibh']) }}">
@@ -9,7 +9,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-xs-12 welcomeElement">
             <div class="caption col-lg-12">
                 <h3 class="text-center">{{ ucwords(trans('general.welcome_message_title')) }}</h3>
                 <hr>
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-12 ibnlpElement">
             <div class="text-center"
                  style="display: flex; align-items: center; align-content: center; flex-direction: column">
                 <h5 class="text-center"><b>{{ ucwords(trans('general.search_tow')) }}</b></h5>

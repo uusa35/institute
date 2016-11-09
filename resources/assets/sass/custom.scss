@@ -3,7 +3,7 @@ body {
   background: url("../images/bg_6.jpg") repeat-y !important;
   -webkit-background-size: 100%;
   background-size: 100%;
-  color : grey;
+  color: grey;
 }
 
 .navbar-brand {
@@ -121,6 +121,35 @@ end of nav
   -moz-background-size: contain;
   -o-background-size: contain;
   background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  .ibhElement {
+    display: flex;
+    order: 3;
+    justify-content: center;
+    align-items: center;
+  }
+  .ibnlpElement {
+    display: flex;
+    order: 4;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcomeElement {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 }
 
 .gallery-thumb {
