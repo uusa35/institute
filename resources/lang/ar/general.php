@@ -31,7 +31,7 @@ return array (
   'social_media' => 'شبكات التواصل',
   'subscribe' => 'اشترك',
   'youtube' => 'يو تيوب',
-  'ideasowners' => 'أصحاب أفكار',
+  'ideasowners' => 'أصحاب الأفكار',
   'created_at' => 'منذ',
   'more' => 'مزيد',
   'home' => 'الرئيسية',
