@@ -5,6 +5,13 @@
         {{--logo--}}
         <div class="navbar-header">
 
+            <!-- Branding Image -->
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="{{ File::exists('storage/'.$contactusInfo->logo) ? asset('storage/'.$contactusInfo->logo) : 'http://placehold.it/130x75&text=logo&color=gold' }}"
+                     alt="{{ $contactusInfo->company_name }}"
+                     class="img-responsive img-rounded"/>
+            </a>
+
             <!-- Collapsed Hamburger -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#app-navbar-collapse">
@@ -14,13 +21,6 @@
                 <span class="icon-bar"></span>
             </button>
 
-
-            <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ File::exists('storage/'.$contactusInfo->logo) ? asset('storage/'.$contactusInfo->logo) : 'http://placehold.it/130x75&text=logo&color=gold' }}"
-                     alt="{{ $contactusInfo->company_name }}"
-                     class="img-responsive img-rounded"/>
-            </a>
         </div>
 
         <div class="nav-top-frontend">

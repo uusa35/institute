@@ -1,6 +1,6 @@
 @if($users->count() > 0)
     @foreach($users as $user)
-        <div class="col-lg-3" style="height : 415px;">
+        <div class="col-lg-3 col-xs-6">
             @if(request()->has('filter'))
                 <div class="col-lg-10 col-lg-push-1">
                     <a href="{{ route('user.show',$user->id) }}" class="">
@@ -35,7 +35,7 @@
             @endif
         </div>
     @endforeach
-    <div class="col-lg-12 text-center">
+    <div class="col-xs-12 text-center">
         {{ $users->setPath('?filter='.request()->get('filter')) }}
     </div>
 @else

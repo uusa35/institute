@@ -5,10 +5,10 @@
             <img src="{{ asset('images/'.strtoupper(request()->get('filter')).'.png') }}" alt="" class="img-responsive" style="width: 120px;">
     </div>
     <div class="col-lg-10 col-lg-push-1 userMainHeader">
-        <div class="col-lg-8">
-            <h1>{{ trans('general.users').' '.(strtoupper(request()->get('filter'))) }}</h1>
+        <div class="col-xs-7">
+            <h3>{{ trans('general.users').' '.(strtoupper(request()->get('filter'))) }}</h3>
         </div>
-        <div class="col-lg-4">
+        <div class="col-xs-5">
             {{ Form::open(['route' => 'user.index','method' => 'GET','class' => 'form-horizontal']) }}
             {{ Form::hidden('filter',request()->get('filter')) }}
             <div class="input-group">
