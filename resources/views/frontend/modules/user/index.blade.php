@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-xs-12" style="display: flex; align-items: center; justify-content: center;">
-            <img src="{{ asset('images/'.strtoupper(request()->get('filter')).'.png') }}" alt="" class="img-responsive" style="width: 120px;">
+            <img src="{{ asset('images/'.strtoupper(request()->get('filter')).'.png') }}" alt="" class="img-responsive" style="width: 120px; margin-top: 5px;">
     </div>
     <div class="col-lg-10 col-lg-push-1 userMainHeader">
         <div class="col-xs-7">
