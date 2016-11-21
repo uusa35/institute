@@ -22,7 +22,6 @@ nav:first-child {
 
 .navbar > .container-fluid {
   display: flex;
-  flex-direction: column;
   justify-items: center;
   align-items: center;
 }
@@ -44,7 +43,7 @@ nav:first-child {
 .navbar > .container-fluid {
   align-items: center;
   justify-content: space-between;
-  flex-direction: row-reverse;
+  flex-direction: column;
 }
 
 .mainNav {
