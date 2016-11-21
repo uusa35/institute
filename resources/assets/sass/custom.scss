@@ -43,7 +43,7 @@ nav:first-child {
 .navbar > .container-fluid {
   align-items: center;
   justify-content: space-between;
-  flex-direction: column;
+  flex-direction: row-reverse;
 }
 
 .mainNav {
@@ -127,6 +127,11 @@ end of nav
 }
 
 @media screen and (max-width: 480px) {
+
+  .navbar > .container-fluid {
+    flex-direction: column !important;
+  }
+
   .logos_bg {
     flex-direction: column;
   }
