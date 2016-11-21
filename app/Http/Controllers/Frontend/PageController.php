@@ -16,7 +16,7 @@ class PageController extends Controller
      */
     public function index()
     {
-//        $pages = Page::with('category')->all();
+        $pages = Page::with('category')->all();
 
     }
 
