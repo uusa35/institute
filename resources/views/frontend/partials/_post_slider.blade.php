@@ -9,8 +9,9 @@
             {{--@endforeach--}}
             {{--</ol>--}}
                     <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox" style="padding-top: 20px;">
-                <h4>{{ ucwords(trans('general.articles')) }}</h4>
+            <div class="carousel-inner" role="listbox"
+                 style="padding-top: 20px;">
+                <h4 style="{{ app()->getLocale() === 'ar' ? 'padding-right : 30px;' : 'padding-left: 30px;' }}">{{ ucwords(trans('general.articles')) }}</h4>
                 @foreach($posts as $post)
                     <article class="item {{ ($loop->first) ? 'active' : null }} articleElement">
                         <div class="col-xs-12">
@@ -61,33 +62,36 @@
 <div class="bg-circle hidden-lg hidden-md" style="width: 100%; min-height: 280px;">
     <div class="col-xs-6 col-xs-push-3 bg-article"
          style="background: url('../images/articles_{{ app()->getLocale() }}.png') no-repeat center center;">
-            <article class="item 'active' articleElement">
+        <article class="item 'active' articleElement">
+            <div class="col-xs-12">
+                <h5 text="text-center">
+                    </br>
+                    <h5>{{ ucwords(trans('general.articles')) }}</h5>
+                    <a
+                            href="{{ route('post.show',$posts->first()->id) }}">{{ $posts->first()->title }}</a>
+                </h5>
+            </div>
+            <div class="col-xs-12" style="min-height : 184pxpx;">
                 <div class="col-xs-12">
-                    <h5 text="text-center"><a
-                                href="{{ route('post.show',$posts->first()->id) }}">{{ $posts->first()->title }}</a>
-                    </h5>
+                    {{ trans('general.created_at') }}
+                    <a
+                            href="{{ route('post.show',$posts->first()->id) }}" target="_blank">
+                        {{ $posts->first()->created_at->diffForHumans() }}
+                    </a>
                 </div>
-                <div class="col-xs-12" style="min-height : 200px;">
-                    <div class="col-xs-12">
-                        {{ trans('general.created_at') }}
-                        <a
-                                href="{{ route('post.show',$posts->first()->id) }}" target="_blank">
-                            {{ $posts->first()->created_at->diffForHumans() }}
-                        </a>
-                    </div>
-                    <div class="col-xs-3 hidden-sm hidden-xs">
-                        <img src="{{ File::exists('storage/'.$posts->first()->image) ? asset('storage/'.$posts->first()->image) : 'http://placehold.it/120x120&text=post'}}"
-                             alt="{{ $posts->first()->title }}"
-                             class="img-rounded img-responsive {!! (app()->getLocale() == 'ar' ? 'pull-right' : 'pull-left') !!}"
-                             style="max-width: 100px; max-height: 80px; padding : 5px;">
-                    </div>
-                    <div class="col-lg-9 col-md-9 col-xs-12">
-                        <p class="text-justify" style="font-size: 12px; !important;">
-                            {!! str_limit($posts->first()->body ,30) !!}
-                            &nbsp;&nbsp;{{ link_to_route('post.show',trans('general.more'), $posts->first()->id,['class' => 'btn btn-xs btn-info']) }}
-                        </p>
-                    </div>
+                <div class="col-xs-3 hidden-sm hidden-xs">
+                    <img src="{{ File::exists('storage/'.$posts->first()->image) ? asset('storage/'.$posts->first()->image) : 'http://placehold.it/120x120&text=post'}}"
+                         alt="{{ $posts->first()->title }}"
+                         class="img-rounded img-responsive {!! (app()->getLocale() == 'ar' ? 'pull-right' : 'pull-left') !!}"
+                         style="max-width: 100px; max-height: 80px; padding : 5px;">
                 </div>
-            </article>
+                <div class="col-lg-9 col-md-9 col-xs-12">
+                    <p class="text-justify" style="font-size: 12px; !important;">
+                        {!! str_limit($posts->first()->body ,30) !!}
+                        &nbsp;&nbsp;{{ link_to_route('post.show',trans('general.more'), $posts->first()->id,['class' => 'btn btn-xs btn-info']) }}
+                    </p>
+                </div>
+            </div>
+        </article>
     </div>
 </div>

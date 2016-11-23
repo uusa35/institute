@@ -1,5 +1,5 @@
 <div class="row slider-main">
-    <div id="carousel-example-generic" class="carousel slide col-lg-10 col-lg-push-1" data-ride="carousel">
+    <div id="carousel-example-generic" class="carousel slide col-lg-10 col-lg-push-1" data-ride="carousel" data-interval="false" data-pause="hover">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             @foreach($sliders as $slider)
@@ -19,7 +19,7 @@
                     </div>
                 @elseif($slider->type == 'video')
                     <div class="item {{ ($loop->first) ? 'active' : null }} text-center">
-                        <iframe width="700" height="315" src="{{ url($slider->url) }}"
+                        <iframe width="800" height="423" src="{{ url($slider->url) }}"
                                 frameborder="0" allowfullscreen></iframe>
                         <div class="carousel-caption">
                             <h4 class="text-center"><a href="{{ url($slider->url) }}" class="" target="_blank">{{ $slider->caption }}</a></h4>
