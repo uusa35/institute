@@ -55,7 +55,13 @@
             <div class="form-group">
                 <div class="col-lg-4">
                     <label for="membership_type">{{ ucwords(trans('general.membership_type')) }}</label></br>
-                    {{ Form::select('membership_type',['IBNLP', 'IBH'],null, ['class' => 'form-control']) }}
+                    {{ Form::select('membership_type',[ trans('general.membership_type') ,'IBNLP' => 'IBNLP', 'IBH' => 'IBH'],null, ['class' => 'form-control','id' => 'membership_type']) }}
+                </div>
+                <div class="col-lg-1" id="IBNLP" style="display: none;">
+                    <img src="{{ asset('images/IBNLP_en.png') }}" alt="" class="img-responsive">
+                </div>
+                <div class="col-lg-1" id="IBH" style="display: none;">
+                    <img src="{{ asset('images/IBH_en.png') }}" alt="" class="img-responsive">
                 </div>
             </div>
             <div class="form-group col-lg-1 col-lg-push-10">
@@ -65,4 +71,29 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    @parent
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('#membership_type').on('change', function () {
+                var element = $(this).val();
+                if (element === 'IBH') {
+                    $('#IBH').css('display', 'inline');
+                    $('#IBNLP').css('display', 'none');
+
+                }
+                else if (element === 'IBNLP') {
+                    $('#IBH').css('display', 'none');
+                    $('#IBNLP').css('display', 'inline');
+                }
+                else {
+                    $('#IBH').css('display', 'none');
+                    $('#IBNLP').css('display', 'none');
+                }
+
+            });
+        });
+    </script>
 @endsection
