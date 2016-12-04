@@ -26,7 +26,7 @@ class SliderStore extends FormRequest
         return [
             'caption_ar' => 'required|min:3',
             'caption_en' => 'required|min:3',
-            'url' => 'url',
+            'url' => 'required:min:3',
             'image' => 'mimes:jpeg,bmp,png',
             'type' => 'required'
         ];

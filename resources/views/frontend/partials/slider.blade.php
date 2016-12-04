@@ -23,7 +23,7 @@
                 @elseif($slider->type == 'video')
                     <div class="item {{ ($loop->first) ? 'active' : null }} text-center">
                         <iframe id="youtube-{!! $slider->id !!}" width="800" height="423"
-                                src="{{ url($slider->url.'?enablejsapi=1&version=3&playerapiid=ytplayer') }}"
+                                src="{{ url('https://www.youtube.com/embed/'.$slider->url.'?enablejsapi=1&version=3&playerapiid=ytplayer') }}"
                                 frameborder="0" allowfullscreen allowscriptaccess="always"></iframe>
                         <div class="carousel-caption">
                             <h4 class="text-center"><a href="{{ url($slider->url) }}" class=""

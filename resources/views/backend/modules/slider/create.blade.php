@@ -33,8 +33,8 @@
                         {!! Form::file('image',['class' => 'form-control']) !!}
                     </div>
                     <div class="col-lg-6">
-                        <label for="url">Video URL
-                            <small>Direct Youtube Video URL</small>
+                        <label for="url">Video ID
+                            <small>Direct Youtube Video ID</small>
                         </label>
                         {!! Form::text('url',old('url'),['class' => 'form-control', 'placeholder' => 'youtube url']) !!}
                     </div>
