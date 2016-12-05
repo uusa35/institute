@@ -22,7 +22,7 @@
                     </div>
                 @elseif($slider->type == 'video')
                     <div class="item {{ ($loop->first) ? 'active' : null }} text-center">
-                        <iframe id="youtube-{!! $slider->id !!}" width="800" height="423"
+                        <iframe id="youtube-{!! $slider->id !!}" width="800" height="429"
                                 src="{{ url('https://www.youtube.com/embed/'.$slider->url.'?enablejsapi=1&version=3&playerapiid=ytplayer') }}"
                                 frameborder="0" allowfullscreen allowscriptaccess="always"></iframe>
                         <div class="carousel-caption">
@@ -30,19 +30,19 @@
                                                        target="_blank">{{ $slider->caption }}</a></h4>
                         </div>
                     </div>
-            @section('scripts')
-                @parent
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $('#leftCarousel').click(function () {
-                            $('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-                        });
-                        $('#rightCarousel').click(function () {
-                            $('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-                        });
-                    });
-                </script>
-            @endsection
+            {{--@section('scripts')--}}
+                {{--@parent--}}
+                {{--<script type="text/javascript">--}}
+                    {{--$(document).ready(function () {--}}
+                        {{--$('#leftCarousel').click(function () {--}}
+                            {{--$('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');--}}
+                        {{--});--}}
+                        {{--$('#rightCarousel').click(function () {--}}
+                            {{--$('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');--}}
+                        {{--});--}}
+                    {{--});--}}
+                {{--</script>--}}
+            {{--@endsection--}}
             @endif
             @endforeach
         </div>

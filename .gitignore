@@ -6,6 +6,6 @@ Homestead.json
 Homestead.yaml
 .env
 /metronic_v4.5.6
-/storage/app/uploads/
+/storage
 /node_modules/
 /bower_components/
