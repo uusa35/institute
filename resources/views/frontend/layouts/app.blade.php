@@ -36,5 +36,7 @@
 @section('scripts')
     @include('frontend.partials.scripts')
 @show
+@section('customScripts')
+@show
 </body>
 </html>

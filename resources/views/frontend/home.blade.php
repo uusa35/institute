@@ -4,9 +4,9 @@
 @section('body')
 
 @section('content')
-{{--    @if(!is_null($sliders) && app()->environment() != 'local')--}}
+    @if(!is_null($sliders))
         @include('frontend.partials.slider')
-    {{--@endif--}}
+    @endif
 
     @include('frontend.partials._search_section')
 
