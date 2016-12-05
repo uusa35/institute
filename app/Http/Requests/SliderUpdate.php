@@ -26,8 +26,8 @@ class SliderUpdate extends FormRequest
         return [
             'caption_ar' => 'required|min:3',
             'caption_en' => 'required|min:3',
-            'url' => 'required:min:3',
-            'image' => 'mimes:jpeg,bmp,png',
+            'url' => 'min:3',
+            'image' => 'mimes:jpeg,bmp,png,jpg',
             'type' => 'required'
         ];
     }
