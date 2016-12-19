@@ -36,5 +36,20 @@
             "order": [[0, "desc"]]
         });
         tinymce.init({selector: 'textarea'});
+        console.log('jquery started');
+        $('.sections').on('click', function () {
+            console.log('sections clicked');
+            $('#pdfEelement').css('display', 'none');
+        });
+        $('#sectionB').on('click', function () {
+            console.log('sectionC clicked');
+            $('#pdfEelement').css('display', 'inline');
+        });
+        var activeSection = $('.activeSection').length;
+        if (activeSection > 0) {
+            $('#pdfEelement').css('display', 'inline');
+            console.log('is active');
+            console.log(activeSection);
+        }
     });
 </script>

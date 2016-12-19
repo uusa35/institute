@@ -5,13 +5,14 @@
             {!! $section->content !!}
         </p>
     </div>
-    @if(File::exists(asset('storage/'.$section->pdf)))
+    @if(!empty($section->pdf))
         <div class="col-sm-12 text-center">
             <a href="{{ asset('storage/'.$section->pdf) }}">
                 <i class="fa fa-fw fa-file-pdf-o fa-3x"></i>
             </a>
         </div>
     @endif
+
     @if(File::exists(asset('storage/'.$section->image)))
         <div class="col-sm-12 text-center">
             <img src="{{ asset('storage/'.$section->image) }}"

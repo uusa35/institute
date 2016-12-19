@@ -1,7 +1,6 @@
 @extends('backend.layouts.app')
 
 @section('content')
-
     <div class="col-lg-12">
         <div class="panel panel-info">
             <div class="panel-heading">

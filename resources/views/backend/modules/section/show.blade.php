@@ -13,7 +13,8 @@
                             <th>id</th>
                             <th>header ar</th>
                             <th>header en</th>
-                            <th>page id</th>
+                            <th>page title</th>
+                            <th>section tye</th>
                             <th>actions</th>
 
                         </tr>
@@ -25,6 +26,7 @@
                                 <td>{{ $section->header_ar }}</td>
                                 <td>{{ $section->header_en }}</td>
                                 <td>{{ $section->page->title }}</td>
+                                <td>{{ $section->type }}</td>
                                 <td>
                                     <div class="btn-group">
                                         <button class="btn btn-xs green dropdown-toggle" type="button"
@@ -41,7 +43,7 @@
                                                     <i class="fa fa-edit"></i> edit section</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('backend.section.create',['post_id' => $section->page_id]) }}">
+                                                <a href="{{ route('backend.section.create',['page_id' => $section->page_id]) }}">
                                                     <i class="fa fa-edit"></i> add section</a>
                                             </li>
                                             <li>

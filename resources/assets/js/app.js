@@ -9,26 +9,9 @@ require('./bootstrap');
 //import { render } from 'react-dom';
 //import Home from './components/Home'
 
-$(document).ready(function () {
 
-    //render(<Home />, document.getElementById('app'));
-    $(document).ready(function () {
-        $('.sections').on('click', function () {
-            console.log('sections clicked');
-            $('#pdfEelement').css('display', 'none');
-        });
-        $('#sectionB').on('click', function () {
-            console.log('sectionC clicked');
-            $('#pdfEelement').css('display', 'inline');
-        });
-        var activeSection = $('.activeSection').length;
-        if (activeSection > 0) {
-            $('#pdfEelement').css('display', 'inline');
-            console.log('is active');
-            console.log(activeSection);
-        }
-    });
-});
+//render(<Home />, document.getElementById('app'));
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

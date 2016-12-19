@@ -30,6 +30,7 @@ class SectionController extends Controller
     public function create()
     {
         $page_id = request()->page_id;
+
         return view('backend.modules.section.create', compact('page_id'));
     }
 
@@ -103,7 +104,7 @@ class SectionController extends Controller
 
         Section::find($id)->update($request->request->all());
 
-        return redirect()->route('backend.section.show', [$id,'page_id' => $request->page_id])->with('success', 'section updated');
+        return redirect()->route('backend.section.show', [$id, 'page_id' => $request->page_id])->with('success', 'section updated');
     }
 
     /**

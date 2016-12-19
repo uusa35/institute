@@ -1,1 +1,5 @@
-@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);.container,.container-fluid,.nav,a,body,div,h1,h2,h3,h4,h5,html,li,nav,p,ul{font-family:'Droid Arabic Kufi',sans-serif!important}
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+html, body, nav, .nav, .container-fluid, .container, h1, h2, h3, h4, h5, div, p, ul, li, a {
+  font-family: 'Droid Arabic Kufi', sans-serif !important; }
+
+/*# sourceMappingURL=custom-arabic.css.map */

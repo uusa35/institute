@@ -12,6 +12,6 @@ namespace App\Core\Services\Image;
 Interface PrimaryImageServiceInterface
 {
 
-    public function CreateImage($currentImage, $thumbResize, $largeResize);
+    public function CreateImage($currentImage);
 
 }
