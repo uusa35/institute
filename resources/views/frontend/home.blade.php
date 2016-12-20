@@ -4,9 +4,9 @@
 @section('body')
 
 @section('content')
-    @if(!is_null($sliders))
-        @include('frontend.partials.slider')
-    @endif
+    {{--@if(!is_null($sliders))--}}
+        {{--@include('frontend.partials.slider')--}}
+    {{--@endif--}}
 
     @include('frontend.partials._search_section')
 
