@@ -16,7 +16,7 @@ class ViewComposers
     {
         $category = new Category;
 
-        $menuItems = $category->menus()->orderBy('created_at', 'asc')->get();
+        $menuItems = $category->menus()->with('pages')->orderBy('created_at', 'asc')->get();
 
         $contactusInfo = $this->contactusInfo();
 
