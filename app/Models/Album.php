@@ -3,10 +3,8 @@
 namespace App\Models;
 
 use App\Core\Traits\LocaleTrait;
-use App\Models\Gallery;
 use App\Scopes\ScopeHasGallery;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Album extends Model
 {

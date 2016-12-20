@@ -24,9 +24,9 @@ class Post extends Model
         return $this->morphMany(Gallery::class, 'galleryable');
     }
 
-    public function reviews()
-    {
-        return $this->hasMany(Review::class,'post_id');
-    }
+//    public function reviews()
+//    {
+//        return $this->hasMany(Review::class,'post_id');
+//    }
 
 }
