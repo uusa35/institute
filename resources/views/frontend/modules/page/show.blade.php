@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="col-lg-12">
+    <div class="col-lg-12" style="padding-bottom: 50px;">
         <div class="col-lg-10 col-lg-push-1">
             <h1 class="text-justify">{{ $page->title }}</h1>
             <hr>
