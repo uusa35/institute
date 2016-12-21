@@ -9,6 +9,7 @@
             @endforeach
         </ol>
 
+        <div id="video_count" class="hidden">{!! $sliders->where('type','video')->count() !!}</div>
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             @foreach($sliders as $slider)
@@ -22,7 +23,8 @@
                     </div>
                 @elseif($slider->type == 'video')
                     <div class="item {{ ($loop->first) ? 'active' : null }} text-center">
-                        <iframe class="youtube_frame" width="800" height="429"
+                        <iframe class="youtube_frame" id="frame-{!! $slider->id !!}"
+                                width="800" height="429"
                                 src="{{ url('https://www.youtube.com/embed/'.$slider->url.'?enablejsapi=1&version=3&playerapiid=ytplayer') }}"
                                 frameborder="0" allowfullscreen allowscriptaccess="always"></iframe>
                         <div class="carousel-caption">
@@ -50,15 +52,23 @@
 @section('customScripts')
     <script type="text/javascript">
         $(document).ready(function () {
+            var count = $('#video_count').text();
+            var youtubeFrameList = $('[class^="youtube_frame"]');
+            var list = [];
+            youtubeFrameList.each(function () {
+                var frameId = $(this).attr('id');
+                list.push(frameId);
+            });
             $('#leftCarousel').click(function () {
-                $('*[class^="youtube_frame"]')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                for (var i = 0; i < list.length; i++) {
+                    $('#' + list[i])[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                }
             });
             $('#rightCarousel').click(function () {
-                $('*[class^="youtube_frame"]')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                for (var i = 0; i < list.length; i++) {
+                    $('#' + list[i])[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                }
             });
-            {{--$('#rightCarousel').click(function () {--}}
-            {{--$('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');--}}
-            {{--});--}}
         });
     </script>
 @endsection
