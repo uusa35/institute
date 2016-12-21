@@ -22,7 +22,7 @@
                     </div>
                 @elseif($slider->type == 'video')
                     <div class="item {{ ($loop->first) ? 'active' : null }} text-center">
-                        <iframe id="youtube_frame" width="800" height="429"
+                        <iframe class="youtube_frame" width="800" height="429"
                                 src="{{ url('https://www.youtube.com/embed/'.$slider->url.'?enablejsapi=1&version=3&playerapiid=ytplayer') }}"
                                 frameborder="0" allowfullscreen allowscriptaccess="always"></iframe>
                         <div class="carousel-caption">
@@ -51,10 +51,10 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#leftCarousel').click(function () {
-                $('#youtube_frame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                $('.youtube_frame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
             });
             $('#rightCarousel').click(function () {
-                $('#youtube_frame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                $('.youtube_frame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
             });
             {{--$('#rightCarousel').click(function () {--}}
             {{--$('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');--}}
