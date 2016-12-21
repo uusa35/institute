@@ -32,16 +32,16 @@
                     </div>
             {{--@section('customScripts')--}}
                 {{--@parent--}}
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $('#leftCarousel').click(function () {
-                            $('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-                        });
-                        $('#rightCarousel').click(function () {
-                            $('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-                        });
-                    });
-                </script>
+                {{--<script type="text/javascript">--}}
+                    {{--$(document).ready(function () {--}}
+                        {{--$('#leftCarousel').click(function () {--}}
+                            {{--$('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');--}}
+                        {{--});--}}
+                        {{--$('#rightCarousel').click(function () {--}}
+                            {{--$('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');--}}
+                        {{--});--}}
+                    {{--});--}}
+                {{--</script>--}}
             {{--@show--}}
             @endif
             @endforeach
