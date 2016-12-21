@@ -51,10 +51,10 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#leftCarousel').click(function () {
-                $('.youtube_frame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                $('*[class^="youtube_frame"]')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
             });
             $('#rightCarousel').click(function () {
-                $('.youtube_frame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                $('*[class^="youtube_frame"]')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
             });
             {{--$('#rightCarousel').click(function () {--}}
             {{--$('#youtube-' + '{!! $slider->id !!}')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');--}}
