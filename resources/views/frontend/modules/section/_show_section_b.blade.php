@@ -1,6 +1,6 @@
 <div class="col-lg-6">
     <div class="col-sm-12">
-        <img src="{{ asset('storage/'.$section->image) }}" alt="{{ $section->header }}" class="img-responsive img-thumbnail">
+        <img src="{{ asset('storage/'.$section->image) }}" alt="{{ $section->header }}" class="img-responsive img-thumbnail" style="max-height: 170px !important;">
         <h3 class="title text-center">{{ $section->header }}</h3>
         <p class="text-center">
             {!! $section->content !!}
