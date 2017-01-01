@@ -42,8 +42,13 @@
         <hr>
         <!-- LightWidget WIDGET -->
         <script src="//lightwidget.com/widgets/lightwidget.js"></script>
-        <iframe src="//lightwidget.com/widgets/c56f1a5058e5526485ea592914428bed.html" id="lightwidget_c56f1a5058"
-                name="lightwidget_c56f1a5058" scrolling="no" allowtransparency="true" class="lightwidget-widget"
+        {{--<iframe src="//lightwidget.com/widgets/c56f1a5058e5526485ea592914428bed.html" id="lightwidget_c56f1a5058"--}}
+        {{--name="lightwidget_c56f1a5058" scrolling="no" allowtransparency="true" class="lightwidget-widget"--}}
+        {{--style="width: 100%; border: 0; overflow: hidden;"></iframe>--}}
+                <!-- LightWidget WIDGET -->
+        <script src="//lightwidget.com/widgets/lightwidget.js"></script>
+        <iframe src="//lightwidget.com/widgets/7c3a60886fe85a95b7b234fd796afc37.html" scrolling="no"
+                allowtransparency="true" class="lightwidget-widget"
                 style="width: 100%; border: 0; overflow: hidden;"></iframe>
 
 
