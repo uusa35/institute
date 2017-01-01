@@ -27,7 +27,7 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('isAdmin', function ($user) {
 
-            return $user->id === 1;
+            return $user->id <= 3;
 
         });
 
