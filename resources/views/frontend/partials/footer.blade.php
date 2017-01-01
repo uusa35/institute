@@ -46,8 +46,9 @@
         {{--name="lightwidget_c56f1a5058" scrolling="no" allowtransparency="true" class="lightwidget-widget"--}}
         {{--style="width: 100%; border: 0; overflow: hidden;"></iframe>--}}
                 <!-- LightWidget WIDGET -->
+        <!-- LightWidget WIDGET -->
         <script src="//lightwidget.com/widgets/lightwidget.js"></script>
-        <iframe src="//lightwidget.com/widgets/7c3a60886fe85a95b7b234fd796afc37.html" scrolling="no"
+        <iframe src="//lightwidget.com/widgets/204ddeb19d6e5a95865b245f6abd870d.html" scrolling="no"
                 allowtransparency="true" class="lightwidget-widget"
                 style="width: 100%; border: 0; overflow: hidden;"></iframe>
 
