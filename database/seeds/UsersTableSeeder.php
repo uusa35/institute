@@ -23,9 +23,9 @@ class UsersTableSeeder extends Seeder
                 DB::table('users')->truncate();
             }
 
-            factory(User::class, 1)->create(['first_name' => 'dr.waleed', 'email'=>'w.almarshed@hotmail.com','password' => 'Waleed1!!5waleed']);
-            factory(User::class, 1)->create(['first_name' => 'eng.yasmeen', 'email' => 'y.malaki@hotmail.com','password' => 'Waleed1!!5waleed']);
-            factory(User::class, 1)->create(['first_name' => 'moh', 'email' => 'mgamal30@yahoo.com','password' => 'Waleed1!!5waleed']);
+            factory(User::class, 1)->create(['first_name' => 'dr.waleed', 'email'=>'w.almarshed@hotmail.com','password' => bcrypt('Waleed1!!5waleed')]);
+            factory(User::class, 1)->create(['first_name' => 'eng.yasmeen', 'email' => 'y.malaki@hotmail.com','password' => bcrypt('Waleed1!!5waleed')]);
+            factory(User::class, 1)->create(['first_name' => 'moh', 'email' => 'mgamal30@yahoo.com','password' => bcrypt('Waleed1!!5waleed')]);
         }
 
     }
