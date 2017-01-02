@@ -10,7 +10,7 @@
             <div class="row">
                 @foreach($element->gallery->first()->images->chunk(5) as $itemSet)
                     @foreach($itemSet as $item)
-                        <div class="col-lg-3">
+                        <div class="col-lg-2 col-lg-push-1">
                             <a href="{{ asset('storage/'.$item->image_url) }}" data-gallery>
                                 <img src="{{ asset('storage/'.$item->image_url) }}" alt="{{ $item->caption }}"
                                      class="img-responsive img-rounded gallery-thumb"/>
