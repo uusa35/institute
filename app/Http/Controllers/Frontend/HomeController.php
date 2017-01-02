@@ -95,7 +95,7 @@ class HomeController extends Controller
     {
         $contactusInfo = Contactus::first();
 
-        $email = Mail::to('member@ibh-ibnlp.com'))->queue(new MembershipRegisterRequest(request()->all(),$contactusInfo->address));
+        $email = Mail::to('member@ibh-ibnlp.com')->queue(new MembershipRegisterRequest(request()->all(),$contactusInfo->address));
 
         return redirect()->back()->with('success', 'email has been sent');
 
