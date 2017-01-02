@@ -28,23 +28,26 @@
                         {{ Form::select('category_id', $categories, $page->category_id, ['class' => 'form-control']) }}
                     </div>
                     {{--<div class="col-sm-2">--}}
-                        {{--<label for="order" class="control-label">order</label>--}}
-                        {{ Form::hidden('order', 0) }}
+                    {{--<label for="order" class="control-label">order</label>--}}
+                    {{ Form::hidden('order', 0) }}
                     {{--</div>--}}
                     <div class="col-lg-2">
-                        <img src="{{ File::exists('storage/'.$page->image) ? asset('storage/'.$page->image) : 'http://placehold.it/100x100&test=no-image'}}" alt="" class="img-responsive">
+                        <img src="{{ File::exists('storage/'.$page->image) ? asset('storage/'.$page->image) : 'http://placehold.it/100x100&test=no-image'}}"
+                             alt="" class="img-responsive">
                     </div>
                 </div>
 
                 <!-- File Button http://getbootstrap.com/css/#forms -->
                 <div class="form-group">
                     <div class="col-sm-6">
-                        <label for="image" class="control-label">first image<small>best fit 1150px*310px</small></label>
-                        <input type="file" name="image" name="image" >
+                        <label for="image" class="control-label">first image
+                            <small>best fit 1150px*310px</small>
+                        </label>
+                        <input type="file" name="image" name="image">
                     </div>
                     <div class="col-sm-6">
                         <label for="gallery" class="control-label">gallery</label>
-                        <input type="file" name="gallery[]" multiple >
+                        <input type="file" name="gallery[]" multiple>
 
                     </div>
                 </div>
@@ -59,6 +62,16 @@
                     </div>
                 </div>
                 {{ Form::close() }}
+                <div class="col-lg-12">
+                    @foreach($page->gallery->first()->images as $image)
+                        <div class="col-lg-2">
+                            {{ Form::open(['route' => ['backend.image.destroy',$image->id],'method'=> 'DELETE']) }}
+                            <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></button>
+                            {{ Form::close() }}
+                            <img src="{{ asset('storage/'.$image->image_url) }}" alt="" class="img-responsive">
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

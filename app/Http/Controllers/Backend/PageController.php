@@ -85,7 +85,7 @@ class PageController extends Controller
     {
         $categories = Category::where('menu', true)->with('pages')->pluck('name_ar', 'id')->all();
 
-        $page = Page::find($id);
+        $page = Page::whereId($id)->with('gallery.images')->first();
 
         return view('backend.modules.page.edit', compact('page', 'categories'));
     }
