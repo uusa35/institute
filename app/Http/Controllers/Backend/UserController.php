@@ -103,10 +103,18 @@ class UserController extends Controller
             $request->request->add(['pdf' => str_replace('public/', '', $pdfPath)]);
         }
 
+
         if ($request->file('avatar')) {
-            $avatarPath = $request->avatar->store('public/uploads/avatars');
-            $request->request->add(['avatar' => str_replace('public/', '', $avatarPath)]);
+
+            $imagePath = $this->saveImage($request, 'avatar', '200', '200');
+
+            $request->request->add(['avatar' => str_replace('public/', '', $imagePath)]);
         }
+//
+//        if ($request->file('avatar')) {
+//            $avatarPath = $request->avatar->store('public/uploads/avatars');
+//            $request->request->add(['avatar' => str_replace('public/', '', $avatarPath)]);
+//        }
 
         if ($request->has('password')) {
 
