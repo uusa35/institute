@@ -40,14 +40,20 @@
                     <i class="glyphicon glyphicon-calendar"></i> &nbsp; {{ trans('general.graduation_year') }} :
                     &nbsp;{{ $user->graduation_year }}
                     <br/>
-                    <i class="glyphicon glyphicon-paperclip"></i> &nbsp; {{ trans('general.pdf') }} :
-                    &nbsp;<a href="{{ asset('storage/'.$user->pdf) }}">{{ trans('general.pdf') }}</a>
-                    <br/>
-                    <i class="glyphicon glyphicon-globe"></i> &nbsp; <a href="{{ $user->other_link }}"
-                                                                        class="btn btn-xs">{{ trans('general.other_link') }}</a>
-                    <br/>
-                    <i class="glyphicon glyphicon-play-circle"></i> &nbsp; <a href="{{ $user->video_link }}"
-                                                                              class="btn btn-xs">{{ trans('general.video') }}</a>
+                    @if(!empty($user->pdf))
+                        <i class="glyphicon glyphicon-paperclip"></i> &nbsp; {{ trans('general.pdf') }} :
+                        &nbsp;<a href="{{ asset('storage/'.$user->pdf) }}">{{ trans('general.pdf') }}</a>
+                        <br/>
+                    @endif
+                    @if(!empty($user->other_link))
+                        <i class="glyphicon glyphicon-globe"></i> &nbsp; <a href="{{ $user->other_link }}"
+                                                                            class="btn btn-xs">{{ trans('general.other_link') }}</a>
+                        <br/>
+                    @endif
+                    @if(!empty($user->video_link))
+                        <i class="glyphicon glyphicon-play-circle"></i> &nbsp; <a href="{{ $user->video_link }}"
+                                                                                  class="btn btn-xs">{{ trans('general.video') }}</a>
+                    @endif
                 </p>
             </div>
             {{-- Porchore --}}
@@ -81,7 +87,7 @@
                         {!! $user->description !!}
                     </p>
                 </blockquote>
-                @if(!empty($user->video_link) >= 1)
+                @if(!empty($user->video_link) && count($user->video_link) > 5)
                     <div class="col-lg-12 hidden-sm text-center">
                         <h5>{{ trans('general.video') }}</h5>
                         <iframe width="350" height="241"

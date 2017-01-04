@@ -110,7 +110,7 @@
         </p>
     </div>
     <!-- col -->
-    <div class="col-lg-12 text-center text-default" style="font-size: small">
+    <div class="col-lg-12 text-center text-default" style="font-size: smaller">
         {{ trans('messages.allrights') }} - {{ trans('messages.designed_developed') }} -
         {{ trans('general.ideasowners') }}
         </br>

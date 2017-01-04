@@ -20,10 +20,10 @@
             <hr>
             <div class="col-lg-12 searchMiddle">
                 <div class="col-lg-1 text-center">
-                    <button type="submit" href="#" style="border: none; background: transparent;">
+                    <a type="submit" href="{!! action('Frontend\HomeController@searchById',['method' => 'GET']) !!}" style="border: none; background: transparent;" class="btn">
                         <i class="arrowBtn glyphicon glyphicon-circle-arrow-{{ app()->getLocale() == 'en' ? 'left' : 'right' }}"
                            aria-hidden="true"></i>
-                    </button>
+                    </a>
                 </div>
                 <div class="col-lg-10">
                     {{ Form::open(['action' => 'Frontend\HomeController@searchByName','method' => 'GET']) }}
@@ -44,10 +44,10 @@
                     {{ Form::close() }}
                 </div>
                 <div class="col-lg-1 text-center">
-                    <button type="submit" href="#" style="border: none; background: transparent;">
+                    <a type="submit" href="{!! action('Frontend\HomeController@searchById',['method' => 'GET']) !!}" style="border: none; background: transparent;">
                         <i class="arrowBtn glyphicon glyphicon-circle-arrow-{{ app()->getLocale() == 'en' ? 'right' : 'left' }}"
                            aria-hidden="true"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
