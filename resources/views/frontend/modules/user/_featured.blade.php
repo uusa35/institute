@@ -15,7 +15,7 @@
                         <div class="col-xs-12">
                             <img src="{{ File::exists('storage/'.$user->avatar) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"
                                  alt="{{ $user->first_name }}"
-                                 class="img-responsive img-circle">
+                                 class="img-responsive img-circle" style="width : 100px; height : 115px;">
                         </div>
                         <div class="col-xs-12 text-center">
                             <small>
