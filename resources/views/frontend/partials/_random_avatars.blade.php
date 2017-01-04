@@ -8,7 +8,7 @@
                     <a href="{{ route('user.show',$user->id) }}" class="text-center" style="margin-bottom: 4px;">
                         <img src="{{ File::exists('storage/'.$user->avatar) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"
                              alt="{{ $user->name }}"
-                             class="img-responsive text-center img-rounded" style="border: 1px solid lightgrey;">
+                             class="img-responsive text-center img-rounded" style="width: 100px; height : auto; max-height: 125px !important; border: 1px solid lightgrey;">
                     </a>
                 </div>
             @endforeach
