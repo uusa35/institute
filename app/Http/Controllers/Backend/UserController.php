@@ -51,7 +51,7 @@ class UserController extends Controller
 
         if ($request->file('avatar')) {
 
-            $imagePath = $this->saveImage($request, 'avatar', '200', '200');
+            $imagePath = $this->saveImage($request, 'avatar', '100', '115');
 
             $request->request->add(['avatar' => str_replace('public/', '', $imagePath)]);
         }
@@ -106,7 +106,7 @@ class UserController extends Controller
 
         if ($request->file('avatar')) {
 
-            $imagePath = $this->saveImage($request, 'avatar', '200', '200');
+            $imagePath = $this->saveImage($request, 'avatar', '100', '115');
 
             $request->request->add(['avatar' => str_replace('public/', '', $imagePath)]);
         }

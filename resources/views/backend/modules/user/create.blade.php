@@ -52,7 +52,7 @@
 
                 <div class="form-group">
                     <div class="col-md-4">
-                        <label for="avatar" class="control-label">Avatar</label>
+                        <label for="avatar" class="control-label">Avatar *best fit (100*115)</label>
                         <input type="file" class="form-control"
                                name="avatar">
                     </div>
