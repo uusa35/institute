@@ -104,8 +104,6 @@ class UserController extends Controller
 
         $user = User::find($id);
 
-//        $request->request->add(['type',$user->type]);
-
         $user->update($request->request->all());
 
         if ($request->has('password')) {
