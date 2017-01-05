@@ -7,7 +7,7 @@
             <div class="panel-body">
                 {{ Form::model($user,['route' => ['user.update',$user->id],'method' => 'patch','class' => 'form-horizontal','files' => true ]) }}
                 {{ csrf_field() }}
-
+                {{ Form::hidden('type' ,$user->type) }}
                 <div class="form-group">
                     <div class="col-md-4">
                         <label for="first_name" class="control-label">First Name</label>

