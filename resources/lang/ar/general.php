@@ -35,7 +35,7 @@ return array (
   'created_at' => 'منذ',
   'more' => 'مزيد',
   'home' => 'الرئيسية',
-  'albums' => 'البوم الصور',
+  'albums' => 'معرض الصور',
   'posts' => 'مقالات',
   'language' => 'اللغة',
   'arabic' => 'عربي',
