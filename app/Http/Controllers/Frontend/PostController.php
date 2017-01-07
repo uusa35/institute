@@ -50,7 +50,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::whereId($id)->with('gallery')->first();
+        $post = Post::whereId($id)->with('gallery.images')->first();
 
         return view('frontend.modules.post.show',compact('post'));
     }
