@@ -111,7 +111,7 @@
             </p>
         </div>
         <!-- col -->
-        <div class="col-lg-12 text-center text-default" style="font-size: smaller;">
+        <div class="col-xs-12 text-center text-default" style="font-size: smaller;">
             {{ trans('messages.allrights') }} - {{ trans('messages.designed_developed') }} -
             <a href="http://ideasowners.net">{{ trans('general.ideasowners') }}</a>
             <br>
