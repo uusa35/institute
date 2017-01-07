@@ -16,7 +16,7 @@
         </div>
         @if(!is_null($post->gallery->first()))
             <div class="col-lg-12">
-                @include('frontend.partials._gallery',['element' => $post->gallery->first()])
+                @include('frontend.partials._gallery',['gallery' => $post->gallery->first()])
             </div>
         @endif
     </div>
