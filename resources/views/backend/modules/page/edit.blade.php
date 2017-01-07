@@ -62,16 +62,19 @@
                     </div>
                 </div>
                 {{ Form::close() }}
-                <div class="col-lg-12">
-                    @foreach($page->gallery->first()->images as $image)
-                        <div class="col-lg-2">
-                            {{ Form::open(['route' => ['backend.image.destroy',$image->id],'method'=> 'DELETE']) }}
-                            <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></button>
-                            {{ Form::close() }}
-                            <img src="{{ asset('storage/'.$image->image_url) }}" alt="" class="img-responsive">
-                        </div>
-                    @endforeach
-                </div>
+                @if(!is_null($page->gallery->first()))
+                    <div class="col-lg-12">
+                        @foreach($page->gallery->first()->images as $image)
+                            <div class="col-lg-2">
+                                {{ Form::open(['route' => ['backend.image.destroy',$image->id],'method'=> 'DELETE']) }}
+                                <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i>
+                                </button>
+                                {{ Form::close() }}
+                                <img src="{{ asset('storage/'.$image->image_url) }}" alt="" class="img-responsive">
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
             </div>
         </div>
     </div>

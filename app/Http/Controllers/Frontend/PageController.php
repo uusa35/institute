@@ -49,7 +49,7 @@ class PageController extends Controller
      */
     public function show($id)
     {
-        $page = Page::whereId($id)->with('gallery','sections')->first();
+        $page = Page::whereId($id)->with('gallery.images','sections')->first();
 
         return view('frontend.modules.page.show', compact('page'));
     }

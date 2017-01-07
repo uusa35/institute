@@ -51,7 +51,7 @@ class AlbumController extends Controller
      */
     public function show($id)
     {
-        $album = Album::whereId($id)->with('gallery')->first();
+        $album = Album::whereId($id)->with('gallery.images')->first();
         return view('frontend.modules.album.show',compact('album'));
     }
 

@@ -11,7 +11,7 @@ namespace App\Core\Services\Image;
 
 use App\Core\Services\Image\PrimaryImageServiceInterface;
 
-class PrimaryImageService implements PrimaryImageServiceInterface
+class PrimaryImageService
 {
 
     public function CreateImage($currentImage, $thumbResize, $largeResize)

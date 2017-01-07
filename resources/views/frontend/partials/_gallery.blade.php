@@ -3,22 +3,19 @@
     <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}">
 @endsection
-@if(!is_null($element->gallery->first()))
-    <div class="col-lg-8">
+@if(!is_null($gallery))
         <div id="links"
-             style="display: flex; align-items: center; align-content: center; justify-content: center; justify-items: center; padding: 15px;">
-            <div class="row">
-                @foreach($element->gallery->first()->images->chunk(5) as $itemSet)
-                    @foreach($itemSet as $item)
-                        <div class="col-lg-6">
-                            <a href="{{ asset('storage/'.$item->image_url) }}" data-gallery>
-                                <img src="{{ asset('storage/'.$item->image_url) }}" alt="{{ $item->caption }}"
-                                     class="img-responsive img-rounded gallery-thumb"/>
-                            </a>
-                        </div>
-                    @endforeach
+             {{--style="display: flex; align-items: center; align-content: center; justify-content: center; justify-items: center; padding: 15px;"--}}>
+            @foreach($gallery->images->chunk(5) as $itemSet)
+                @foreach($itemSet as $item)
+                    <div class="col-lg-2" style="padding-bottom : 10px;">
+                        <a href="{{ asset('storage/'.$item->image_url) }}" data-gallery>
+                            <img src="{{ asset('storage/'.$item->image_url) }}" alt="{{ $item->caption }}"
+                                 class="img-responsive img-rounded gallery-thumb"/>
+                        </a>
+                    </div>
                 @endforeach
-            </div>
+            @endforeach
         </div>
 
         <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
@@ -55,7 +52,6 @@
                 </div>
             </div>
         </div>
-    </div>
 @endif
 
 @section('scripts')

@@ -16,8 +16,8 @@
                 @include('frontend.modules.section._show_section_'.$section->type)
             @endforeach
             @if(!is_null($page->gallery->first()))
-                <div class="row">
-                    @include('frontend.partials._gallery',['element' => $page])
+                <div class="col-lg-12">
+                    @include('frontend.partials._gallery',['gallery' => $page->gallery->first()])
                 </div>
             @endif
         </div>
