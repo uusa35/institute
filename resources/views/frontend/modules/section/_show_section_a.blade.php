@@ -7,6 +7,6 @@
 @if(Storage::disk('public')->exists($section->image))
     <div class="col-sm-4 {{ (($loop->index % 2) == 0) ? 'pull-right' : 'pull-left'}}">
         <img src="{{ asset('storage/'.$section->image) }}"
-             class="img-responsive img-thumbnail text-center">
+             class="img-responsive img-thumbnail center-block">
     </div>
 @endif
