@@ -19,11 +19,11 @@
                         <input id="last_name" type="last_name" class="form-control" name="last_name"
                                placeholder="Last Name" value="{{ $user->last_name }}">
                     </div>
-                    <div class="col-md-4">
-                        <label for="membership_id" class="control-label">membership Id</label>
-                        <input id="membership_id" type="membership_id" class="form-control" name="membership_id"
-                               placeholder="Membership Id" value="{{ $user->membership_id }}">
-                    </div>
+                    {{--<div class="col-md-4">--}}
+                        {{--<label for="ibh_membership_id" class="control-label">membership Id</label>--}}
+                        {{--<input id="ibh_membership_id" type="membership_id" class="form-control" name="ibh_membership_id"--}}
+                               {{--placeholder="Membership Id" value="{{ $user->ibh_membership_id }}">--}}
+                    {{--</div>--}}
                 </div>
 
                 <div class="form-group">

@@ -64,7 +64,14 @@
                          alt="" class="img-rounded img-responsive"/>
                 </div>
                 <div class="col-lg-12">
-                    <h3 class="text-default">{{ trans('general.membership_id') }} : {{ $user->membership_id }}</h3>
+                    @if(!empty($user->ibh_membership_id))
+                        <h3 class="text-default">{{ trans('general.membership_id') }}
+                            : {{ $user->ibh_membership_id }}</h3>
+                    @endif
+                    @if(!empty($user->ibnlp_membership_id))
+                        <h3 class="text-default">{{ trans('general.membership_id') }}
+                            : {{ $user->ibnlp_membership_id }}</h3>
+                    @endif
                 </div>
                 <div class="col-lg-12">
                     @if(File::exists('storage/'.$user->pdf))
