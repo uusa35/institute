@@ -131,8 +131,9 @@ class HomeController extends Controller
             return redirect()->back()->withErrors($validator);
         }
 
-        $users = User::where('membership_id', 'LIKE', "%{$memebershipId}%")
+        $users = User::where('ibh_membership_id', 'LIKE', "%{$memebershipId}%")
             ->orWhere('id', $memebershipId)
+            ->orWhere('ibnlp_membership_id', $memebershipId)
             ->paginate(12);
         return view('frontend.modules.user.index', compact('users'));
     }

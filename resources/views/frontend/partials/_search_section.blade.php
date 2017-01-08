@@ -20,13 +20,13 @@
             <hr>
             <div class="col-lg-12 searchMiddle">
                 <div class="col-lg-1 text-center">
-                    <a type="submit" href="{!! action('Frontend\HomeController@searchById',['method' => 'GET']) !!}" style="border: none; background: transparent;" class="btn">
+                    <a id="searchName" style="border: none; background: transparent;" class="btn">
                         <i class="arrowBtn glyphicon glyphicon-circle-arrow-{{ app()->getLocale() == 'en' ? 'left' : 'right' }}"
                            aria-hidden="true"></i>
                     </a>
                 </div>
                 <div class="col-lg-10">
-                    {{ Form::open(['action' => 'Frontend\HomeController@searchByName','method' => 'GET']) }}
+                    {{ Form::open(['action' => 'Frontend\HomeController@searchByName','method' => 'GET','id' =>'searchByName']) }}
                     <div class="col-lg-12 text-center">
                         <div class="form-group">
                             <input name="first_name" class="input-lg searchInput" type="text" style="width: 100%;"
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     {{ Form::close() }}
-                    {{ Form::open(['action' => 'Frontend\HomeController@searchById','method' => 'GET']) }}
+                    {{ Form::open(['action' => 'Frontend\HomeController@searchById','method' => 'GET','id' => 'searchById']) }}
                     <div class="col-lg-12 text-center">
                         <div class="form-group">
                             <input name="membership_id" class="input-lg searchInput" type="text" style="width: 100%;"
@@ -44,7 +44,7 @@
                     {{ Form::close() }}
                 </div>
                 <div class="col-lg-1 text-center">
-                    <a type="submit" href="{!! action('Frontend\HomeController@searchById',['method' => 'GET']) !!}" style="border: none; background: transparent;">
+                    <a id="searchId" style="border: none; background: transparent;" class="btn">
                         <i class="arrowBtn glyphicon glyphicon-circle-arrow-{{ app()->getLocale() == 'en' ? 'right' : 'left' }}"
                            aria-hidden="true"></i>
                     </a>
@@ -62,3 +62,15 @@
         </div>
     </div>
 </div>
+
+@section('scripts')
+    @parent
+    <script>
+        $('#searchId').on('click',function () {
+            $('#searchById').submit();
+        });
+        $('#searchName').on('click',function () {
+            $('#searchByName').submit();
+        });
+    </script>
+@endsection
