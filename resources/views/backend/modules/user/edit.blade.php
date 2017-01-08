@@ -9,46 +9,51 @@
                 {{ csrf_field() }}
 
                 <div class="form-group">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <label for="first_name" class="control-label">First Name</label>
                         <input id="first_name" type="text" class="form-control" name="first_name"
                                placeholder="First Name" value="{{ $user->first_name }}"/>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <label for="last_name" class="control-label">last name</label>
                         <input id="last_name" type="last_name" class="form-control" name="last_name"
                                placeholder="Last Name" value="{{ $user->last_name }}">
                     </div>
-                    <div class="col-md-4">
-                        <label for="membership_id" class="control-label">membership Id</label>
-                        <input id="membership_id" type="membership_id" class="form-control" name="membership_id"
-                               placeholder="Membership Id" value="{{ $user->membership_id }}">
+                    <div class="col-md-3">
+                        <label for="ibh_membership_id" class="control-label">IBH Membership ID</label>
+                        <input id="ibh_membership_id" type="last_name" class="form-control" name="ibh_membership_id"
+                               placeholder="membership Id" value="{{ $user->ibh_membership_id }}">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="ibnlp_membership_id" class="control-label">IBNLP Membership ID</label>
+                        <input id="ibnlp_membership_id" type="last_name" class="form-control" name="ibnlp_membership_id"
+                               placeholder="membership Id" value="{{ $user->ibnlp_membership_id }}">
                     </div>
                 </div>
 
 
                 {{--<div class="form-group">--}}
-                    {{--<div class="col-md-6">--}}
-                        {{--<label for="password" class="control-label">password</label>--}}
-                        {{--<input id="password" type="password" class="form-control" name="password">--}}
+                {{--<div class="col-md-6">--}}
+                {{--<label for="password" class="control-label">password</label>--}}
+                {{--<input id="password" type="password" class="form-control" name="password">--}}
 
-                        {{--@if ($errors->has('password'))--}}
-                            {{--<span class="help-block">--}}
-                                        {{--<strong>{{ $errors->first('password') }}</strong>--}}
-                                    {{--</span>--}}
-                        {{--@endif--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-6">--}}
-                        {{--<label for="password-confirm" class="control-label">Password confirmation</label>--}}
-                        {{--<input id="password-confirm" type="password" class="form-control"--}}
-                               {{--name="password_confirmation">--}}
+                {{--@if ($errors->has('password'))--}}
+                {{--<span class="help-block">--}}
+                {{--<strong>{{ $errors->first('password') }}</strong>--}}
+                {{--</span>--}}
+                {{--@endif--}}
+                {{--</div>--}}
+                {{--<div class="col-md-6">--}}
+                {{--<label for="password-confirm" class="control-label">Password confirmation</label>--}}
+                {{--<input id="password-confirm" type="password" class="form-control"--}}
+                {{--name="password_confirmation">--}}
 
-                        {{--@if ($errors->has('password_confirmation'))--}}
-                            {{--<span class="help-block">--}}
-                                        {{--<strong>{{ $errors->first('password_confirmation') }}</strong>--}}
-                                    {{--</span>--}}
-                        {{--@endif--}}
-                    {{--</div>--}}
+                {{--@if ($errors->has('password_confirmation'))--}}
+                {{--<span class="help-block">--}}
+                {{--<strong>{{ $errors->first('password_confirmation') }}</strong>--}}
+                {{--</span>--}}
+                {{--@endif--}}
+                {{--</div>--}}
                 {{--</div>--}}
 
                 <div class="form-group">
@@ -109,14 +114,19 @@
                     </div>
                     <div class="col-lg-2">
                         <label for="type">User Type</label></br>
-                        {{ Form::radio('type', 'trainer' , $user->ibnlp === 'trainer' ? true : false, ['class' => 'form-input']) }} trainer </br>
-                        {{ Form::radio('type', 'assistant', $user->ibnlp === 'assistant' ? true : false, ['class' => 'form-input']) }} assistant </br>
-                        {{ Form::radio('type', 'master', $user->ibnlp === 'master' ? true : false, ['class' => 'form-input']) }} master
+                        {{ Form::radio('type', 'trainer' , $user->ibnlp === 'trainer' ? true : false, ['class' => 'form-input']) }}
+                        trainer </br>
+                        {{ Form::radio('type', 'assistant', $user->ibnlp === 'assistant' ? true : false, ['class' => 'form-input']) }}
+                        assistant </br>
+                        {{ Form::radio('type', 'master', $user->ibnlp === 'master' ? true : false, ['class' => 'form-input']) }}
+                        master
                     </div>
                     <div class="col-lg-2">
                         <label for="type">Gender</label></br>
-                        {{ Form::radio('gender','male', $user->gender == 'male' ? true : false, ['class' => '', 'required']) }} male -
-                        {{ Form::radio('gender','female',$user->gender  == 'female' ? true : false, ['class' => '', 'required']) }} female
+                        {{ Form::radio('gender','male', $user->gender == 'male' ? true : false, ['class' => '', 'required']) }}
+                        male -
+                        {{ Form::radio('gender','female',$user->gender  == 'female' ? true : false, ['class' => '', 'required']) }}
+                        female
                     </div>
 
                     <div class="col-lg-2">
