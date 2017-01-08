@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-lg-9 col-md-9 col-xs-12">
                                 <p class="text-justify" style="font-size: 12px; !important;">
-                                    {!! e(str_limit($post->body ,100,'...')) !!}
+                                    {!! str_limit(strip_tags($post->body) ,100,'...') !!}
                                     &nbsp;&nbsp; <a href="{{ url('post/'.$post->id) }}" class="btn btn-xs btn-info">{{ trans('general.more') }}</a>
                                 </p>
                             </div>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-lg-9 col-md-9 col-xs-12">
                     <p class="text-justify" style="font-size: 12px; !important;">
-                        {!! str_limit($posts->first()->body ,20,'...') !!}
+                        {!! str_limit(strip_tags($posts->first()->body) ,20,'...') !!}
                         &nbsp;&nbsp; <a href="{{ url('post/'.$post->id) }}" class="btn btn-xs btn-info">{{ trans('general.more') }}</a>
                         {{--&nbsp;&nbsp;{{ link_to_route('post.show',trans('general.more'), $posts->first()->id,['class' => 'btn btn-xs btn-info']) }}--}}
                     </p>
