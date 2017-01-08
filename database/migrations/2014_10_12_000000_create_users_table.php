@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->longText('description_en');
             $table->string('video_link');
             $table->string('other_link');
-            $table->string('membership_id')->index()->default(0);
+            $table->string('ibh_membership_id')->index()->default(0);
             $table->string('graduation_year');
             $table->text('pdf');
             $table->enum('gender', ['male', 'female'])->default('male');

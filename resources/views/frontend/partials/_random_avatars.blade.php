@@ -4,7 +4,7 @@
         <hr>
         @foreach($users->chunk(6) as $usersSet)
             @foreach($usersSet as $user )
-                <div class="col-lg-2 col-xs-3" style="margin-bottom : 1px;">
+                <div class="col-lg-2 col-xs-3" style="margin-bottom : 5px;">
                     <a href="{{ route('user.show',$user->id) }}" class="text-center" style="margin-bottom: 4px;">
                         <img src="{{ File::exists('storage/'.$user->avatar) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"
                              alt="{{ $user->name }}"

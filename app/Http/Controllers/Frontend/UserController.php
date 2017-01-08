@@ -18,9 +18,9 @@ class UserController extends Controller
     {
         $title = request()->get('filter') ? request()->get('filter') : 'ibh';
 
-        $featuredTrainers = User::where($title, true)->featured()->trainer()->take(4)->get();
+        $featuredTrainers = User::inRandomOrder()->where($title, true)->featured()->trainer()->take(4)->get();
 
-        $featuredMasters = User::where($title, true)->featured()->master()->take(4)->get();
+        $featuredMasters = User::inRandomOrder()->where($title, true)->featured()->master()->take(4)->get();
 
         $q = User::query();
 

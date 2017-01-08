@@ -8,20 +8,24 @@
                 {{ Form::open(['route' => 'backend.user.store','method' => 'post','class' => 'form-horizontal','files' => true ]) }}
                 {{ csrf_field() }}
                 <div class="form-group">
-
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <label for="first_name" class="control-label">First Name</label>
                         <input id="first_name" type="text" class="form-control" name="first_name"
                                placeholder="First Name"/>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <label for="last_name" class="control-label">last name</label>
                         <input id="last_name" type="last_name" class="form-control" name="last_name"
                                placeholder="Last Name">
                     </div>
-                    <div class="col-md-4">
-                        <label for="membership_id" class="control-label">Membership ID</label>
-                        <input id="membership_id" type="last_name" class="form-control" name="membership_id"
+                    <div class="col-md-3">
+                        <label for="ibh_membership_id" class="control-label">IBH Membership ID</label>
+                        <input id="ibh_membership_id" type="last_name" class="form-control" name="ibh_membership_id"
+                               placeholder="membership Id">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="ibnlp_membership_id" class="control-label">IBNLP Membership ID</label>
+                        <input id="ibnlp_membership_id" type="last_name" class="form-control" name="ibnlp_membership_id"
                                placeholder="membership Id">
                     </div>
                 </div>

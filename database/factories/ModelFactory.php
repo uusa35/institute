@@ -48,7 +48,8 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'ibnlp' => $faker->numberBetween(0,1),
         'ibh' => $faker->numberBetween(0,1),
         'active' => 1,
-        'membership_id' => $faker->numberBetween(999, 99999).$faker->randomLetter,
+        'ibh_membership_id' => $faker->numberBetween(999, 99999).$faker->randomLetter,
+        'ibnlp_membership_id' => $faker->numberBetween(999, 99999).$faker->randomLetter,
         'subscribed' => $faker->numberBetween(0, 1),
         'featured' => $faker->numberBetween(0, 1),
     ];
