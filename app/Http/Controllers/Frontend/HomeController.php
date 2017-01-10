@@ -48,7 +48,7 @@ class HomeController extends Controller
 
         $posts = Post::latest()->take(4)->get();
 
-        $users = User::subscribed()->trainer()->take(12)->get()->shuffle();
+        $users = User::inRandomOrder()->subscribed()->trainer()->take(12)->get()->shuffle();
 
         return view('frontend.home', compact('sliders', 'users', 'posts'));
     }
