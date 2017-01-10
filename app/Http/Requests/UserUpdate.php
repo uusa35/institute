@@ -43,8 +43,8 @@ class UserUpdate extends FormRequest
             'pdf' => 'mimes:pdf',
             'video_link' => 'url',
             'other_link' => 'url',
-            'ibh_membership_id' => 'alpha_num|unique:users,ibh_membership_id',
-            'ibnlp_membership_id' => 'alpha_num|unique:users,ibnlp_membership_id',
+            'ibh_membership_id' => 'alpha_num',
+            'ibnlp_membership_id' => 'alpha_num',
             'type' => 'required',
             'gender' => 'required'
         ];
