@@ -53,7 +53,7 @@ return array (
   'search' => 'بحــث',
   'trainer_card' => 'مـدرب مرخـص بالتنويـم',
   'graduation_year' => 'الدفعـة',
-  'pdf' => 'بي دي أف',
+  'pdf' => 'PDF',
   'other_link' => 'روابط اخرى',
   'video' => 'Video',
   'membership_id' => 'Code',
@@ -68,4 +68,6 @@ return array (
   ),
   'articles' => '  مقـالات المدربيـن الدولييـن:',
   'master_users' => 'باقة التميز - برنامج المدرب الماستر',
+  'ibh_membership_id' => 'IBH رقم',
+  'ibnlp_membership_id' => 'IBNLP رقم',
 );
