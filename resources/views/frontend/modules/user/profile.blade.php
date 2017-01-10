@@ -7,16 +7,16 @@
                 <h1 class="text-center">{{ trans('general.trainer_card') }} {{ $user->type }}</h1>
                 <hr>
             </div>
-            <div class="col-lg-4">
-                <div class="col-lg-6">
+            <div class="col-lg-4 center-block">
+                <div class="col-lg-6 center-block">
                     @if($user->ibh)
-                        <img style="max-height:100px;" class="img-resopnsive"
+                        <img style="max-height:100px;" class="img-responsive center-block"
                              src="{{ asset('images/IBH.png')  }}" alt="{{ $user->type }}">
                     @endif
                 </div>
                 <div class="col-lg-6">
                     @if($user->ibnlp)
-                        <img style="max-height:100px;" class="img-resopnsive"
+                        <img style="max-height:100px;" class="img-responsive center-block"
                              src="{{ asset('images/IBNLP.png')  }}" alt="{{ $user->type }}">
                     @endif
                 </div>
@@ -27,61 +27,65 @@
         <div class="col-lg-12">
             {{-- CV + Youtube Video --}}
             <div class="col-lg-8 col-xs-12">
-                <h4>
-                    {{trans('general.name') }} : {{ $user->name }}
-                </h4>
-                <p>
-                    <i class="glyphicon glyphicon-flag"></i> {{ trans('general.country') }}
-                    &nbsp;{{ $user->country }}
-                    <br/>
-                    <i class="glyphicon glyphicon-envelope"></i> {{ trans('general.email') }} :
-                    &nbsp;{{ $user->email }}
-                    </br>
-                    <i class="glyphicon glyphicon-calendar"></i> &nbsp; {{ trans('general.graduation_year') }} :
-                    &nbsp;{{ $user->graduation_year }}
-                    <br/>
-                    @if(!empty($user->pdf))
-                        <i class="glyphicon glyphicon-paperclip"></i> &nbsp; {{ trans('general.pdf') }} :
-                        &nbsp;<a href="{{ asset('storage/'.$user->pdf) }}">{{ trans('general.pdf') }}</a>
-                        <br/>
-                    @endif
-                    @if(!empty($user->other_link))
-                        <i class="glyphicon glyphicon-globe"></i> &nbsp; <a href="{{ $user->other_link }}"
-                                                                            class="btn btn-xs">{{ trans('general.other_link') }}</a>
-                        <br/>
-                    @endif
-                    @if(!empty($user->video_link))
-                        <i class="glyphicon glyphicon-play-circle"></i> &nbsp; <a href="{{ $user->video_link }}"
-                                                                                  class="btn btn-xs">{{ trans('general.video') }}</a>
-                    @endif
-                </p>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>
+                            {{trans('general.name') }} : {{ $user->name }}
+                        </h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <i class="glyphicon glyphicon-flag"></i> {{ trans('general.country') }}
+                            &nbsp;{{ $user->country }}
+                            <br/>
+                            <i class="glyphicon glyphicon-envelope"></i> {{ trans('general.email') }} :
+                            &nbsp;{{ $user->email }}
+                            </br>
+                            <i class="glyphicon glyphicon-calendar"></i> &nbsp; {{ trans('general.graduation_year') }} :
+                            &nbsp;{{ $user->graduation_year }}
+                            <br/>
+                            @if(!empty($user->pdf))
+                                <i class="glyphicon glyphicon-paperclip"></i> &nbsp; {{ trans('general.pdf') }} :
+                                &nbsp;<a href="{{ asset('storage/'.$user->pdf) }}">{{ trans('general.pdf') }}</a>
+                                <br/>
+                            @endif
+                            @if(!empty($user->other_link))
+                                <i class="glyphicon glyphicon-globe"></i> &nbsp; <a href="{{ $user->other_link }}"
+                                                                                    class="btn btn-xs">{{ trans('general.other_link') }}</a>
+                                <br/>
+                            @endif
+                            @if(!empty($user->video_link))
+                                <i class="glyphicon glyphicon-play-circle"></i> &nbsp; <a href="{{ $user->video_link }}"
+                                                                                          class="btn btn-xs">{{ trans('general.video') }}</a>
+                            @endif
+                        </p>
+                    </div>
+                </div>
             </div>
             {{-- Porchore --}}
             <div class="col-lg-4">
                 <div class="col-lg-12">
-                    <img style="max-height:100px;" class="img-responsive"
+                    <img style="max-height:100px;" class="img-responsive center-block img-thumbnail"
                          src="{{ File::exists('storage/'.$user->avatar) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"
-                         alt="" class="img-rounded img-responsive"/>
+                         alt=""/>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-12 text-center">
                     @if(!empty($user->ibh_membership_id))
-                        <h3 class="text-default">{{ trans('general.membership_id') }}
+                        <h3 class="text-default">{{ trans('general.ibh_membership_id') }}
                             : {{ $user->ibh_membership_id }}</h3>
                     @endif
                     @if(!empty($user->ibnlp_membership_id))
-                        <h3 class="text-default">{{ trans('general.membership_id') }}
+                        <h3 class="text-default">{{ trans('general.ibnlp_membership_id') }}
                             : {{ $user->ibnlp_membership_id }}</h3>
                     @endif
-                </div>
-                <div class="col-lg-12">
                     @if(File::exists('storage/'.$user->pdf))
-                        <a href="{{ asset('storage/'.$user->pdf) }}"><i
-                                    class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+                        <button href="{{ asset('storage/'.$user->pdf) }}" class="btn btn-info">
+                            <i class="fa fa-fw fa-file-pdf-o fa-lg"></i></button>
                     @endif
                 </div>
             </div>
         </div>
-        <div class="col-lg-12 panel panel-default">
+        <div class="col-lg-12 panel panel-default" style="margin : 10px;">
             <div class="panel-heading">
                 <blockquote>
                     {{ trans('general.info') }}
