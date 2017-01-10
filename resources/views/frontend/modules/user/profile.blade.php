@@ -78,7 +78,7 @@
                         <h3 class="text-default">{{ trans('general.ibnlp_membership_id') }}
                             : {{ $user->ibnlp_membership_id }}</h3>
                     @endif
-                    @if(File::exists(storage_path('app/public/'.$user->pdf)))
+                    @if(File::exists(storage_path('app/public/'.$user->pdf)) && !empty($user->pdf))
                         <a href="{{ asset('storage/'.$user->pdf) }}" class="btn btn-info">
                             <i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
                     @endif
