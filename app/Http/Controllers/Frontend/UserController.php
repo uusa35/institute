@@ -105,11 +105,13 @@ class UserController extends Controller
         $user = User::find($id);
 
         if ($request->hasFile('pdf')) {
+
             $pdfPath = $request->pdf->store('public/uploads/pdfs');
+
             $request->request->add(['pdf' => str_replace('public/', '', $pdfPath)]);
         }
 
-        if ($request->file('avatar')) {
+        if ($request->hasFile('avatar')) {
 
             $imagePath = $this->saveImage($request, 'avatar', '100', '115');
 

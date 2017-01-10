@@ -103,7 +103,7 @@ class UserController extends Controller
         }
 
 
-        if ($request->file('avatar')) {
+        if ($request->hasFile('avatar')) {
 
             $imagePath = $this->saveImage($request, 'avatar', '100', '115');
 
