@@ -68,4 +68,6 @@ return array (
   'membership_id' => 'Code',
   'articles' => 'Trainers Articles',
   'master_users' => 'Master Trainer Program',
+  'ibh_membership_id' => 'IBH No.',
+  'ibnlp_membership_id' => 'IBNLP No.',
 );
