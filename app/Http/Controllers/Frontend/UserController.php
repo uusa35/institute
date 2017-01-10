@@ -104,6 +104,18 @@ class UserController extends Controller
 
         $user = User::find($id);
 
+        if ($request->hasFile('pdf')) {
+            $pdfPath = $request->pdf->store('public/uploads/pdfs');
+            $request->request->add(['pdf' => str_replace('public/', '', $pdfPath)]);
+        }
+
+        if ($request->file('avatar')) {
+
+            $imagePath = $this->saveImage($request, 'avatar', '100', '115');
+
+            $request->request->add(['avatar' => str_replace('public/', '', $imagePath)]);
+        }
+
         $user->update($request->request->all());
 
         if ($request->has('password')) {
