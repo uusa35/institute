@@ -79,8 +79,8 @@
                             : {{ $user->ibnlp_membership_id }}</h3>
                     @endif
                     @if(File::exists('storage/'.$user->pdf))
-                        <button href="{{ asset('storage/'.$user->pdf) }}" class="btn btn-info">
-                            <i class="fa fa-fw fa-file-pdf-o fa-lg"></i></button>
+                        <a href="{{ asset('storage/'.$user->pdf) }}" class="btn btn-info">
+                            <i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
                     @endif
                 </div>
             </div>
