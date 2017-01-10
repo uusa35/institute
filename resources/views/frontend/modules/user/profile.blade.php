@@ -66,7 +66,7 @@
             <div class="col-lg-4">
                 <div class="col-lg-12">
                     <img style="max-height:100px;" class="img-responsive center-block img-thumbnail"
-                         src="{{ File::exists('storage/'.$user->avatar) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"
+                         src="{{ File::exists(storage_path('app/public/'.$user->avatar)) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"
                          alt=""/>
                 </div>
                 <div class="col-lg-12 text-center">
@@ -78,7 +78,7 @@
                         <h3 class="text-default">{{ trans('general.ibnlp_membership_id') }}
                             : {{ $user->ibnlp_membership_id }}</h3>
                     @endif
-                    @if(File::exists('storage/'.$user->pdf))
+                    @if(File::exists(storage_path('app/public/'.$user->pdf)))
                         <a href="{{ asset('storage/'.$user->pdf) }}" class="btn btn-info">
                             <i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
                     @endif
