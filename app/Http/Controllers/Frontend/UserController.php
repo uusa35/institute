@@ -102,7 +102,7 @@ class UserController extends Controller
 
         $this->authorize('isOwner', $id);
 
-        $user = User::find($id);
+        $user = User::whereId($id)->first();
 
         if ($request->hasFile('pdf')) {
 
