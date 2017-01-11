@@ -43,7 +43,7 @@ return array (
   'submit' => 'بحــث',
   'dashboard' => 'إدارى المحتوى',
   'profile' => 'السيـرة الذاتيـة',
-  'random_users' => 'باقة الدعم التدريبية للمدربين',
+  'random_users' => 'باقة الدعم التدريبية للمدربين:',
   'no_posts' => 'لا يوجد مقالات ...',
   'no_albums' => 'لا يوجد صور',
   'gallery' => 'المعــرض',
@@ -68,6 +68,6 @@ return array (
   ),
   'articles' => '  مقـالات المدربيـن الدولييـن:',
   'master_users' => 'باقة التميز - برنامج المدرب الماستر',
-  'ibh_membership_id' => 'IBH رقم',
-  'ibnlp_membership_id' => 'IBNLP رقم',
+  'ibh_membership_id' => 'IBH Code:',
+  'ibnlp_membership_id' => 'IBNLP Code:',
 );
