@@ -141,7 +141,7 @@ class UserController extends Controller
 
     public function postResetPassword(Request $request)
     {
-        $user = User::find($request->id)->update(['password' => bcrypt($request->password)]);
+        $user = User::whereId($request->id)->update(['password' => bcrypt($request->password)]);
 
         return redirect()->route('backend.user.index')->with('success', 'password has been reset successfully');
     }
