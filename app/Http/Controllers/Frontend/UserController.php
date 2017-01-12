@@ -76,9 +76,21 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        $user = User::whereId($id)->first();
 
-        return view('frontend.modules.user.profile', compact('user'));
+        if (session('filter')) {
+            if ($user->ibh && $user->ibnlp) {
+                $userTypeTrans = session('filter') . '_' . $user->type;
+            } elseif ($user->ibh) {
+                $userTypeTrans = $user->ibhCertificate . '_' . $user->type;
+            } elseif ($user->ibnlp) {
+                $userTypeTrans = $user->ibnlpCertificate . '_' . $user->type;
+            }
+        } else {
+            $userTypeTrans = ($user->ibh) ? $user->ibhCertificate . '_' . $user->type : $user->ibnlpCertificate . '_' . $user->type;
+        }
+
+        return view('frontend.modules.user.profile', compact('user', 'userTypeTrans'));
     }
 
     /**

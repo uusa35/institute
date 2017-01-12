@@ -4,7 +4,7 @@
     <div class="col-lg-8 col-lg-push-2">
         <div class="col-lg-12">
             <div class="col-lg-8 text-center">
-                <h1 class="text-center">{{ trans('general.'.(session('filter') ? session('filter') : ($user->ibh) ? $user->ibhCertificate : $user->ibnlpCertificate ).'_'.$user->type) }}</h1>
+                <h1 class="text-center">{{ trans('general.'.$userTypeTrans) }}</h1>
                 <hr>
             </div>
             <div class="col-lg-4 center-block">
