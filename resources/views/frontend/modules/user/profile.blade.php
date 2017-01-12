@@ -70,13 +70,15 @@
                          alt="{{ $user->name }}"/>
                 </div>
                 <div class="col-lg-12 text-center">
-                    @if(!empty($user->ibh_membership_id) & session('filter') === $user->ibhCertificate)
-                        <h4 class="text-default">{{ trans('general.ibh_membership_id') }}
-                            : {{ $user->ibh_membership_id }}</h4>
+                    @if(!is_null($userCode))
+                        <h4 class="text-default">{{ trans('general.membership_id') }}
+                            : {{ $userCode }}</h4>
                     @endif
-                    @if(!empty($user->ibnlp_membership_id) & session('filter') === $user->ibnlpCertificate)
+                    @if(!session()->has('filter'))
+                        <h4 class="text-default">{{ trans('general.ibh_membership_id') }}
+                            : {{ $userCodeIBH }}</h4>
                         <h4 class="text-default">{{ trans('general.ibnlp_membership_id') }}
-                            : {{ $user->ibnlp_membership_id }}</h4>
+                            : {{ $userCodeIBNLP }}</h4>
                     @endif
                     @if(File::exists(storage_path('app/public/'.$user->pdf)) && !empty($user->pdf))
                         <a href="{{ asset('storage/'.$user->pdf) }}" class="btn btn-info">

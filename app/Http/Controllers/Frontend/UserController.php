@@ -78,19 +78,33 @@ class UserController extends Controller
     {
         $user = User::whereId($id)->first();
 
-        if (session('filter')) {
+        $userCode = null;
+        $userCodeIBH = null;
+        $userCodeIBNLP = null;
+        $filter = session()->get('filter');
+
+        if (session()->has('filter')) {
             if ($user->ibh && $user->ibnlp) {
-                $userTypeTrans = session('filter') . '_' . $user->type;
+                $userTypeTrans = $filter . '_' . $user->type;
+                if ($filter === 'ibh') {
+                    $userCode = $user->ibh_membership_id;
+                } elseif ($filter === 'ibnlp') {
+                    $userCode = $user->ibnlp_membership_id;
+                }
             } elseif ($user->ibh) {
                 $userTypeTrans = $user->ibhCertificate . '_' . $user->type;
+                $userCode = $user->ibh_membership_id;
             } elseif ($user->ibnlp) {
                 $userTypeTrans = $user->ibnlpCertificate . '_' . $user->type;
+                $userCode = $user->ibnlp_membership_id;
             }
         } else {
+            $userCodeIBH = $user->ibh_membership_id;
+            $userCodeIBNLP = $user->ibnlp_membership_id;
             $userTypeTrans = ($user->ibh) ? $user->ibhCertificate . '_' . $user->type : $user->ibnlpCertificate . '_' . $user->type;
         }
 
-        return view('frontend.modules.user.profile', compact('user', 'userTypeTrans'));
+        return view('frontend.modules.user.profile', compact('user', 'userTypeTrans', 'userCode', 'userCodeIBH', 'userCodeIBNLP'));
     }
 
     /**
