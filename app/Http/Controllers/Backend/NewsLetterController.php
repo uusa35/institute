@@ -66,7 +66,7 @@ class NewsLetterController extends Controller
      */
     public function edit($id)
     {
-        $subscriber = Newsletter::find($id);
+        $subscriber = Newsletter::whereId($id)->first();
 
         return view('backend.modules.newsletter.edit', compact('subscriber'));
     }

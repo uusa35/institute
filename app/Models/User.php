@@ -102,6 +102,11 @@ class User extends Authenticatable
         $q->where('type', 'master');
     }
 
+    public function scopeSelected($q)
+    {
+        $q->where('type', 'trainer')->orWhere('type', 'assistant');
+    }
+
     public function scopeIbh($q)
     {
         $q->where('ibh', true);
@@ -112,7 +117,7 @@ class User extends Authenticatable
         $q->where('ibh', true);
     }
 
-    public function scopefeatured($q)
+    public function scopeFeatured($q)
     {
         $q->where('featured', true);
     }
@@ -137,5 +142,14 @@ class User extends Authenticatable
         return User::where('active', 0)->count();
     }
 
+    public function getIbhCertificateAttribute()
+    {
+        return $this->ibh ? 'ibh' : false;
+    }
+
+    public function getIbnlpCertificateAttribute()
+    {
+        return $this->ibnlp ? 'ibnlp' : false;
+    }
 
 }

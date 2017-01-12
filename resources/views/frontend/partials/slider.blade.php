@@ -1,6 +1,6 @@
 <div class="row slider-main">
     <div id="carousel-example-generic" class="carousel slide col-lg-10 col-lg-push-1" data-ride="carousel"
-         data-interval="false" data-pause="hover">
+         data-interval="2000" data-pause="hover">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             @foreach($sliders as $slider)

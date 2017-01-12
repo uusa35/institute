@@ -16,15 +16,21 @@ class UserController extends Controller
      */
     public function index()
     {
-        $title = request()->get('filter') ? request()->get('filter') : 'ibh';
+        session()->put('filter', request()->get('filter'));
 
+        $filter = session('filter');
+
+        $title = $filter ? $filter : 'ibh';
+
+        // only trainder
         $featuredTrainers = User::inRandomOrder()->where($title, true)->featured()->trainer()->take(4)->get();
 
-        $featuredMasters = User::inRandomOrder()->where($title, true)->featured()->master()->take(4)->get();
+        // master + asistant
+        $featuredMasters = User::inRandomOrder()->where($title, true)->featured()->selected()->take(4)->get();
 
         $q = User::query();
 
-        if (request()->get('filter')) {
+        if (session('filter')) {
 
             $q->where($title, true);
 

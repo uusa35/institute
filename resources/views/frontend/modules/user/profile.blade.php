@@ -4,7 +4,7 @@
     <div class="col-lg-8 col-lg-push-2">
         <div class="col-lg-12">
             <div class="col-lg-8 text-center">
-                <h1 class="text-center">{{ trans('general.trainer_card') }} {{ $user->type }}</h1>
+                <h1 class="text-center">{{ trans('general.'.session('filter').'_'.$user->type) }}</h1>
                 <hr>
             </div>
             <div class="col-lg-4 center-block">
@@ -67,16 +67,16 @@
                 <div class="col-lg-12">
                     <img style="max-height:100px;" class="img-responsive center-block img-thumbnail"
                          src="{{ File::exists(storage_path('app/public/'.$user->avatar)) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"
-                         alt=""/>
+                         alt="{{ $user->name }}"/>
                 </div>
                 <div class="col-lg-12 text-center">
-                    @if(!empty($user->ibh_membership_id))
-                        <h3 class="text-default">{{ trans('general.ibh_membership_id') }}
-                            : {{ $user->ibh_membership_id }}</h3>
+                    @if(!empty($user->ibh_membership_id) && session('filter') === $user->ibhCertificate)
+                        <h4 class="text-default">{{ trans('general.ibh_membership_id') }}
+                            : {{ $user->ibh_membership_id }}</h4>
                     @endif
-                    @if(!empty($user->ibnlp_membership_id))
-                        <h3 class="text-default">{{ trans('general.ibnlp_membership_id') }}
-                            : {{ $user->ibnlp_membership_id }}</h3>
+                    @if(!empty($user->ibnlp_membership_id) && session('filter') === $user->ibnlpCertificate)
+                        <h4 class="text-default">{{ trans('general.ibnlp_membership_id') }}
+                            : {{ $user->ibnlp_membership_id }}</h4>
                     @endif
                     @if(File::exists(storage_path('app/public/'.$user->pdf)) && !empty($user->pdf))
                         <a href="{{ asset('storage/'.$user->pdf) }}" class="btn btn-info">
@@ -110,3 +110,4 @@
         </div>
     </div>
 @endsection
+

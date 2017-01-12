@@ -130,3 +130,11 @@
         </div>
     </div>
 @endsection
+
+@section('customScripts')
+    @parent
+    <script src="{{ asset('js/tinymce.js') }}" type="text/javascript"></script>
+    <script type="application/javascript">
+        tinymce.init({selector: 'textarea'});
+    </script>
+@endsection

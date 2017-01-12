@@ -99,6 +99,9 @@ elixir(mix => {
             //
         ], 'public/js/frontend.js')
         .scripts([
+            '../../../node_modules/tinymce/tinymce.min.js',
+        ], 'public/js/tinymce.js')
+        .scripts([
             //
             '../../../bower_components/bower_installer/js/pusher-websocket-iso/pusher.js',
         ], 'public/js/pusher.js')
