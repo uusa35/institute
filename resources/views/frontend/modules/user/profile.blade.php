@@ -70,11 +70,11 @@
                          alt="{{ $user->name }}"/>
                 </div>
                 <div class="col-lg-12 text-center">
-                    @if(!empty($user->ibh_membership_id) && session('filter') === $user->ibhCertificate)
+                    @if(!empty($user->ibh_membership_id) || session('filter') === $user->ibhCertificate)
                         <h4 class="text-default">{{ trans('general.ibh_membership_id') }}
                             : {{ $user->ibh_membership_id }}</h4>
                     @endif
-                    @if(!empty($user->ibnlp_membership_id) && session('filter') === $user->ibnlpCertificate)
+                    @if(!empty($user->ibnlp_membership_id) || session('filter') === $user->ibnlpCertificate)
                         <h4 class="text-default">{{ trans('general.ibnlp_membership_id') }}
                             : {{ $user->ibnlp_membership_id }}</h4>
                     @endif
