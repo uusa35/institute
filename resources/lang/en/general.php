@@ -70,4 +70,10 @@ return array (
   'master_users' => 'Master Trainer Program',
   'ibh_membership_id' => 'IBH No.',
   'ibnlp_membership_id' => 'IBNLP No.',
+  'ibnlp_trainer' => 'IBNLP مدرب مرخص بالـ ',
+  'ibh_trainer' => 'مدرب مرخص بالتنويم',
+  'ibh_assistant' => 'مدرب مساعد بالتنويم',
+  'ibh_master' => 'مدرب مدربين بالتنويم',
+  'ibnlp_assistant' => 'IBNLP مدرب مساعد بالـ ',
+  'ibnlp_master' => 'IBNLP مدرب مدربين بالـ ',
 );

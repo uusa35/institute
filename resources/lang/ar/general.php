@@ -70,4 +70,10 @@ return array (
   'master_users' => 'باقة التميز - برنامج المدرب الماستر',
   'ibh_membership_id' => 'IBH Code:',
   'ibnlp_membership_id' => 'IBNLP Code:',
+  'ibh_trainer' => 'مدرب مرخص بالتنويم',
+  'ibh_master' => 'مدرب مدربين بالتنويم',
+  'ibh_assistant' => 'مدرب مساعد بالتنويم',
+  'ibnlp_trainer' => 'IBNLP مدرب مرخص بالـ ',
+  'ibnlp_assistant' => 'IBNLP مدرب مساعد بالـ ',
+  'ibnlp_master' => 'IBNLP مدرب مدربين بالـ ',
 );
