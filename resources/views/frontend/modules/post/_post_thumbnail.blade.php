@@ -8,7 +8,7 @@
         </div>
         <div class="hf-info col-lg-9">
             <h2 class="post-title">
-                <a class="article-link" href="#">
+                <a class="article-link" href="{{ route('post.show',$post->id) }}">
                     {{ $post->title }}
                     <span class="overlay article-overlay"></span>
                 </a>
