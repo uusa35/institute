@@ -70,16 +70,16 @@
                          alt="{{ $user->name }}"/>
                 </div>
                 <div class="col-lg-12 text-center">
-                    @if(!is_null($userCode) && count($userCode) > 1)
+                    @if(!is_null($userCode) && strlen($userCode) > 1)
                         <h4 class="text-default">{{ trans('general.membership_id') }}
                             : {{ $userCode }}</h4>
                     @endif
                     @if(!session()->has('filter'))
-                        @if(!is_null($userCodeIBH) && count($userCodeIBH) > 1)
+                        @if(!is_null($userCodeIBH) && strlen($userCodeIBH) > 1)
                             <h4 class="text-default">{{ trans('general.ibh_membership_id') }}
                                 : {{ $userCodeIBH }}</h4>
                         @endif
-                        @if(!is_null($userCodeIBNLP) && count($userCodeIBNLP) > 1)
+                        @if(!is_null($userCodeIBNLP) && strlen($userCodeIBNLP) > 1)
                             <h4 class="text-default">{{ trans('general.ibnlp_membership_id') }}
                                 : {{ $userCodeIBNLP }}</h4>
                         @endif
