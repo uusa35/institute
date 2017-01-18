@@ -79,8 +79,12 @@
                         <input type="file" class="form-control" name="pdf">
                     </div>
                     <div class="col-md-2">
-                        <label for="graduation_year" class="control-label">graduation year</label>
+                        <label for="graduation_year" class="control-label">IBH graduation year</label>
                         <input type="text" class="form-control" name="graduation_year">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="ibnlp_graduation_year" class="control-label">IBNLP graduation year</label>
+                        <input type="text" class="form-control" name="ibnlp_graduation_year">
                     </div>
                     <div class="col-md-3">
                         <label for="mobile" class="ontrol-label">mobile</label>

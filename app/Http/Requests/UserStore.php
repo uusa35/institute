@@ -34,6 +34,8 @@ class UserStore extends FormRequest
             'other_link' => 'url',
             'ibh_membership_id' => 'alpha_num|unique:users',
             'ibnlp_membership_id' => 'alpha_num|unique:users',
+            'graduation_year' => 'numeric',
+            'ibnlp_graduation_year' => 'numeric',
             'type' => 'required',
             'gender' => 'required',
             'active' => 'required',

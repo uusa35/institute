@@ -41,8 +41,8 @@
                             <i class="glyphicon glyphicon-envelope"></i> {{ trans('general.email') }} :
                             &nbsp;{{ $user->email }}
                             </br>
-                            <i class="glyphicon glyphicon-calendar"></i> &nbsp; {{ trans('general.graduation_year') }} :
-                            &nbsp;{{ $user->graduation_year }}
+                            <i class="glyphicon glyphicon-calendar"></i> &nbsp; {{ trans('general.graduation_year') }}  :
+                            &nbsp;{{ $graduationYear }}
                             <br/>
                             @if(!empty($user->pdf))
                                 <i class="glyphicon glyphicon-paperclip"></i> &nbsp; {{ trans('general.pdf') }} :

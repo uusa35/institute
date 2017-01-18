@@ -26,6 +26,7 @@
     @include('frontend.partials.notifications')
     @section('body')
         <div class="row">
+
             @yield('content')
             @show
         </div>
@@ -33,6 +34,8 @@
 @section('footer')
     @include('frontend.partials.footer')
 @show
+
+
 @section('scripts')
     @include('frontend.partials.scripts')
 @show

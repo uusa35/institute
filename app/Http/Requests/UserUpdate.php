@@ -41,6 +41,8 @@ class UserUpdate extends FormRequest
             'email' => 'required|email|max:255',
             'password' => 'sometimes|min:1|confirmed',
             'pdf' => 'mimes:pdf',
+            'graduation_year' => 'numeric',
+            'ibnlp_graduation_year' => 'numeric',
             'video_link' => 'url',
             'other_link' => 'url',
             'ibh_membership_id' => 'alpha_num',

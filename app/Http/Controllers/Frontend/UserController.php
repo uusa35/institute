@@ -88,15 +88,19 @@ class UserController extends Controller
                 $userTypeTrans = $filter . '_' . $user->type;
                 if ($filter === 'ibh') {
                     $userCode = $user->ibh_membership_id;
+                    $graduationYear = $user->graduation_year;
                 } elseif ($filter === 'ibnlp') {
                     $userCode = $user->ibnlp_membership_id;
+                    $graduationYear = $user->ibnlp_graduation_year;
                 }
             } elseif ($user->ibh) {
                 $userTypeTrans = $user->ibhCertificate . '_' . $user->type;
                 $userCode = $user->ibh_membership_id;
+                $graduationYear = $this->graduation_year;
             } elseif ($user->ibnlp) {
                 $userTypeTrans = $user->ibnlpCertificate . '_' . $user->type;
                 $userCode = $user->ibnlp_membership_id;
+                $graduationYear = $this->ibnlp_graduation_year;
             }
         } else {
             $userCodeIBH = $user->ibh_membership_id;
@@ -104,7 +108,7 @@ class UserController extends Controller
             $userTypeTrans = ($user->ibh) ? $user->ibhCertificate . '_' . $user->type : $user->ibnlpCertificate . '_' . $user->type;
         }
 
-        return view('frontend.modules.user.profile', compact('user', 'userTypeTrans', 'userCode', 'userCodeIBH', 'userCodeIBNLP'));
+        return view('frontend.modules.user.profile', compact('user', 'userTypeTrans', 'userCode', 'userCodeIBH', 'userCodeIBNLP','graduationYear'));
     }
 
     /**

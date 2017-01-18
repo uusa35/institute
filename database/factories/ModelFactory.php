@@ -43,6 +43,7 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'other_link' => $faker->sentence(5),
         'pdf' => $faker->imageUrl(),
         'graduation_year' => $faker->year,
+        'ibnlp_graduation_year' => $faker->year,
         'gender' => $faker->randomElement(['male', 'female']),
         'type' => $faker->randomElement(['trainer', 'assistant', 'master']),
         'ibnlp' => $faker->numberBetween(0,1),
