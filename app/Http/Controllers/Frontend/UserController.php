@@ -96,11 +96,11 @@ class UserController extends Controller
             } elseif ($user->ibh) {
                 $userTypeTrans = $user->ibhCertificate . '_' . $user->type;
                 $userCode = $user->ibh_membership_id;
-                $graduationYear = $this->graduation_year;
+                $graduationYear = $user->graduation_year;
             } elseif ($user->ibnlp) {
                 $userTypeTrans = $user->ibnlpCertificate . '_' . $user->type;
                 $userCode = $user->ibnlp_membership_id;
-                $graduationYear = $this->ibnlp_graduation_year;
+                $graduationYear = $user->ibnlp_graduation_year;
             }
         } else {
             $userCodeIBH = $user->ibh_membership_id;
