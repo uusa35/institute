@@ -81,6 +81,7 @@ class UserController extends Controller
         $userCode = null;
         $userCodeIBH = null;
         $userCodeIBNLP = null;
+        $graduationYear = null;
         $filter = session()->get('filter');
 
         if (session()->has('filter')) {
@@ -106,6 +107,7 @@ class UserController extends Controller
             $userCodeIBH = $user->ibh_membership_id;
             $userCodeIBNLP = $user->ibnlp_membership_id;
             $userTypeTrans = ($user->ibh) ? $user->ibhCertificate . '_' . $user->type : $user->ibnlpCertificate . '_' . $user->type;
+            $graduationYear = $user->graduation_year;
         }
 
         return view('frontend.modules.user.profile', compact('user', 'userTypeTrans', 'userCode', 'userCodeIBH', 'userCodeIBNLP','graduationYear'));
