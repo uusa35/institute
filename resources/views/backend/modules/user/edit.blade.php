@@ -90,7 +90,7 @@
                         {{ Form::select('country', $countries, $user->country, ['class' => 'form-control']) }}
                     </div>
                     <div class="col-md-2">
-                        <label for="graduation_year" class="control-label">graduation year</label>
+                        <label for="graduation_year" class="control-label">IBH graduation year</label>
                         <input type="text" class="form-control" name="graduation_year" value="{{ $user->graduation_year }}">
                     </div>
                     <div class="col-md-2">
