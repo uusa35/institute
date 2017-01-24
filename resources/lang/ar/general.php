@@ -55,7 +55,7 @@ return array (
   'graduation_year' => 'الدفعـة',
   'pdf' => 'PDF',
   'other_link' => 'روابط اخرى',
-  'video' => 'Video',
+  'video' => 'رابط الفيديو',
   'membership_id' => 'Code:',
   'info' => 'نرحب بك بالصفحة الخاصة ببيانات المدرب المرخص من البورد الدولي IBH - IBNLP',
   'description' => 'السيرة الذاتيـة:',
