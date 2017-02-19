@@ -42,7 +42,7 @@
             <h3>{{ trans('general.instagram') }}</h3>
             <hr>
             <!-- LightWidget WIDGET -->
-            <script src="//lightwidget.com/widgets/lightwidget.js"></script>
+            {{--<script src="//lightwidget.com/widgets/lightwidget.js"></script>--}}
 
             {{--<iframe src="//lightwidget.com/widgets/c56f1a5058e5526485ea592914428bed.html" id="lightwidget_c56f1a5058"--}}
             {{--name="lightwidget_c56f1a5058" scrolling="no" allowtransparency="true" class="lightwidget-widget"--}}
@@ -50,10 +50,14 @@
                     <!-- LightWidget WIDGET -->
             <!-- LightWidget WIDGET -->
             <!-- LightWidget WIDGET -->
-            <script src="//lightwidget.com/widgets/lightwidget.js"></script>
-            <iframe src="//lightwidget.com/widgets/7537e132d3a355e4b60ff9378d05234c.html" scrolling="no"
-                    allowtransparency="true" class="lightwidget-widget"
-                    style="width: 100%; border: 0; overflow: hidden;"></iframe>
+            {{--<script src="//lightwidget.com/widgets/lightwidget.js"></script>--}}
+            {{--<iframe src="//lightwidget.com/widgets/7537e132d3a355e4b60ff9378d05234c.html" scrolling="no"--}}
+                    {{--allowtransparency="true" class="lightwidget-widget"--}}
+                    {{--style="width: 100%; border: 0; overflow: hidden;"></iframe>--}}
+
+            <!-- InstaWidget -->
+            <a href="https://instawidget.net/v/user/inter_t_i" id="link-7da1028c58d17edacf850860bb521f2954b0988c4c1a1fb4a095f3edfbf374d9">@{{ $contactusInfo->instagram_url }}</a>
+            <script src="https://instawidget.net/js/instawidget.js?u=7da1028c58d17edacf850860bb521f2954b0988c4c1a1fb4a095f3edfbf374d9&width=300px"></script>
 
 
         </div>
