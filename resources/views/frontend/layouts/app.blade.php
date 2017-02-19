@@ -25,7 +25,7 @@
     <div id="app">from app</div>
     @include('frontend.partials.notifications')
     @section('body')
-        <div class="row">
+        <div class="col-lg-12">
 
             @yield('content')
             @show

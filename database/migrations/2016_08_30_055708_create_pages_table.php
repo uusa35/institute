@@ -19,7 +19,6 @@ class CreatePagesTable extends Migration
             $table->integer('category_id')->unsigned()->index();
             $table->enum('order',range(0,10));
             $table->string('image');
-
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
