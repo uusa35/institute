@@ -18,7 +18,6 @@ class UsersTableSeeder extends Seeder
         } else {
             DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
-
             if (Schema::hasTable('users')) {
                 DB::table('users')->truncate();
             }
