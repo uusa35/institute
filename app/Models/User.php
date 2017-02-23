@@ -16,31 +16,6 @@ class User extends Authenticatable
      *
      * @var array
      */
-//    protected $guarded = [''];
-//    protected $fillable = [
-//        'email',
-//        'first_name',
-//        'last_name',
-//        'avatar',
-//        'country',
-//        'password',
-//        'mobile',
-//        'description_ar',
-//        'description_en',
-//        'video_link',
-//        'other_link',
-//        'ibh_membership_id',
-//        'ibnlp_membership_id',
-//        'graduation_year',
-//        'pdf',
-//        'gender',
-//        'type',
-//        'ibnlp',
-//        'ibh',
-//        'active',
-//        'subscribed',
-//        'featured',
-//    ];
     protected $guarded = [''];
     public $localeStrings = ['description'];
 
