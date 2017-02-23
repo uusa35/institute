@@ -54,6 +54,7 @@ class UserController extends Controller
             $imagePath = $this->saveImage($request, 'avatar', '100', '115');
             $request->request->add(['avatar' => str_replace('public/', '', $imagePath)]);
         }
+        $request->request->remove('password_confirmation');
 
         $user = User::create($request->request->all());
 
@@ -131,7 +132,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-
+        $user = User::whereId($id)->first();
+        $user->delete();
+        return redirect()->back()->with('success', 'user deleted');
     }
 
     public function getResetPassword($id)

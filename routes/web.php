@@ -15,19 +15,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 
-
-//if (Schema::hasTable('users') && app()->environment() === 'local') {
-//
-//    $user = User::where('active', 1)->first();
-//    Auth::loginUsingId($user->id);
-//
-//}
-
 Auth::routes();
-
-//Route::get('testing', function () {
-//   return view('test');
-//});
 
 //Route::any('/testing/pusher', function () {
 //    $configName = 'broadcasting.connections.pusher.';

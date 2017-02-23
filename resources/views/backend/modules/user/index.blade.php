@@ -50,9 +50,9 @@
                                                     <i class="fa fa-edit"></i> reset password</a>
                                             </li>
                                             <li>
-                                                {{ Form::open(['route' => ['backend.user.destroy',$user->id]]) }}
-                                                <a href="#" type="submit">
-                                                    <i class="fa fa-remove"></i> delete </a>
+                                                {{ Form::open(['route' => ['backend.user.destroy',$user->id],'method' => 'delete']) }}
+                                                <button type="submit">
+                                                    <i class="fa fa-remove"></i> delete </button>
                                                 {{ Form::close() }}
                                             </li>
                                         </ul>
