@@ -22,11 +22,11 @@ class UserController extends Controller
 
         $title = $filter ? $filter : 'ibh';
 
-        // only trainder
-        $featuredTrainers = User::inRandomOrder()->where($title, true)->featured()->trainer()->take(4)->get();
+        // only trainer
+        $featuredAssistants= User::inRandomOrder()->where($title, true)->featured()->assistant()->take(4)->get();
 
         // master + asistant
-        $featuredMasters = User::inRandomOrder()->where($title, true)->featured()->selected()->take(4)->get();
+        $featuredMasters = User::inRandomOrder()->where($title, true)->featured()->master()->take(4)->get();
 
         $q = User::query();
 
@@ -44,7 +44,7 @@ class UserController extends Controller
 
         $users = $q->paginate(12);
 
-        return view('frontend.modules.user.index', compact('users', 'featuredTrainers', 'featuredMasters'));
+        return view('frontend.modules.user.index', compact('users', 'featuredAssistants', 'featuredMasters'));
     }
 
     /**
