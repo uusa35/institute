@@ -27,7 +27,7 @@ class Controller extends BaseController
         return null;
     }
 
-    public function saveGallery(Request $request, $gallery, $width = '450', $height = '450')
+    public function saveGallery(Request $request, $gallery, $width = '1450', $height = '1450')
     {
         if (count($request->gallery) >= 1 && ($request->gallery[0] != null)) {
             foreach ($request->gallery as $item) {
