@@ -6,9 +6,12 @@
             @foreach($usersSet as $user )
                 <div class="col-lg-2 col-xs-3" style="margin-bottom : 5px;">
                     <a href="{{ route('user.show',$user->id) }}" class="text-center" style="margin-bottom: 4px;">
-                        <img src="{{ File::exists('storage/'.$user->avatar) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"
+                        <img src="asset('storage/'.$user->avatar)"
                              alt="{{ $user->name }}"
                              class="img-responsive text-center img-rounded" style="width: 100px; height : 115px; max-height: 125px !important; border: 1px solid lightgrey;">
+                        {{--<img src="{{ File::exists('storage/'.$user->avatar) ? asset('storage/'.$user->avatar) : asset('images/profile.png') }}"--}}
+                             {{--alt="{{ $user->name }}"--}}
+                             {{--class="img-responsive text-center img-rounded" style="width: 100px; height : 115px; max-height: 125px !important; border: 1px solid lightgrey;">--}}
                     </a>
                 </div>
             @endforeach
