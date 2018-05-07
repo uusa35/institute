@@ -72,7 +72,13 @@ class AlbumController extends Controller
     {
         $album = Album::whereId($id)->with('gallery.images')->first();
 
-        return view('backend.modules.album.edit', compact('album'));
+        if($album) {
+            return view('backend.modules.album.edit', compact('album'));
+        } else {
+            return redirect()->back()->with('error', 'album does not exists !!!');
+        }
+
+
     }
 
     /**
@@ -86,9 +92,15 @@ class AlbumController extends Controller
     {
         $album = Album::whereId($id)->first();
 
+        if(!$album) {
+            return redirect()->route('backend.album.index')->with('error', 'album does not exist. please try again.');
+        }
+
         $album->update($request->except('gallery'));
 
         $gallery = $album->gallery()->first();
+
+        $gallery = $gallery ? $gallery : $album->gallery()->save(new Gallery());
 
         $this->saveGallery($request, $gallery);
 
@@ -107,8 +119,12 @@ class AlbumController extends Controller
      */
     public function destroy($id)
     {
-        $album = Album::find($id);
-        $album->delete();
-        return redirect()->back()->with('success', 'album deleted');
+        $album = Album::whereId($id)->first();
+        if($album) {
+            $album->delete();
+            return redirect()->back()->with('success', 'album deleted');
+        }
+        return redirect()->route('backend.album.index')->with('error', 'album is not deleted please try again.');
+
     }
 }
