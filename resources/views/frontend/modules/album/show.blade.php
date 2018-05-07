@@ -13,7 +13,7 @@
                          alt="{{ $album->description }}">
                 @else
                     <img class="img-responsive" style="max-width: 150px;"
-                         src="{{ asset('storage/'.$album->gallery->first()->images->where('cover',1)->first()->image_url) }}"
+                         src="{{ asset('storage/'.$album->gallery->first()->images->first()->image_url) }}"
                          alt="{{ $album->description }}">
                 @endif
             </div>
