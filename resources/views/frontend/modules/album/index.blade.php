@@ -8,7 +8,7 @@
             <div class='list-group gallery'>
                 @foreach($albums as $album)
                     @if(!is_null($album->gallery->first()))
-                        <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3' style="padding:4px;">
+                        <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3' style="padding:4px; height : 450px;">
                             <a class="thumbnail fancybox" rel="ligthbox"
                                href="{{ route('album.show',$album->id) }}">
                                 @if(File::exists(asset('storage/'.$album->cover)))
