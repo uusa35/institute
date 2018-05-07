@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gallery;
 use App\Models\Image;
 use Illuminate\Http\Request;
 
@@ -73,7 +74,11 @@ class ImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $image = Image::whereId($id)->first()->update(['cover' => 1]);
+        $image = Image::whereId($id)->first();
+        $gallery = Gallery::whereId($image->gallery_id)->first();
+        $gallery->images()->update(['cover' => 0]);
+        $image->cover = 1;
+        $image->save();
         return redirect()->back()->with('success', 'cover initialized for this album');
     }
 

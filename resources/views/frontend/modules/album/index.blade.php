@@ -11,12 +11,7 @@
                         <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3' style="padding:4px; height : 450px;">
                             <a class="thumbnail fancybox" rel="ligthbox"
                                href="{{ route('album.show',$album->id) }}">
-                                @if(File::exists(asset('storage/'.$album->cover)))
                                     <img class="img-responsive" alt="" src="{{ asset('storage/'.$album->cover) }}"/>
-                                @else
-                                    <img class="img-responsive" alt=""
-                                         src="{{ asset('storage/'.$album->gallery->first()->images->first()->image_url) }}"/>
-                                @endif
                                 <div class='text-center'>
                                     <small class='text-muted text-justify'>
                                         <p>
