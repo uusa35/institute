@@ -3,12 +3,11 @@
 @section('content')
     <div class="col-xs-10 col-xs-push-1">
         <h1>{{ trans('general.albums') }}</h1>
-
         @if($albums->count() > 0)
             <div class='list-group gallery'>
                 @foreach($albums as $album)
                     @if(!is_null($album->gallery->first()))
-                        <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3' style="padding:4px; height : 450px;">
+                        <div class='col-lg-3 col-xs-6' style="padding:4px; height : 550px;">
                             <a class="thumbnail fancybox" rel="ligthbox"
                                href="{{ route('album.show',$album->id) }}">
                                 @if(!is_null($album->cover))
@@ -33,7 +32,7 @@
             <div class="alert alert-warning"><p>{{ trans('general.no_albums') }}</p></div>
         @endif
     </div>
-    <div class="col-xs-12 text-center">
+    <div class="col-lg-12 text-center">
         {{ $albums->links() }}
     </div>
 @endsection

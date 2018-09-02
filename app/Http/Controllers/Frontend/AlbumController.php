@@ -18,7 +18,6 @@ class AlbumController extends Controller
     public function index()
     {
         $albums = Album::with('gallery')->paginate(8);
-
         return view('frontend.modules.album.index', compact('albums'));
     }
 
