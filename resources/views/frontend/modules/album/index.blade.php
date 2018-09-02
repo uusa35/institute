@@ -6,15 +6,14 @@
         @if($albums->count() > 0)
             <div class='list-group gallery'>
                 @foreach($albums as $album)
-
-                        <div class='col-lg-3 col-xs-6' style="padding:4px; height : 550px;">
+                        <div class='col-lg-3 col-xs-6' style="padding:4px; height : 450px;">
                             <a class="thumbnail fancybox" rel="ligthbox"
                                href="{{ route('album.show',$album->id) }}">
                                 @if(!is_null($album->cover))
-                                    <img class="img-responsive" alt="" src="{{ asset('storage/'.$album->cover) }}"/>
+                                    <img class="img-responsive" alt="" src="{{ asset('storage/'.$album->cover) }}" style="height : 300px;"/>
                                 @else
                                     <img class="img-responsive" alt=""
-                                         src="{{ asset('storage/'.$album->gallery->first()->images->first()->image_url) }}"/>
+                                         src="{{ asset('storage/'.$album->gallery->first()->images->first()->image_url) }}" style="height: 300px;"/>
                                 @endif
                                 <div class='text-center'>
                                     <small class='text-muted text-justify'>
