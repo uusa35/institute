@@ -6,7 +6,7 @@
         @if($albums->count() > 0)
             <div class='list-group gallery'>
                 @foreach($albums as $album)
-                    @if(!is_null($album->gallery->first()))
+
                         <div class='col-lg-3 col-xs-6' style="padding:4px; height : 550px;">
                             <a class="thumbnail fancybox" rel="ligthbox"
                                href="{{ route('album.show',$album->id) }}">
@@ -25,7 +25,6 @@
                                 </div> <!-- text-right / end -->
                             </a>
                         </div> <!-- col-6 / end -->
-                    @endif
                 @endforeach
             </div>
         @else
