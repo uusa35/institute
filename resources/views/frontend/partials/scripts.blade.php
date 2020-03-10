@@ -22,12 +22,12 @@
     ga('send', 'pageview');
     var myVar;
     function loader() {
-        myVar = setTimeout(showPage, 3000);
+        myVar = setTimeout(showPage, 2000);
     }
     function showPage() {
         console.log('here');
         document.getElementById("loader").style.display = "none";
         document.getElementById("root").style.display = "block";
-        // document.getElementsByTagName("body").style.display('load');
+        document.getElementById("loadWrapper").style.display = "none";
     }
 </script>

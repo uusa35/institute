@@ -16,11 +16,13 @@
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}"/>
 </head>
 <body onload="loader()" class="load">
+<div id="loadWrapper">
     <div id="loader" class="lds-ripple">
         <div></div>
         <div></div>
     </div>
-<div id="root">
+</div>
+<div id="root" style="display: none">
     @section('header')
         @include('frontend.partials.nav')
     @show

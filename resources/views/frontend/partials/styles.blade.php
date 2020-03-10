@@ -45,5 +45,11 @@
             opacity: 0;
         }
     }
+    #loadWrapper {
+        min-width: 150em;
+        height: 100em;
+        background-color: white;
+        z-index: 999;
+    }
 </style>
 

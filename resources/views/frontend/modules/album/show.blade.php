@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="col-lg-12" style="margin-bottom : 20px;">
+    <div class="col-lg-12" style="margin-bottom : 3%; margin-top: 5%;">
         <div class="col-lg-5 col-lg-push-1 article">
             <div class="col-lg-12">
                 <p>{!! $album->description !!}</p>
