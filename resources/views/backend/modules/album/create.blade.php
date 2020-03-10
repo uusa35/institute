@@ -13,6 +13,7 @@
                 <div class="form-group">
                     <div class="col-sm-6">
                         <label for="gallery" class="control-label">gallery</label>
+                        <label for="gallery" class="control-label">Image Should be 500 X 500 (Size Not to exceed 100KB)</label>
                         <input type="file" name="gallery[]" multiple required="">
                     </div>
                 </div>
