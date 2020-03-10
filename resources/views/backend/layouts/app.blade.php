@@ -16,12 +16,8 @@
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}"/>
 </head>
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
-
 @section('header')
-
-
 @show
-
 @section('body')
     @include('backend.partials.nav')
     <div class="page-container">
@@ -58,5 +54,6 @@
 @section('scripts')
     @include('backend.partials.scripts')
 @show
+
 </body>
 </html>

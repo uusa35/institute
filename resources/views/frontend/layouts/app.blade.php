@@ -15,26 +15,30 @@
     @show
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}"/>
 </head>
-<body>
+<body onload="loader()" class="load">
+    <div id="loader" class="lds-ripple">
+        <div></div>
+        <div></div>
+    </div>
+<div id="root">
+    @section('header')
+        @include('frontend.partials.nav')
+    @show
 
-@section('header')
-    @include('frontend.partials.nav')
-@show
+    <div class="container-fluid">
+        <div id="app"></div>
+        @include('frontend.partials.notifications')
+        @section('body')
+            <div class="col-lg-12">
 
-<div class="container-fluid">
-    <div id="app">from app</div>
-    @include('frontend.partials.notifications')
-    @section('body')
-        <div class="col-lg-12">
-
-            @yield('content')
-            @show
-        </div>
+                @yield('content')
+                @show
+            </div>
+    </div>
+    @section('footer')
+        @include('frontend.partials.footer')
+    @show
 </div>
-@section('footer')
-    @include('frontend.partials.footer')
-@show
-
 
 @section('scripts')
     @include('frontend.partials.scripts')
