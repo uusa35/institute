@@ -22,7 +22,7 @@
     ga('send', 'pageview');
     var myVar;
     function loader() {
-        myVar = setTimeout(showPage, 2000);
+        myVar = setTimeout(showPage, 1000);
     }
     function showPage() {
         console.log('here');

@@ -39,14 +39,14 @@
 
         <!-- Instagram -->
         <div class="col-lg-3 col-xs-12 col-sm-12">
-            <h3>{{ trans('general.instagram') }}</h3>
-            <hr>
-            @if(app()->environment() !== 'local')
-            <!-- InstaWidget -->
-            <a href="https://instawidget.net/v/user/inter_t_i"
-               id="link-7da1028c58d17edacf850860bb521f2954b0988c4c1a1fb4a095f3edfbf374d9"></a>
-            <script src="https://instawidget.net/js/instawidget.js?u=7da1028c58d17edacf850860bb521f2954b0988c4c1a1fb4a095f3edfbf374d9&width=300px"></script>
-            @endif
+{{--            <h3>{{ trans('general.instagram') }}</h3>--}}
+{{--            <hr>--}}
+{{--            @if(app()->environment() !== 'local')--}}
+{{--            <!-- InstaWidget -->--}}
+{{--            <a href="https://instawidget.net/v/user/inter_t_i"--}}
+{{--               id="link-7da1028c58d17edacf850860bb521f2954b0988c4c1a1fb4a095f3edfbf374d9"></a>--}}
+{{--            <script src="https://instawidget.net/js/instawidget.js?u=7da1028c58d17edacf850860bb521f2954b0988c4c1a1fb4a095f3edfbf374d9&width=300px"></script>--}}
+{{--            @endif--}}
         </div>
         <!-- Icons -->
         <div class="col-lg-3 col-xs-12 col-sm-12">
