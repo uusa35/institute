@@ -24,7 +24,7 @@ class NewsletterStore extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required:min:3',
+            'name' => 'required:min:5|string',
             'email' => 'required|email|unique:newsletter,email',
             'active' => 'required|boolean'
         ];
