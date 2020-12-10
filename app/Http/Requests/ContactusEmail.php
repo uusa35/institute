@@ -24,10 +24,10 @@ class ContactusEmail extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required:min3',
-            'email' => 'required|email',
-            'subject' => 'required|min:3',
-            'content' => 'required|min:3'
+            'name' => 'required|min:5|string',
+            'email' => 'required|email|min:5',
+            'subject' => 'required|min:5|max:300',
+            'content' => 'required|min:10|max:2000'
         ];
     }
 }
