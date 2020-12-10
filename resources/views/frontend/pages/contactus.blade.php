@@ -10,12 +10,8 @@
                 <!--maps-area start-->
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <!-- Map area -->
-                        <div class="map-area">
-                            <div id="latitude" class="hidden">{{ $contactusInfo->latitude }}</div>
-                            <div id="longitude" class="hidden">{{ $contactusInfo->longitude }}</div>
-                            <div id="googleMap" style="width:100%;height:410px;"></div>
-                        </div><!-- End Map area -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2140.8929464727016!2d48.07622139590436!3d29.34425838022287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9d87e6bdc835%3A0xa397ca18643da6f5!2sAbud%20Al-wahaab%20Mall%20(Galleria%202000)!5e0!3m2!1sen!2skw!4v1607593635109!5m2!1sen!2skw" style="margin-top: 50px; width : 100%; height : 400px; border: 2px solid lightgrey
+                        ;" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
                 <!--maps-area end-->
@@ -113,36 +109,5 @@
     </div>
 </div>
 <!-- Contact page body end -->
-
-@endsection
-
-@section('scripts')
-@parent
-        <!-- Google Map js -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuU_0_uLMnFM-2oWod_fzC0atPZj7dHlU"></script>
-<script>
-    var latitude = document.getElementById('latitude').innerHTML;
-    var longitude = document.getElementById('longitude').innerHTML;
-    function initialize() {
-        var mapOptions = {
-            zoom: 15,
-            scrollwheel: false,
-            center: new google.maps.LatLng(latitude, longitude)
-        };
-
-        var map = new google.maps.Map(document.getElementById('googleMap'),
-                mapOptions);
-
-
-        var marker = new google.maps.Marker({
-            position: map.getCenter(),
-            animation: google.maps.Animation.BOUNCE,
-            icon: '/img/logo/map-marker.png',
-            map: map
-        });
-
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-</script>
 
 @endsection
