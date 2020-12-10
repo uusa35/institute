@@ -52,6 +52,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    {{ $subscribers->render() }}
                 </div>
             </div>
             <!-- END EXAMPLE TABLE PORTLET-->

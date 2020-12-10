@@ -20,8 +20,7 @@ class NewsLetterController extends Controller
      */
     public function index()
     {
-        $subscribers = Newsletter::all();
-        dd($subscribers);
+        $subscribers = Newsletter::paginate(100);
         return view('backend.modules.newsletter.index', compact('subscribers'));
     }
 
