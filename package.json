@@ -27,7 +27,7 @@
     "redux-thunk": "^2.1.0",
     "style-css": "^1.0.2",
     "style-loader": "^0.13.1",
-    "tinymce": "^4.4.2",
+    "tinymce": "^5.7.1",
     "url-loader": "^0.5.7",
     "vue": "^1.0.26"
   }
